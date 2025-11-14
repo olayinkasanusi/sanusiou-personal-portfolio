@@ -1,4 +1,4 @@
-import Navbar from "../ui/navBar";
+import Navbar from "./ui/NavBar";
 import AboutMe from "./pages/AboutMe";
 import HeroSection from "./pages/HeroSection";
 
