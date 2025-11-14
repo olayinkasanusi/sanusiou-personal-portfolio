@@ -1,5 +1,6 @@
 import { useRef, useEffect, useCallback } from "react";
 import * as THREE from "three";
+import Footer from "../ui/Footer";
 
 const CHARACTERS = ["+", "-", "=", "<", "*", ">"];
 
@@ -200,10 +201,7 @@ const HeroSection = () => {
           </button>
         </div>
 
-        <footer className="absolute bottom-0 w-full z-30 p-4 text-center text-sm text-gray-400 backdrop-blur-sm bg-black/10">
-          <div></div>
-          <p>&copy; 2025 Sanusi Olayinka | All Rights reserved</p>
-        </footer>
+        <Footer />
       </div>
     </section>
   );

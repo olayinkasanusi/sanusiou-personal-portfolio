@@ -1,23 +1,26 @@
 import Button from "../ui/Button";
+import Footer from "../ui/Footer";
 import NavBar from "../ui/NavBar";
+import Icons from "../ui/Icons";
 
 const technologies = [
-  { icon: "", technology: "React.js" },
-  { icon: "", technology: "Tailwind.css" },
-  { icon: "", technology: "Redux" },
-  { icon: "", technology: "Next.js" },
-  { icon: "", technology: "Supabase" },
-  { icon: "", technology: "Vercel" },
+  { icon: `/react.svg`, tech: "React.js" },
+  { icon: "/tailwind.svg", tech: "Tailwindcss" },
+  { icon: "/redux.svg", tech: "Redux" },
+  { icon: "/nextjs.svg", tech: "Next.js" },
+  { icon: "/supabase.svg", tech: "Supabase" },
+  { icon: "/vercel.svg", tech: "Vercel" },
 ];
 
 function AboutMe() {
   return (
     <>
-      <div className="bg-[#0A192F] w-full h-dvh flex items-center flex-col justify-between gap-4">
+      <div className="bg-[#0A192F] w-full flex items-center flex-col justify-between  gap-10 overflow-scroll">
         <NavBar />
         <div className="max-w-3xl flex items-center justify-between gap-12 border-b border-gray-500 pb-8">
           <img
-            src="public\profile_picture.jpg"
+            src="/profile_picture.jpg"
+            alt="sanusi_olayinka_img"
             className="rounded-full w-50 float-left border-white border"
           />{" "}
           <div className="text-left flex flex-col gap-5">
@@ -25,16 +28,32 @@ function AboutMe() {
               Hello, I am Sanusi Olayinka
             </h1>
             <p className="text-[#707070] leading-8 font-raleway font-light">
-              I am a freelance web developer, constantly honing my skills and
-              bringing digital ideas to life through coding, I specialize in
-              creating modern Web Applications that are both performant and
-              delightful to use.
+              I am a freelance{" "}
+              <strong className="font-bold text-white">
+                Frontend web developer,
+              </strong>{" "}
+              constantly honing my skills and bringing digital ideas to life
+              through coding, I specialize in creating modern Web Applications
+              that are both performant and delightful to use.
             </p>
             <Button>View My Work</Button>
           </div>
         </div>
-        <div></div>
-        <div></div>
+        <div className="max-w-3xl pb-8 w-full flex flex-col justify-between items-start mb-6">
+          <h1 className="text-left text-2xl text-white font-montserrat font-semibold mb-4">
+            Core Technologies
+          </h1>
+          <div className="px-5 py-3 grid grid-cols-6 gap-10 m-auto">
+            {technologies.map((tech) => (
+              <Icons icon={tech.icon} tech={tech.tech} />
+            ))}
+          </div>
+        </div>
+        <footer className="bottom-0 fixed w-full z-30 p-4 text-center text-sm text-gray-400 backdrop-blur-sm bg-gray-900">
+          <div></div>
+          <p>&copy; 2025 Sanusi Olayinka | All Rights reserved</p>
+        </footer>
+        {/* <Footer /> */}
       </div>
     </>
   );
