@@ -8,12 +8,12 @@ import Projects from "./pages/Projects";
 function App() {
   return (
     <div>
-      <HeroSection />
+      {/* <HeroSection /> */}
       {/* <Navbar /> */}
       {/* <AboutMe /> */}
       {/* <Carousel /> */}
       {/* <ContactMe /> */}
-      {/* <Projects /> */}
+      <Projects />
     </div>
   );
 }

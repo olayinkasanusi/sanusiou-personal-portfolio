@@ -186,7 +186,7 @@ const HeroSection = () => {
         <h1 className="text-7xl md:text-7xl font-bold font-montserrat bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-600 w-9/10 ">
           Sanusi Olayinka.{" "}
           <p className="text-5xl text-white mt-2">
-            Creative Frontend Developer.
+            {"<"}Creative Frontend Developer.{"/>"}
           </p>
         </h1>
         <p className="text-xl md:text-2xl max-w-xl font-light font-raleway">

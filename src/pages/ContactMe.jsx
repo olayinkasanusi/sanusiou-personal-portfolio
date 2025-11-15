@@ -2,20 +2,7 @@ import React, { useState } from "react";
 import GitHubIcon from "../ui/GithubIcon";
 import LinkedInIcon from "../ui/LinkedInIcon";
 import NavBar from "../ui/NavBar";
-
-function SocialLink({ children, name, href }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center text-gray-400 hover:text-blue-400 transition-colors"
-    >
-      {children}
-      <span className="text-sm font-medium">{name}</span>
-    </a>
-  );
-}
+import SocialLinks from "../ui/SocialLinks";
 
 function ContactMe() {
   const [formData, setFormData] = useState({
@@ -49,7 +36,7 @@ function ContactMe() {
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <NavBar />
-      <div className="w-full max-w-lg mx-auto p-8 bg-[#0f172a] rounded-xl shadow-2xl">
+      <div className="w-full max-w-lg mx-auto p-8 bg-[#0f172a] rounded-xl shadow-2xl mt-10">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-extrabold text-white mb-2 font-montserrat">
             Let's Connect
@@ -123,20 +110,7 @@ function ContactMe() {
           </button>
         </form>
 
-        <div className="mt-12 pt-6 border-t border-gray-800 text-center">
-          <p className="text-gray-400 mb-4 text-sm">Or find me on</p>
-          <div className="flex justify-center space-x-6">
-            <SocialLink name="Github" href="https://github.com/olayinkasanusi">
-              <GitHubIcon className="w-5 h-5 mr-2" />
-            </SocialLink>
-            <SocialLink
-              name="LinkedIn"
-              href="https://linkedin.com/in/sanusiolayinka"
-            >
-              <LinkedInIcon className="w-5 h-5 mr-2" />
-            </SocialLink>
-          </div>
-        </div>
+        <SocialLinks />
       </div>
     </div>
   );
