@@ -150,8 +150,8 @@ const CareerPath = () => {
   }, [pathLength]);
 
   return (
-    <div className="bg-[##0A192F] p-4 sm:p-6 flex flex-col items-center justify-center font-raleway">
-      <div className="w-full h-auto overflow-x-auto" ref={containerRef}>
+    <div className="bg-[##0A192F] p-4 sm:p-6 flex w-full overflow-x-scroll flex-col items-center justify-center font-raleway">
+      <div className="w-full h-auto overflow-x-scroll" ref={containerRef}>
         <svg
           viewBox="0 0 1000 400"
           className="w-full h-full min-w-[700px]"

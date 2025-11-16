@@ -148,8 +148,7 @@ function ProjectDetails() {
     <div className=" bg-[#0A192F]">
       <div className="max-w-3xl mx-auto flex gap-10 flex-col justify-between items-center pb-40 px-5">
         <NavBar />
-        <Carousel slidesData={projects[0].slidesData} />
-        <div className="mx-auto flex flex-col justify-between items-start w-full">
+        <div className="mx-auto flex flex-col justify-between items-start w-full mt-30">
           <h1 className={`text-3xl underline ${headerStyling}`}>
             {projects[num].name}
           </h1>
@@ -165,6 +164,7 @@ function ProjectDetails() {
             </a>
           </div>
         </div>
+        <Carousel slidesData={projects[0].slidesData} />
         <div className="w-full">
           <h1 className={headerStyling}>Project Overview</h1>
           <hr className="text-[#007bff] w-full" />
@@ -199,12 +199,13 @@ function ProjectDetails() {
         <div className={containerStyle}>
           <h1 className={headerStyling}>Technology Stack</h1>
           <hr className="text-[#007bff] w-full mb-4" />
-          <div className="px-5 py-3 grid grid-cols-2 md:grid-cols-6 gap-8 md:gap-10 m-auto sm:grid-cols-3">
+          <div className="px-5 py-3 grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-10 m-auto sm:grid-cols-2">
             {projects[num].technologyStack.map((tech) => (
               <Icons icon={tech.icon} tech={tech.tech} key={tech.tech} />
             ))}
           </div>
         </div>
+        <Button>Contact Me</Button>
         <Footer position="fixed" />
       </div>
     </div>

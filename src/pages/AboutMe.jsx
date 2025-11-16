@@ -24,9 +24,9 @@ function AboutMe() {
 
   return (
     <>
-      <div className="bg-[#0A192F] w-full flex items-center flex-col justify-between  gap-10 overflow-scroll">
+      <div className="bg-[#0A192F] w-full flex items-center flex-col justify-between  gap-10 overflow-scroll px-5">
         <NavBar />
-        <div className="max-w-3xl flex items-center justify-between gap-12 border-b border-gray-500 pb-8 mt-20">
+        <div className="max-w-3xl flex items-center md:flex-row flex-col justify-between gap-12 border-b border-gray-500 pb-8 mt-20">
           <img
             src="/profile_picture.jpg"
             alt="sanusi_olayinka_img"
@@ -48,21 +48,24 @@ function AboutMe() {
             <Button>View My Work</Button>
           </div>
         </div>
+
         <div className={containerStyle}>
           <h1 className={headerStyling}>Core Technologies</h1>
-          <div className="px-5 py-3 grid grid-cols-6 gap-10 m-auto">
+          <div className="px-2 py-3 grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-10 m-auto sm:grid-cols-2">
             {technologies.map((tech) => (
               <Icons icon={tech.icon} tech={tech.tech} key={tech.tech} />
             ))}
           </div>
         </div>
-        <div className={containerStyle}>
+
+        <div className={`${containerStyle}`}>
           <h1 className={headerStyling}>My Learning RoadMap</h1>
           <CareerPath />
         </div>
+
         <div className={`${containerStyle} border-b-0 mb-30`}>
           <h1 className={headerStyling}>Cerifications</h1>
-          <div className="flex justify-between items-center gap-4 flex-row-reverse">
+          <div className="flex justify-between items-center gap-4 flex-col md:flex-row-reverse">
             <img className="w-80" src="/freecodecamp-certificate.png" />
             <p className={`${paragraphStyle} text-gray-400`}>
               Completed the freeCodeCamp Responsive Web Design course in late
@@ -81,10 +84,6 @@ function AboutMe() {
             </p>
           </div>
         </div>
-        {/* <footer className="bottom-0 fixed w-full z-30 p-4 text-center text-sm text-gray-400 backdrop-blur-sm bg-gray-900">
-          <div></div>
-          <p>&copy; 2025 Sanusi Olayinka | All Rights reserved</p>
-        </footer> */}
         <Footer position="fixed" />
       </div>
     </>

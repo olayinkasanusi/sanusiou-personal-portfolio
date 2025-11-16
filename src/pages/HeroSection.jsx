@@ -183,10 +183,11 @@ const HeroSection = () => {
         id="hero-content"
         className="relative z-20 flex flex-col justify-center items-center h-full text-center p-4 text-[#E0E7FF] gap-8"
       >
-        <h1 className="text-7xl md:text-7xl font-bold font-montserrat bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-600 w-9/10 ">
+        <h1 className="text-4xl sm:text-7xl font-bold font-montserrat bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-600 w-9/10 ">
           Sanusi Olayinka.{" "}
-          <p className="text-5xl text-white mt-2">
-            {"<"}Creative Frontend Developer.{"/>"}
+          <p className="text-3xl sm:text-5xl text-white mt-2">
+            <span className="text-violet-950">{"<"}</span>Creative Frontend
+            Developer.<span className="text-violet-950">{"/>"}</span>
           </p>
         </h1>
         <p className="text-xl md:text-2xl max-w-xl font-light font-raleway">

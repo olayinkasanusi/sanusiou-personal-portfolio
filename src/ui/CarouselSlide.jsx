@@ -10,7 +10,7 @@ const CarouselSlide = ({ slide, isActive }) => (
       alt={slide.title}
     />
     <div className="absolute inset-0 bg-transparent flex items-end p-8">
-      <h2 className="text-white text-lg font-raleway font-medium md:text-5xl">
+      <h2 className="text-white text-2xl font-raleway font-semibold md:text-5xl">
         {slide.title}
       </h2>
     </div>
