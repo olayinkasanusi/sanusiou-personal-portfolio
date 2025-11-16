@@ -4,6 +4,7 @@ import HeroSection from "./pages/HeroSection";
 import Carousel from "./ui/Carousel";
 import ContactMe from "./pages/ContactMe";
 import Projects from "./pages/Projects";
+import ProjectDetails from "./pages/ProjectDetails";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <AboutMe /> */}
       {/* <Carousel /> */}
       {/* <ContactMe /> */}
-      <Projects />
+      {/* <Projects /> */}
+      <ProjectDetails />
     </div>
   );
 }

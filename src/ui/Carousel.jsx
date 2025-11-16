@@ -62,10 +62,7 @@ const Carousel = () => {
   };
 
   return (
-    <div
-      className="min-h-screen bg-gray-100 flex items-center justify-center p-4"
-      style={{ fontFamily: "Inter, sans-serif" }}
-    >
+    <div className="bg-transparent w-full flex items-center justify-center sm:p-4 font-montserrat mt-20">
       <div className="w-full max-w-5xl shadow-2xl rounded-xl overflow-hidden bg-white">
         <div
           className="relative w-full overflow-hidden"
