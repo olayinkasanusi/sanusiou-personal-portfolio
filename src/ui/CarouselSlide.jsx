@@ -8,14 +8,9 @@ const CarouselSlide = ({ slide, isActive }) => (
       src={slide.img}
       className="w-full h-full object-cover"
       alt={slide.title}
-      onError={(e) => {
-        e.target.onerror = null;
-        e.target.src =
-          "https://placehold.co/1000x600/000000/ffffff?text=Image+Failed+to+Load";
-      }}
     />
-    <div className="absolute inset-0 bg-black bg-opacity-30 flex items-end p-8">
-      <h2 className="text-white text-3xl font-bold md:text-5xl">
+    <div className="absolute inset-0 bg-transparent flex items-end p-8">
+      <h2 className="text-white text-lg font-raleway font-medium md:text-5xl">
         {slide.title}
       </h2>
     </div>

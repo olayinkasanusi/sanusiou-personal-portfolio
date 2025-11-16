@@ -1,7 +1,7 @@
 const CarouselButton = ({ direction, onClick }) => (
   <button
     onClick={onClick}
-    className="absolute top-1/2 transform -translate-y-1/2 text-white z-10 bg-black bg-opacity-40 hover:bg-opacity-60 transition-all rounded-full w-12 h-12 flex items-center justify-center shadow-lg"
+    className="absolute top-1/2 transform -translate-y-1/2 text-white z-10 bg-transparent hover:bg-opacity-60 transition-all rounded-full w-12 h-12 flex items-center justify-center shadow-lg"
     style={{ [direction === "prev" ? "left" : "right"]: "1rem" }}
     aria-label={direction === "prev" ? "Previous Slide" : "Next Slide"}
   >

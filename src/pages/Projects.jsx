@@ -6,7 +6,7 @@ function Image({ src, children, classes, href }) {
   return (
     <>
       <img
-        className="w-full h-full rounded-2xl border border-blue-400"
+        className="w-full h-full object-cover border border-blue-400 rounded-2xl"
         src={src}
       />
       <a
@@ -28,6 +28,14 @@ function Projects() {
   const paragraphStyle =
     "text-[#a3a3a3] leading-8 font-raleway font-light text-center";
 
+  const doubleRow =
+    "col-span-3 md:col-span-2 relative w-full h-70 overflow-hidden hover:shadow-md hover:shadow-blue-400 rounded-2xl";
+
+  // const imageClass = "";
+
+  const singleRow =
+    "md:col-span-1 col-span-3 relative w-full h-70 overflow-hidden hover:shadow-md hover:shadow-blue-400 rounded-2xl";
+
   return (
     <>
       <div className=" bg-[#0A192F]">
@@ -36,26 +44,26 @@ function Projects() {
 
           <div className="mt-25 flex flex-col justify-between items-center">
             <h1 className={headerStyling}>My Featured Projects</h1>
-            <p className={`${paragraphStyle} w-xl`}>
+            <p className={`${paragraphStyle} px-5 md:w-xl`}>
               A selection of my best projects, showcasing my skills in creating
               modern, responsive and user friendly applications
             </p>
           </div>
-          <div className="grid grid-cols-3 grid-rows-2 gap-6 w-full gap-y-8 p-10 bg-transparent">
-            <div className="col-span-2 relative w-135 h-65.5">
+          <div className="grid grid-cols-3 grid-rows-4 md:grid-rows-2 gap-6 w-full gap-y-8 p-5 md:p-10 bg-transparent">
+            <div className={doubleRow}>
               <Image src="/oasis-5.png">The wild Oasis App</Image>
             </div>
-            <div className="col-span-1 w-72.6 h-65.5 relative ">
-              <Image src="/fast-react-pizza.png" classes="text-gray-900">
+            <div className={singleRow}>
+              <Image src="/fast-react-pizza.png" classes="text-black">
                 Fast React Pizza Co.
               </Image>
             </div>
-            <div className="col-span-1 relative">
-              <Image src="/fast-react-pizza.png" classes="text-gray-900">
+            <div className={singleRow}>
+              <Image src="/fast-react-pizza.png" classes="text-black">
                 Fast React Pizza Co.
               </Image>
             </div>
-            <div className="col-span-2 relative">
+            <div className={doubleRow}>
               <Image src="/oasis-5.png">The wild Oasis App</Image>
             </div>
           </div>

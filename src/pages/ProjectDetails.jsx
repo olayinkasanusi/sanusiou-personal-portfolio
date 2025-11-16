@@ -148,7 +148,7 @@ function ProjectDetails() {
     <div className=" bg-[#0A192F]">
       <div className="max-w-3xl mx-auto flex gap-10 flex-col justify-between items-center pb-40 px-5">
         <NavBar />
-        <Carousel />
+        <Carousel slidesData={projects[0].slidesData} />
         <div className="mx-auto flex flex-col justify-between items-start w-full">
           <h1 className={`text-3xl underline ${headerStyling}`}>
             {projects[num].name}

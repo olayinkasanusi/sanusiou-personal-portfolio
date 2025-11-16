@@ -2,25 +2,25 @@ import React, { useState, useEffect } from "react";
 import CarouselButton from "./CarouselButton";
 import CarouselSlide from "./CarouselSlide";
 
-const slidesData = [
-  {
-    id: 0,
-    title: "Mountain Peaks",
-    img: "https://placehold.co/1000x600/1E3A8A/ffffff?text=Slide+1",
-  },
-  {
-    id: 1,
-    title: "Deep Forest",
-    img: "https://placehold.co/1000x600/047857/ffffff?text=Slide+2",
-  },
-  {
-    id: 2,
-    title: "Coastal Sunset",
-    img: "https://placehold.co/1000x600/991B1B/ffffff?text=Slide+3",
-  },
-];
+// const slidesData = [
+//   {
+//     id: 0,
+//     title: "Mountain Peaks",
+//     img: "https://placehold.co/1000x600/1E3A8A/ffffff?text=Slide+1",
+//   },
+//   {
+//     id: 1,
+//     title: "Deep Forest",
+//     img: "https://placehold.co/1000x600/047857/ffffff?text=Slide+2",
+//   },
+//   {
+//     id: 2,
+//     title: "Coastal Sunset",
+//     img: "https://placehold.co/1000x600/991B1B/ffffff?text=Slide+3",
+//   },
+// ];
 
-const Carousel = () => {
+function Carousel({ slidesData }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
 
@@ -37,7 +37,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextSlide]);
 
   const handleDotClick = (index) => {
     setCurrentIndex(index);
@@ -99,6 +99,6 @@ const Carousel = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Carousel;
