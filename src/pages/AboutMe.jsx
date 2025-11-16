@@ -3,6 +3,7 @@ import Footer from "../ui/Footer";
 import NavBar from "../ui/NavBar";
 import Icons from "../ui/Icons";
 import CareerPath from "../ui/CareerPath";
+import useNavigation from "../utils/useNavigation";
 
 const technologies = [
   { icon: `/react.svg`, tech: "React.js" },
@@ -14,6 +15,7 @@ const technologies = [
 ];
 
 function AboutMe() {
+  const handleClick = useNavigation();
   const headerStyling =
     "text-left text-2xl text-white font-montserrat font-semibold mb-4";
 
@@ -45,7 +47,9 @@ function AboutMe() {
               through coding, I specialize in creating modern Web Applications
               that are both performant and delightful to use.
             </p>
-            <Button>View My Work</Button>
+            <Button onClick={() => handleClick("/projects")}>
+              View My Work
+            </Button>
           </div>
         </div>
 

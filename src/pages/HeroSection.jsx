@@ -1,6 +1,7 @@
 import { useRef, useEffect, useCallback } from "react";
 import * as THREE from "three";
 import Footer from "../ui/Footer";
+import useNavigation from "../utils/useNavigation";
 
 const CHARACTERS = ["+", "-", "=", "<", "*", ">"];
 
@@ -10,6 +11,7 @@ const HeroSection = () => {
   const cameraRef = useRef(null);
   const rendererRef = useRef(null);
   const particlesRef = useRef(null);
+  const handleClick = useNavigation();
 
   const mouse = useRef(new THREE.Vector2(0, 0));
   const targetMouse = useRef(new THREE.Vector2(0, 0));
@@ -171,7 +173,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero-section"
-      className="relative w-screen h-screen bg-[#0d0d15] overflow-hidden"
+      className="relative w-screen h-screen bg-[#0A192F] overflow-hidden"
     >
       <div
         ref={containerRef}
@@ -194,11 +196,17 @@ const HeroSection = () => {
           I build exceptional and accessible digital experiences
         </p>
         <div className="flex justify-between items-center gap-3">
-          <button className="bg-transparent hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 border-2 border-white font-roboto">
+          <button
+            className="bg-transparent hover:bg-purple-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 border-2 border-white font-roboto"
+            onClick={() => handleClick("projects")}
+          >
             View My Work
           </button>
-          <button className="bg-transparent hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 border-2 border-white font-roboto">
-            Get In Touch
+          <button
+            className="bg-transparent hover:bg-purple-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 border-2 border-white font-roboto"
+            onClick={() => handleClick("aboutme")}
+          >
+            About Me
           </button>
         </div>
 

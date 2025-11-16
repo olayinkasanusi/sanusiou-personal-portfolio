@@ -3,6 +3,8 @@ import NavBar from "../ui/NavBar";
 import Footer from "../ui/Footer";
 import Button from "../ui/Button";
 import Icons from "../ui/Icons";
+import { useParams } from "react-router";
+import useNavigation from "../utils/useNavigation";
 
 const projects = [
   {
@@ -135,7 +137,8 @@ const projects = [
 ];
 
 function ProjectDetails() {
-  const num = 2;
+  const { projectId } = useParams();
+  const handleClick = useNavigation();
 
   const headerStyling =
     "text-left text-2xl text-white font-montserrat font-semibold mb-4";
@@ -150,16 +153,16 @@ function ProjectDetails() {
         <NavBar />
         <div className="mx-auto flex flex-col justify-between items-start w-full mt-30">
           <h1 className={`text-3xl underline ${headerStyling}`}>
-            {projects[num].name}
+            {projects[projectId].name}
           </h1>
           <p className={` mb-4 ${paragraphStyle}`}>
-            {projects[num].shortSummary}
+            {projects[projectId].shortSummary}
           </p>
           <div className="flex gap-3 justify-between items-center sm:flex-row flex-col">
-            <a>
+            <a href="">
               <Button size="small">View On Github</Button>
             </a>
-            <a>
+            <a href="">
               <Button size="small">View Live Demo</Button>
             </a>
           </div>
@@ -168,7 +171,9 @@ function ProjectDetails() {
         <div className="w-full">
           <h1 className={headerStyling}>Project Overview</h1>
           <hr className="text-[#007bff] w-full" />
-          <p className={paragraphStyle}>{projects[num].projectOverview}</p>
+          <p className={paragraphStyle}>
+            {projects[projectId].projectOverview}
+          </p>
         </div>
         <div className="w-full">
           <h1 className={headerStyling}>Goals & Challenges</h1>
@@ -179,7 +184,7 @@ function ProjectDetails() {
                 Goals
               </h1>
               <ul className={`${paragraphStyle} list-disc text-white`}>
-                {projects[num].goals.map((challenge, i) => (
+                {projects[projectId].goals.map((challenge, i) => (
                   <li key={i}>{challenge}</li>
                 ))}
               </ul>
@@ -189,7 +194,7 @@ function ProjectDetails() {
                 Challenges
               </h1>
               <ul className={`${paragraphStyle} list-disc text-white`}>
-                {projects[num].challenges.map((challenge, i) => (
+                {projects[projectId].challenges.map((challenge, i) => (
                   <li key={i}>{challenge}</li>
                 ))}
               </ul>
@@ -200,12 +205,12 @@ function ProjectDetails() {
           <h1 className={headerStyling}>Technology Stack</h1>
           <hr className="text-[#007bff] w-full mb-4" />
           <div className="px-5 py-3 grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-10 m-auto sm:grid-cols-2">
-            {projects[num].technologyStack.map((tech) => (
+            {projects[projectId].technologyStack.map((tech) => (
               <Icons icon={tech.icon} tech={tech.tech} key={tech.tech} />
             ))}
           </div>
         </div>
-        <Button>Contact Me</Button>
+        <Button onClick={() => handleClick("/contactme")}>Contact Me</Button>
         <Footer position="fixed" />
       </div>
     </div>

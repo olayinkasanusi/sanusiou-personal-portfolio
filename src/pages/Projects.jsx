@@ -1,6 +1,8 @@
 import NavBar from "../ui/NavBar";
 import Footer from "../ui/Footer";
 import Button from "../ui/Button";
+import useNavigation from "../utils/useNavigation";
+import { useNavigate, useSearchParams } from "react-router";
 
 function Image({ src, children, classes, href }) {
   return (
@@ -22,6 +24,10 @@ function Image({ src, children, classes, href }) {
 }
 
 function Projects() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const handleClick = useNavigation();
+  const navigate = useNavigate();
+
   const headerStyling =
     "text-left text-2xl text-white font-montserrat font-semibold mb-4";
 
@@ -31,10 +37,14 @@ function Projects() {
   const doubleRow =
     "col-span-3 md:col-span-2 relative w-full h-70 overflow-hidden hover:shadow-md hover:shadow-blue-400 rounded-2xl";
 
-  // const imageClass = "";
-
   const singleRow =
     "md:col-span-1 col-span-3 relative w-full h-70 overflow-hidden hover:shadow-md hover:shadow-blue-400 rounded-2xl";
+
+  function handleSearchParams(id) {
+    searchParams.set("projectId", id);
+    setSearchParams(searchParams);
+    navigate(`/projects/${id}`);
+  }
 
   return (
     <>
@@ -50,25 +60,27 @@ function Projects() {
             </p>
           </div>
           <div className="grid grid-cols-3 grid-rows-4 md:grid-rows-2 gap-6 w-full gap-y-8 p-5 md:p-10 bg-transparent">
-            <div className={doubleRow}>
+            <div className={doubleRow} onClick={() => handleSearchParams(0)}>
               <Image src="/oasis-5.png">The wild Oasis App</Image>
             </div>
-            <div className={singleRow}>
+            <div className={singleRow} onClick={() => handleSearchParams(0)}>
               <Image src="/fast-react-pizza.png" classes="text-black">
                 Fast React Pizza Co.
               </Image>
             </div>
-            <div className={singleRow}>
+            <div className={singleRow} onClick={() => handleSearchParams(0)}>
               <Image src="/fast-react-pizza.png" classes="text-black">
                 Fast React Pizza Co.
               </Image>
             </div>
-            <div className={doubleRow}>
+            <div className={doubleRow} onClick={() => handleSearchParams(0)}>
               <Image src="/oasis-5.png">The wild Oasis App</Image>
             </div>
           </div>
           <div className="mb-30">
-            <Button>Contact Me</Button>
+            <Button onClick={() => handleClick("/contactme")}>
+              Contact Me
+            </Button>
           </div>
           <Footer position="fixed" />
         </div>

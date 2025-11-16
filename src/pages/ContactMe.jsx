@@ -38,7 +38,7 @@ function ContactMe() {
       <NavBar />
       <div className="w-full max-w-lg mx-auto p-8 bg-[#0f172a] rounded-xl shadow-2xl mt-10">
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-extrabold text-white mb-2 font-montserrat">
+          <h1 className="md:text-4xl text-3xl font-extrabold text-white mb-2 font-montserrat">
             Let's Connect
           </h1>
           <p className="text-gray-400 text-base max-w-sm mx-auto font-raleway">

@@ -1,6 +1,7 @@
-import { NavLink } from "react-router";
+import { Link } from "react-router";
 import { useState } from "react";
 import { useOutSideClick } from "../hooks/useOutsideClick";
+import Logo from "./Logo";
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,27 +41,40 @@ const HamburgerMenu = () => {
       <div
         id="mobile-menu"
         className={`
-          absolute right-0 mt-2 w-48  shadow-md bg-[#0A192F] shadow-blue-400 rounded-md overflow-hidden 
+          absolute right-0 mt-2 w-35  shadow-md bg-[#0A192F] shadow-blue-400 rounded-md overflow-hidden 
           transition-all duration-500 ease-in-out origin-top
           ${isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}
         `}
       >
-        <ul className="p-2" ref={ref}>
-          <li
-            className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
+        <ul
+          className="p-2 flex-col flex gap-2 justify-between items-start "
+          ref={ref}
+        >
+          <Link
+            to="/"
+            className="font-raleway w-full text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
             onClick={toggleMenu}
           >
             Home
-          </li>
-          <li className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full">
+          </Link>
+          <Link
+            to="/aboutme"
+            className="font-raleway w-full text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
+          >
             About
-          </li>
-          <li className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full">
+          </Link>
+          <Link
+            to="/projects"
+            className="font-raleway w-full text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
+          >
             Projects
-          </li>
-          <li className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full">
+          </Link>
+          <Link
+            to="/contactme"
+            className="font-raleway w-full text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
+          >
             Contact Me
-          </li>
+          </Link>
         </ul>
       </div>
     </div>
@@ -71,26 +85,34 @@ function NavBar() {
     <div className="fixed mt-2 w-9/10 md:w-auto top-0 z-1000">
       <div className="rounded-full w-auto mx-auto shadow-md bg-[#0A192F] shadow-blue-400 flex justify-between items-center px-6 py-2  border-2 border-blue-600 z-100 gap-6">
         <div className="flex justify-between items-center gap-3">
-          <img src="public\logo.png" className="w-4" />{" "}
+          <Logo />
           <p className="font-raleway font-bold text-white">Sanusi Olayinka</p>
         </div>
         <ul className=" justify-between items-center gap-4 hidden md:flex">
-          {/* <NavLink>Home</NavLink>
-        <NavLink> About</NavLink>
-        <NavLink>Projects</NavLink>
-        <NavLink>Contact Me</NavLink> */}
-          <li className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full">
+          <Link
+            to="/"
+            className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
+          >
             Home
-          </li>
-          <li className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full">
+          </Link>
+          <Link
+            to="/aboutme"
+            className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
+          >
             About
-          </li>
-          <li className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full">
+          </Link>
+          <Link
+            to="/projects"
+            className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
+          >
             Projects
-          </li>
-          <li className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full">
+          </Link>
+          <Link
+            to="/contactme"
+            className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
+          >
             Contact Me
-          </li>
+          </Link>
         </ul>
         <HamburgerMenu />
       </div>
