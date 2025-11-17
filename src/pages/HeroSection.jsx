@@ -173,7 +173,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero-section"
-      className="relative w-screen h-screen bg-[#0A192F] overflow-hidden"
+      className="relative w-screen h-screen bg-[#040a13] overflow-hidden"
     >
       <div
         ref={containerRef}
@@ -188,8 +188,8 @@ const HeroSection = () => {
         <h1 className="text-4xl sm:text-7xl font-bold font-montserrat bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-600 w-9/10 ">
           Sanusi Olayinka.{" "}
           <p className="text-3xl sm:text-5xl text-white mt-2">
-            <span className="text-violet-950">{"<"}</span>Creative Frontend
-            Developer.<span className="text-violet-950">{"/>"}</span>
+            <span className="text-yellow-400">{"<"}</span>Creative Frontend
+            Developer.<span className="text-yellow-500">{"/>"}</span>
           </p>
         </h1>
         <p className="text-xl md:text-2xl max-w-xl font-light font-raleway">

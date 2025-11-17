@@ -37,6 +37,9 @@ function Projects() {
   const doubleRow =
     "col-span-3 md:col-span-2 relative w-full h-70 overflow-hidden hover:shadow-md hover:shadow-blue-400 rounded-2xl";
 
+  const tripleRow =
+    "col-span-3 md:col-span-3 relative w-full h-70 overflow-hidden hover:shadow-md hover:shadow-blue-400 rounded-2xl";
+
   const singleRow =
     "md:col-span-1 col-span-3 relative w-full h-70 overflow-hidden hover:shadow-md hover:shadow-blue-400 rounded-2xl";
 
@@ -63,18 +66,18 @@ function Projects() {
             <div className={doubleRow} onClick={() => handleSearchParams(0)}>
               <Image src="/oasis-5.png">The wild Oasis App</Image>
             </div>
-            <div className={singleRow} onClick={() => handleSearchParams(0)}>
+            <div className={singleRow} onClick={() => handleSearchParams(1)}>
               <Image src="/fast-react-pizza.png" classes="text-black">
                 Fast React Pizza Co.
               </Image>
             </div>
-            <div className={singleRow} onClick={() => handleSearchParams(0)}>
+            {/* <div className={singleRow} onClick={() => handleSearchParams(0)}>
               <Image src="/fast-react-pizza.png" classes="text-black">
                 Fast React Pizza Co.
               </Image>
-            </div>
-            <div className={doubleRow} onClick={() => handleSearchParams(0)}>
-              <Image src="/oasis-5.png">The wild Oasis App</Image>
+            </div> */}
+            <div className={tripleRow} onClick={() => handleSearchParams(2)}>
+              <Image src="/worldwise-3.png">The wild Oasis App</Image>
             </div>
           </div>
           <div className="mb-30">

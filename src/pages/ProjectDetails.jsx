@@ -8,20 +8,20 @@ import useNavigation from "../utils/useNavigation";
 
 const projects = [
   {
-    name: "Quantum-Leap E-Commerce Platform",
+    name: "The Wild Oasis App",
     shortSummary:
-      "A modern, highly scalable e-commerce site for niche vintage electronics, featuring dynamic inventory management and personalized recommendations.",
+      "A modern, highly scalable internal Administration App for the hotel management, for checking in, out guests bookings, adding available cabins and so on",
     projectOverview:
-      "A full-stack application designed to replace a legacy e-commerce system. It includes a user-facing storefront, a secure payment gateway integration, and an admin dashboard for inventory, order processing, and analytics. The platform focuses on high availability and fast load times.",
+      "A full Stack App developed for the convenience of the hotel managements, where the bookings can be edited, the settings can be edited, featuring dark and light mode for user experience..",
     goals: [
-      "Achieve 99.9% uptime and handle up to 10,000 concurrent users.",
-      "Increase conversion rate by 15% through personalized product recommendations.",
-      "Reduce inventory discrepancies by 50% using real-time stock tracking.",
+      "Having a dashboard that gives the general overview of the hotel accommoddations",
+      "Reducing bereaucacy in the hotel by a large margin",
+      "Making sure that the data and uptime of the hotel are updated instantly and immediately",
     ],
     challenges: [
-      "Migrating complex historical order data from the legacy SQL database without downtime.",
-      "Implementing a secure, PCI-compliant payment flow.",
-      "Optimizing image delivery and rendering for thousands of product listings.",
+      "I encountered a difficult challange in the filtering/sorting methods of the app",
+      "Implementing a secure login, where only the login of the authenticator can add other users",
+      "Optimizing image delivery and rendering for Cabin details",
     ],
     technologyStack: [
       { icon: `/react.svg`, tech: "React.js" },
@@ -60,11 +60,11 @@ const projects = [
     ],
   },
   {
-    name: "PulseConnect Health Tracker API",
+    name: "The WorldWise App",
     shortSummary:
-      "A robust backend API for aggregating and analyzing fitness data from various wearable devices and providing secure, anonymized health insights.",
+      "A DEMO traveller app for noting the cities visited and writing a summary about those cities",
     projectOverview:
-      "A RESTful API that acts as a central hub for health data. It includes user authentication, data ingestion endpoints, and endpoints for generating aggregated statistical reports. It emphasizes data security, privacy (HIPAA/GDPR compliance), and high throughput.",
+      "It has a fake user login used to access the app and made use of the leaflet map API for pinpointing and marking the cities visited",
     goals: [
       "Process over 1 million data points per day from connected devices.",
       "Ensure all data storage and transmission adheres to strict regulatory compliance standards.",
@@ -167,7 +167,7 @@ function ProjectDetails() {
             </a>
           </div>
         </div>
-        <Carousel slidesData={projects[0].slidesData} />
+        <Carousel slidesData={projects[projectId].slidesData} />
         <div className="w-full">
           <h1 className={headerStyling}>Project Overview</h1>
           <hr className="text-[#007bff] w-full" />

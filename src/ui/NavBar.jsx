@@ -84,10 +84,12 @@ function NavBar() {
   return (
     <div className="fixed mt-2 w-9/10 md:w-auto top-0 z-1000">
       <div className="rounded-full w-auto mx-auto shadow-md bg-[#0A192F] shadow-blue-400 flex justify-between items-center px-6 py-2  border-2 border-blue-600 z-100 gap-6">
-        <div className="flex justify-between items-center gap-3">
-          <Logo />
-          <p className="font-raleway font-bold text-white">Sanusi Olayinka</p>
-        </div>
+        <Link to="/">
+          <span className="flex justify-between items-center gap-3">
+            <Logo />
+            <p className="font-raleway font-bold text-white">Sanusi Olayinka</p>
+          </span>
+        </Link>
         <ul className=" justify-between items-center gap-4 hidden md:flex">
           <Link
             to="/"
