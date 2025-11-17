@@ -5,7 +5,8 @@ import Logo from "./Logo";
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
+  const toggleMenu = (e) => {
+    e.stopPropagation();
     setIsOpen(!isOpen);
   };
 
@@ -13,7 +14,7 @@ const HamburgerMenu = () => {
     setIsOpen(false);
   }
 
-  const ref = useOutSideClick(close);
+  const ref = useOutSideClick(close, false);
 
   const lineClasses =
     "block h-1 w-7 bg-white transform transition duration-300 ease-in-out";

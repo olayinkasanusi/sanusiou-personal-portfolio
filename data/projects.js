@@ -30,28 +30,23 @@ export const projects = [
     slidesData: [
       {
         id: 0,
-        title: "Booking Page",
-        img: "/oasis-1.png",
+        title: "Dashboard Page",
+        img: "/oasis-5.png",
       },
       {
         id: 1,
+        title: "Booking Details",
+        img: "/oasis-1.png",
+      },
+      {
+        id: 2,
         title: "Cabin Page",
         img: "/oasis-2.png",
       },
       {
-        id: 2,
-        title: "Dashboard Page",
-        img: "/oasis-3.png",
-      },
-      {
         id: 3,
-        title: "Settings Page",
-        img: "/oasis-4.png",
-      },
-      {
-        id: 4,
-        title: "Users Page",
-        img: "/oasis-5.png",
+        title: "Bookings Page",
+        img: "/oasis-3.png",
       },
     ],
   },
@@ -81,28 +76,35 @@ export const projects = [
       liveDemo: "https://fast-react-pizza-mu-ashen.vercel.app/",
       github: "https://github.com/olayinkasanusi/fast-react-pizza",
     },
+    disabled: "disabled",
     slidesData: [
       {
         id: 0,
         title: "Home Page",
-        img: "/worldwise-1.png",
+        img: "/fast-1.png",
       },
       {
         id: 1,
-        title: "Fake Login Page",
-        img: "/worldwise-2.png",
+        title: "Menu Page",
+        img: "/fast-2.png",
       },
       {
         id: 2,
-        title: "Map View",
-        img: "/worldwise-3.png",
+        title: "Cart Page",
+        img: "/fast-3.png",
       },
       {
         id: 3,
-        title: "About Page",
-        img: "/worldwise-4.png",
+        title: "Order Form",
+        img: "/fast-4.png",
+      },
+      {
+        id: 4,
+        title: "Order page",
+        img: "/fast-5.png",
       },
     ],
+    color: "#011831",
   },
   {
     name: "The WorldWise App",

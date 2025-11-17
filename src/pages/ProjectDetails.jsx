@@ -6,6 +6,7 @@ import Icons from "../ui/Icons";
 import { useParams } from "react-router";
 import useNavigation from "../utils/useNavigation";
 import { projects } from "../../data/projects";
+import TypeOnce from "../ui/TypeOnce";
 
 function ProjectDetails() {
   const { projectId } = useParams();
@@ -26,19 +27,29 @@ function ProjectDetails() {
           <h1 className={`text-3xl underline ${headerStyling}`}>
             {projects[projectId].name}
           </h1>
-          <p className={` mb-4 ${paragraphStyle}`}>
-            {projects[projectId].shortSummary}
-          </p>
+          <span className={` mb-4 ${paragraphStyle}`}>
+            <TypeOnce text={projects[projectId].shortSummary} />
+          </span>
           <div className="flex gap-3 justify-between items-center sm:flex-row flex-col">
             <a href={projects[projectId].links.github} target="_blank">
               <Button size="small">View On Github</Button>
             </a>
-            <a href={projects[projectId].links.liveDemo} target="_blank">
+            <a
+              href={`${
+                projects[projectId].disabled === "disabled"
+                  ? projects[projectId].links.liveDemo
+                  : ""
+              } `}
+              target="_blank"
+            >
               <Button size="small">View Live Demo</Button>
             </a>
           </div>
         </div>
-        <Carousel slidesData={projects[projectId].slidesData} />
+        <Carousel
+          slidesData={projects[projectId].slidesData}
+          color={projects[projectId].color}
+        />
         <div className="w-full">
           <h1 className={headerStyling}>Project Overview</h1>
           <hr className="text-[#007bff] w-full" />

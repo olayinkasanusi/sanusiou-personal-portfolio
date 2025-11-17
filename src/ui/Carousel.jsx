@@ -2,25 +2,7 @@ import React, { useState, useEffect } from "react";
 import CarouselButton from "./CarouselButton";
 import CarouselSlide from "./CarouselSlide";
 
-// const slidesData = [
-//   {
-//     id: 0,
-//     title: "Mountain Peaks",
-//     img: "https://placehold.co/1000x600/1E3A8A/ffffff?text=Slide+1",
-//   },
-//   {
-//     id: 1,
-//     title: "Deep Forest",
-//     img: "https://placehold.co/1000x600/047857/ffffff?text=Slide+2",
-//   },
-//   {
-//     id: 2,
-//     title: "Coastal Sunset",
-//     img: "https://placehold.co/1000x600/991B1B/ffffff?text=Slide+3",
-//   },
-// ];
-
-function Carousel({ slidesData }) {
+function Carousel({ slidesData, color }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
 
@@ -74,6 +56,7 @@ function Carousel({ slidesData }) {
             <CarouselSlide
               key={slide.id}
               slide={slide}
+              color={color}
               isActive={index === currentIndex}
             />
           ))}

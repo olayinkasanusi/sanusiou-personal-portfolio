@@ -4,6 +4,7 @@ import NavBar from "../ui/NavBar";
 import Icons from "../ui/Icons";
 import CareerPath from "../ui/CareerPath";
 import useNavigation from "../utils/useNavigation";
+import TypeOnce from "../ui/TypeOnce";
 
 const technologies = [
   { icon: `/react.svg`, tech: "React.js" },
@@ -36,17 +37,18 @@ function AboutMe() {
           />{" "}
           <div className="text-left flex flex-col gap-5">
             <h1 className="font-montserrat text-3xl text-white font-bold">
-              Hello, I am Sanusi Olayinka
+              <TypeOnce text=" Hello, I am Sanusi Olayinka" initDelay={500} />
             </h1>
-            <p className={paragraphStyle}>
-              I am a freelance{" "}
-              <strong className="font-bold text-white">
-                Frontend web developer,
-              </strong>{" "}
+            <span className={paragraphStyle}>
+              <TypeOnce
+                text={`
+              I am a freelance Frontend web developer,
               constantly honing my skills and bringing digital ideas to life
               through coding, I specialize in creating modern Web Applications
-              that are both performant and delightful to use.
-            </p>
+              that are both performant and delightful to use.`}
+                initDelay={2500}
+              />
+            </span>
             <Button onClick={() => handleClick("/projects")}>
               View My Work
             </Button>

@@ -20,7 +20,6 @@ function ContactMe() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
 
     setFormData({ name: "", email: "", message: "" });
   };
@@ -93,7 +92,7 @@ function ContactMe() {
             <textarea
               id="message"
               name="message"
-              value=""
+              value={formData.message}
               onChange={handleChange}
               rows="5"
               placeholder="Your message here..."
