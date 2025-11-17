@@ -51,7 +51,7 @@ export const projects = [
     ],
   },
   {
-    name: "fast React Pizza",
+    name: "Fast React Pizza",
     shortSummary:
       "Fast React Pizza is a single-page application (SPA) designed to simulate the core flow of a modern online food ordering system. It features a dynamic menu display, interactive cart management, and a simplified checkout process where users can place orders for delivery. The project focuses on demonstrating efficient front-end state management and robust client-side routing.",
     projectOverview:
