@@ -27,7 +27,7 @@ const TypeOnce = ({ text, typingSpeed = 75, initDelay = 0 }) => {
   }, [isReadyToType, index, text, typingSpeed]);
 
   return (
-    <div className="inline">
+    <span className="inline">
       {displayedText}
 
       {index < text.length && <span className="animate-blink">|</span>}
@@ -41,7 +41,7 @@ const TypeOnce = ({ text, typingSpeed = 75, initDelay = 0 }) => {
           animation: blink 1s step-end infinite;
         }
       `}</style>
-    </div>
+    </span>
   );
 };
 

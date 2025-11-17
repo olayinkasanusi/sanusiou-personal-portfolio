@@ -27,9 +27,12 @@ function ProjectDetails() {
           <h1 className={`text-3xl underline ${headerStyling}`}>
             {projects[projectId].name}
           </h1>
-          <span className={` mb-4 ${paragraphStyle}`}>
-            <TypeOnce text={projects[projectId].shortSummary} />
-          </span>
+          <p className={` mb-4 ${paragraphStyle}`}>
+            <TypeOnce
+              text={projects[projectId].shortSummary}
+              typingSpeed={25}
+            />
+          </p>
           <div className="flex gap-3 justify-between items-center sm:flex-row flex-col">
             <a href={projects[projectId].links.github} target="_blank">
               <Button size="small">View On Github</Button>

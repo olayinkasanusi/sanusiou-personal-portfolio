@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 
 import { lazy, Suspense } from "react";
 import Spinner from "./ui/Spinner";
+import { Toaster } from "react-hot-toast";
 
 const HeroSection = lazy(() => import("./pages/HeroSection"));
 const ContactMe = lazy(() => import("./pages/ContactMe"));
@@ -17,18 +18,41 @@ const AboutMe = lazy(() => import("./pages/AboutMe"));
 
 function App() {
   return (
-    <BrowserRouter>
-      <Suspense fallback={<Spinner />}>
-        <Routes>
-          <Route path="/" index element={<HeroSection />} />
-          <Route path="aboutme" element={<AboutMe />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="contactme" element={<ContactMe />} />
-          <Route path="projects/:projectId" element={<ProjectDetails />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path="/" index element={<HeroSection />} />
+            <Route path="aboutme" element={<AboutMe />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="contactme" element={<ContactMe />} />
+            <Route path="projects/:projectId" element={<ProjectDetails />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{ margin: "8px" }}
+        toastOptions={{
+          success: {
+            duration: 5000,
+          },
+          error: {
+            duration: 5000,
+          },
+          style: {
+            fontFamily: "sans-serif",
+            fontSize: "16px",
+            maxWidth: "500px",
+            padding: "16px 24px",
+            backgroundColor: "white",
+            color: "var(--color-grey-700)",
+          },
+        }}
+      />
+    </>
   );
 }
 

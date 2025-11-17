@@ -77,7 +77,7 @@ function Projects() {
               </Image>
             </div> */}
             <div className={tripleRow} onClick={() => handleSearchParams(2)}>
-              <Image src="/worldwise-3.png">The wild Oasis App</Image>
+              <Image src="/worldwise-3.png">Worldwise App</Image>
             </div>
           </div>
           <div className="mb-30">

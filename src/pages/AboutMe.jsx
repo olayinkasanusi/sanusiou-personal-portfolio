@@ -39,7 +39,7 @@ function AboutMe() {
             <h1 className="font-montserrat text-3xl text-white font-bold">
               <TypeOnce text=" Hello, I am Sanusi Olayinka" initDelay={500} />
             </h1>
-            <span className={paragraphStyle}>
+            <p className={paragraphStyle}>
               <TypeOnce
                 text={`
               I am a freelance Frontend web developer,
@@ -47,8 +47,9 @@ function AboutMe() {
               through coding, I specialize in creating modern Web Applications
               that are both performant and delightful to use.`}
                 initDelay={2500}
+                typingSpeed={50}
               />
-            </span>
+            </p>
             <Button onClick={() => handleClick("/projects")}>
               View My Work
             </Button>

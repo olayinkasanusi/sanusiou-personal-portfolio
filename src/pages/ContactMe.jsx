@@ -3,6 +3,7 @@ import GitHubIcon from "../ui/GithubIcon";
 import LinkedInIcon from "../ui/LinkedInIcon";
 import NavBar from "../ui/NavBar";
 import SocialLinks from "../ui/SocialLinks";
+import { apiMailer } from "../utils/apiMailer";
 
 function ContactMe() {
   const [formData, setFormData] = useState({
@@ -20,6 +21,13 @@ function ContactMe() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      formData.name !== "" &&
+      formData.email !== "" &&
+      formData.message !== ""
+    ) {
+      apiMailer(formData);
+    }
 
     setFormData({ name: "", email: "", message: "" });
   };

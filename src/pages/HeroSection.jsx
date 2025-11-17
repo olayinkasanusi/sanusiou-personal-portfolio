@@ -188,11 +188,11 @@ const HeroSection = () => {
       >
         <h1 className="text-4xl sm:text-7xl font-bold font-montserrat bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-600 w-9/10 ">
           <TypeOnce text="Sanusi Olayinka." />
-          <span className="text-3xl sm:text-5xl text-white mt-2 block">
+          <p className="text-3xl sm:text-5xl text-white mt-2">
             <span className="text-yellow-400">{"<"}</span>
             <TypeOnce text="Creative Frontend Developer" initDelay={1500} />
             <span className="text-yellow-500">{"/>"}</span>
-          </span>
+          </p>
         </h1>
         <p className="text-xl md:text-2xl max-w-xl font-light font-raleway">
           I build exceptional and accessible digital experiences
