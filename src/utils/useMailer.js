@@ -1,22 +1,51 @@
+import { useState, useCallback } from "react";
 import toast from "react-hot-toast";
 
-export async function apiMailer(data) {
-  const res = await fetch("https://my-portfolio-mailer.vercel.app/send-email", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+const API_ENDPOINT = "https://my-portfolio-mailer.vercel.app/send-email";
 
-  const result = await res.json();
+export const useMailer = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState(null);
 
-  if (res.ok) {
-    toast.success(`${result.msg}, you'll receive a reply in due time`);
-  } else {
-    toast.error(`${result.msg}`);
-  }
-}
+  const sendMail = useCallback(async (data) => {
+    setIsLoading(true);
+    setIsSuccess(false);
+    setError(null);
+
+    try {
+      const res = await fetch(API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        toast.success(`${result.msg}, you'll receive a reply in due time`);
+        setIsSuccess(true);
+      } else {
+        toast.error(`${result.msg}`);
+        setError(result.msg);
+      }
+    } catch (err) {
+      toast.error("Network error or failed to connect to the mail service.");
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  return {
+    sendMail,
+    isLoading,
+    isSuccess,
+    error,
+  };
+};
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   // 1. Get the form element

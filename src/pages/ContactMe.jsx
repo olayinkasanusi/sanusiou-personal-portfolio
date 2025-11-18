@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "../ui/NavBar";
 import SocialLinks from "../ui/SocialLinks";
-import { useApiMailer } from "../hooks/useApiMailer";
+import { useMailer } from "../utils/useMailer";
 
 function ContactMe() {
   const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ function ContactMe() {
   });
   // const [isMailing, setIsMailing] = useState(false);
 
-  const { mailing, isPending: isMailing } = useApiMailer();
+  const { sendMail: mailing, isLoading: isMailing } = useMailer();
 
   const handleChange = (e) => {
     setFormData({
