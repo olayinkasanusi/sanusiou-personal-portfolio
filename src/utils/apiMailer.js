@@ -12,7 +12,7 @@ export async function apiMailer(data) {
   const result = await res.json();
 
   if (res.ok) {
-    toast.success(`${result.msg}`);
+    toast.success(`${result.msg}, you'll receive a reply in due time`);
   } else {
     toast.error(`${result.msg}`);
   }
