@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import GitHubIcon from "../ui/GithubIcon";
-import LinkedInIcon from "../ui/LinkedInIcon";
 import NavBar from "../ui/NavBar";
 import SocialLinks from "../ui/SocialLinks";
-import { apiMailer } from "../utils/apiMailer";
+import { useApiMailer } from "../hooks/useApiMailer";
 
 function ContactMe() {
   const [formData, setFormData] = useState({
@@ -11,6 +9,9 @@ function ContactMe() {
     email: "",
     message: "",
   });
+  // const [isMailing, setIsMailing] = useState(false);
+
+  const { mailing, isPending: isMailing } = useApiMailer();
 
   const handleChange = (e) => {
     setFormData({
@@ -26,7 +27,7 @@ function ContactMe() {
       formData.email !== "" &&
       formData.message !== ""
     ) {
-      apiMailer(formData);
+      mailing(formData);
     }
 
     setFormData({ name: "", email: "", message: "" });
@@ -74,6 +75,7 @@ function ContactMe() {
                 placeholder="Your Name"
                 className={inputClasses}
                 required
+                disabled={isMailing}
               />
             </div>
             <div>
@@ -89,6 +91,7 @@ function ContactMe() {
                 placeholder="your.email@example.com"
                 className={inputClasses}
                 required
+                disabled={isMailing}
               />
             </div>
           </div>
@@ -106,12 +109,14 @@ function ContactMe() {
               placeholder="Your message here..."
               className={inputClasses}
               required
+              disabled={isMailing}
             ></textarea>
           </div>
 
           <button
             type="submit"
             className="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg font-roboto hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30"
+            disabled={isMailing}
           >
             Send Message
           </button>
