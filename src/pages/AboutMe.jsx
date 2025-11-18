@@ -5,6 +5,7 @@ import Icons from "../ui/Icons";
 import CareerPath from "../ui/CareerPath";
 import useNavigation from "../utils/useNavigation";
 import TypeOnce from "../ui/TypeOnce";
+import { motion } from "framer-motion";
 
 const technologies = [
   { icon: `/react.svg`, tech: "React.js" },
@@ -27,19 +28,60 @@ function AboutMe() {
 
   return (
     <>
-      <div className="bg-[#0A192F] w-full flex items-center flex-col justify-between  gap-10 overflow-scroll px-5">
+      <motion.div
+        className="bg-[#0A192F] w-full flex items-center flex-col justify-between  gap-10 overflow-scroll px-5"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         <NavBar />
-        <div className="max-w-3xl flex items-center md:flex-row flex-col justify-between gap-12 border-b border-gray-500 pb-8 mt-20">
-          <img
+
+        {/* PROFILE SECTION */}
+        <motion.div
+          className="max-w-3xl flex items-center md:flex-row flex-col justify-between gap-12 border-b border-gray-500 pb-8 mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <motion.img
             src="/profile_picture.jpg"
             alt="sanusi_olayinka_img"
             className="rounded-full w-50 float-left border-white border"
-          />{" "}
-          <div className="text-left flex flex-col gap-5">
-            <h1 className="font-montserrat text-3xl text-white font-bold">
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          />
+
+          <motion.div
+            className="text-left flex flex-col gap-5"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { staggerChildren: 0.2 },
+              },
+            }}
+          >
+            <motion.h1
+              className="font-montserrat text-3xl text-white font-bold"
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
               <TypeOnce text=" Hello, I am Sanusi Olayinka" initDelay={500} />
-            </h1>
-            <p className={paragraphStyle}>
+            </motion.h1>
+
+            <motion.p
+              className={paragraphStyle}
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
               <TypeOnce
                 text={`
               I am a freelance Frontend web developer,
@@ -49,32 +91,99 @@ function AboutMe() {
                 initDelay={2500}
                 typingSpeed={50}
               />
-            </p>
-            <Button onClick={() => handleClick("/projects")}>
-              View My Work
-            </Button>
-          </div>
-        </div>
+            </motion.p>
 
-        <div className={containerStyle}>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <Button onClick={() => handleClick("/projects")}>
+                View My Work
+              </Button>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
+        {/* TECHNOLOGIES */}
+        <motion.div
+          className={containerStyle}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 className={headerStyling}>Core Technologies</h1>
-          <div className="px-2 py-3 grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-10 m-auto sm:grid-cols-2">
-            {technologies.map((tech) => (
-              <Icons icon={tech.icon} tech={tech.tech} key={tech.tech} />
-            ))}
-          </div>
-        </div>
 
-        <div className={`${containerStyle}`}>
+          <motion.div
+            className="px-2 py-3 grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-10 m-auto sm:grid-cols-2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.1 },
+              },
+            }}
+          >
+            {technologies.map((tech) => (
+              <motion.div
+                key={tech.tech}
+                variants={{
+                  hidden: { opacity: 0, y: 12 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                <Icons icon={tech.icon} tech={tech.tech} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {/* ROADMAP */}
+        <motion.div
+          className={containerStyle}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 className={headerStyling}>My Learning RoadMap</h1>
           <CareerPath />
-        </div>
+        </motion.div>
 
-        <div className={`${containerStyle} border-b-0 mb-30`}>
+        {/* CERTIFICATIONS */}
+        <motion.div
+          className={`${containerStyle} border-b-0 mb-30`}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 className={headerStyling}>Cerifications</h1>
-          <div className="flex justify-between items-center gap-4 flex-col md:flex-row-reverse">
-            <img className="w-80" src="/freecodecamp-certificate.png" />
-            <p className={`${paragraphStyle} text-gray-400`}>
+
+          <motion.div
+            className="flex justify-between items-center gap-4 flex-col md:flex-row-reverse"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <motion.img
+              className="w-80"
+              src="/freecodecamp-certificate.png"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+            />
+
+            <motion.p
+              className={`${paragraphStyle} text-gray-400`}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               Completed the freeCodeCamp Responsive Web Design course in late
               2023. Built hands-on projects with HTML5, CSS3, Flexbox and Grid
               and focused on mobile-first, accessible layouts. I enjoy turning
@@ -88,11 +197,12 @@ function AboutMe() {
               >
                 Check Out the Certification
               </a>
-            </p>
-          </div>
-        </div>
+            </motion.p>
+          </motion.div>
+        </motion.div>
+
         <Footer position="fixed" />
-      </div>
+      </motion.div>
     </>
   );
 }
