@@ -5,6 +5,10 @@ export const projects = [
       "A modern, highly scalable internal Administration App for the hotel management, for checking in, out guests bookings, adding available cabins and so on....",
     projectOverview:
       "A full Stack App developed for the convenience of the hotel managements, where the bookings can be edited, the settings can be edited, featuring dark and light mode for user experience..",
+    login: {
+      gmail: "sanusiolayinka7@gmail.com",
+      password: "Olayinka123",
+    },
     goals: [
       "Having a dashboard that gives the general overview of the hotel accommoddations",
       "Reducing bereaucacy in the hotel by a large margin",

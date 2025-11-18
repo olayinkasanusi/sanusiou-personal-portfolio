@@ -67,6 +67,23 @@ function ProjectDetails() {
               <Button size="small">View Live Demo</Button>
             </a>
           </motion.div>
+          {projects[0].login !== undefined && (
+            <div>
+              <h1 className="text-left text-2xl text-white font-montserrat font-medium mt-2 underline">
+                Login with these details
+              </h1>
+              <p className={paragraphStyle}>
+                Email:{" "}
+                <span className="font-semibold">{projects[0].login.gmail}</span>
+              </p>
+              <p className={paragraphStyle}>
+                Password:{" "}
+                <span className="font-semibold">
+                  {projects[0].login.password}
+                </span>
+              </p>
+            </div>
+          )}
         </motion.div>
 
         <Carousel
