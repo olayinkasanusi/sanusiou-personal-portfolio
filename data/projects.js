@@ -80,7 +80,6 @@ export const projects = [
       liveDemo: "https://fast-react-pizza-mu-ashen.vercel.app/",
       github: "https://github.com/olayinkasanusi/fast-react-pizza",
     },
-    disabled: "disabled",
     slidesData: [
       {
         id: 0,
@@ -136,6 +135,7 @@ export const projects = [
       liveDemo: "https://worldwise-cyan-eta.vercel.app/",
       github: "https://github.com/olayinkasanusi/worldwise",
     },
+    disabled: "disabled",
     slidesData: [
       {
         id: 0,
