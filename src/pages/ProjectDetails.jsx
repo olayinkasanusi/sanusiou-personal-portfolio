@@ -53,14 +53,7 @@ function ProjectDetails() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <a
-              href={`${
-                projects[projectId].disabled !== "disabled"
-                  ? projects[projectId].links.github
-                  : ""
-              } `}
-              target="_blank"
-            >
+            <a href={projects[projectId].links.github} target="_blank">
               <Button size="small">View On Github</Button>
             </a>
             <a
