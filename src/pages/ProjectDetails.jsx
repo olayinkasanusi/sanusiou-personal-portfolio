@@ -67,7 +67,7 @@ function ProjectDetails() {
               <Button size="small">View Live Demo</Button>
             </a>
           </motion.div>
-          {projects[0].login !== undefined && (
+          {projects[projectId].login !== undefined && (
             <div>
               <h1 className="text-left text-2xl text-white font-montserrat font-medium mt-2 underline">
                 Login with these details

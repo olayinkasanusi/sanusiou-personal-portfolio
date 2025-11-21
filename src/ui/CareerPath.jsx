@@ -26,7 +26,7 @@ const milestones = [
     labelPos: "bottom",
   },
   {
-    year: 2025,
+    year: 2024,
     title: "Modern Frameworks",
     description: "React.Js | Next.js | Redux | SSR",
     x: 900,

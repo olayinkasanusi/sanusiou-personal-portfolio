@@ -71,13 +71,11 @@ function Projects() {
                 Fast React Pizza Co.
               </Image>
             </div>
-            {/* <div className={singleRow} onClick={() => handleSearchParams(0)}>
-              <Image src="/fast-react-pizza.png" classes="text-black">
-                Fast React Pizza Co.
-              </Image>
-            </div> */}
-            <div className={tripleRow} onClick={() => handleSearchParams(2)}>
+            <div className={singleRow} onClick={() => handleSearchParams(2)}>
               <Image src="/worldwise-3.png">Worldwise App</Image>
+            </div>
+            <div className={doubleRow} onClick={() => handleSearchParams(3)}>
+              <Image src="/autoforce-1.png">AutoForce Mechanic shop</Image>
             </div>
           </div>
           <div className="mb-30">

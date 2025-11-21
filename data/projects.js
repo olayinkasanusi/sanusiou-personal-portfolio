@@ -159,4 +159,52 @@ export const projects = [
       },
     ],
   },
+  {
+    name: "AutoForce",
+    shortSummary:
+      "autoForce is a high-performance single-page application (SPA) designed as a premium digital storefront for a modern auto mechanic shop. It features a sophisticated dark/light mode engine, smooth scroll-triggered animations, and a responsive layout built to convert visitors into appointment bookings.",
+    projectOverview:
+      "This project modernizes the traditional mechanic shop website by prioritizing user experience and visual impact. The application is built as a cohesive single-page experience that guides the user through a narrative: from an immersive hero section to detailed service offerings, social proof via testimonials, and a final call to action. It leverages a component-based architecture to handle complex UI states, including a custom mobile navigation system and a theme toggle that persists across the session. The design focuses heavily on visual hierarchy and accessibility, ensuring critical information is legible in both high-contrast light and immersive dark themes.",
+    goals: [
+      "To implement a robust, system-aware Dark Mode toggle using Tailwind CSS classes that dynamically adjusts the entire color palette (backgrounds, text, borders) without page reloads.",
+      "To create a custom 'Reveal' animation system using the Intersection Observer API, allowing content to fade and slide in gracefully as the user scrolls.",
+      "To build a fully responsive navigation system that transitions from a transparent floating header to a solid, sticky navbar upon scrolling for better usability.",
+    ],
+    challenges: [
+      "Designing the Hero section to be visually striking with full-width background imagery while maintaining strict accessibility standards and text readability across both light and dark variants.",
+      "Managing the state and synchronization of the custom scroll animations to ensure they trigger smoothly on different device viewports without causing layout shifts or performance bottlenecks.",
+    ],
+    technologyStack: [
+      { icon: "/react.svg", tech: "React.js" },
+      { icon: "/tailwind.svg", tech: "Tailwindcss" },
+      { icon: "/vite.svg", tech: "Vite" },
+      { icon: "/vercel.svg", tech: "Vercel" },
+    ],
+    links: {
+      liveDemo: "https://auto-force.vercel.app/",
+      github: "https://github.com/olayinkasanusi/autoForce",
+    },
+    slidesData: [
+      {
+        id: 0,
+        title: "Home Page",
+        img: "/autoforce-1.png",
+      },
+      {
+        id: 1,
+        title: "Sales Page",
+        img: "/autoforce-2.png",
+      },
+      {
+        id: 2,
+        title: "Contact us",
+        img: "/autoforce-3.png",
+      },
+      {
+        id: 3,
+        title: "Testimonials",
+        img: "/autoforce-4.png",
+      },
+    ],
+  },
 ];

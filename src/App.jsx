@@ -4,6 +4,7 @@ import { lazy, Suspense } from "react";
 import Spinner from "./ui/Spinner";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ScrollToTop from "./ui/ScrollToTop";
 
 const HeroSection = lazy(() => import("./pages/HeroSection"));
 const ContactMe = lazy(() => import("./pages/ContactMe"));
@@ -27,6 +28,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         {/* <ReactQueryDevtools /> */}
         <BrowserRouter>
+          <ScrollToTop />
           <Suspense fallback={<Spinner />}>
             <Routes>
               <Route path="/" index element={<HeroSection />} />

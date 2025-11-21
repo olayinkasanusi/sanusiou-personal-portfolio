@@ -123,7 +123,7 @@ function AboutMe() {
           <h1 className={headerStyling}>Core Technologies</h1>
 
           <motion.div
-            className="px-2 py-3 grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-10 m-auto sm:grid-cols-2"
+            className="px-2 py-3 grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-10 m-auto sm:grid-cols-4"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
