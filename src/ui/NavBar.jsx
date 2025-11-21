@@ -71,6 +71,12 @@ const HamburgerMenu = () => {
             Projects
           </Link>
           <Link
+            to="/blog"
+            className="font-raleway w-full text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
+          >
+            Blogs
+          </Link>
+          <Link
             to="/contactme"
             className="font-raleway w-full text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
           >
@@ -109,6 +115,12 @@ function NavBar() {
             className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
           >
             Projects
+          </Link>
+          <Link
+            to="/blog"
+            className="font-raleway text-white font-light active:bg-[#007bff] px-3 hover:bg-[#007bff] p-1 rounded-full"
+          >
+            Blogs
           </Link>
           <Link
             to="/contactme"

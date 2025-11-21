@@ -4,7 +4,6 @@ import { lazy, Suspense } from "react";
 import Spinner from "./ui/Spinner";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const HeroSection = lazy(() => import("./pages/HeroSection"));
 const ContactMe = lazy(() => import("./pages/ContactMe"));
@@ -12,6 +11,7 @@ const ProjectDetails = lazy(() => import("./pages/ProjectDetails"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 const Projects = lazy(() => import("./pages/Projects"));
 const AboutMe = lazy(() => import("./pages/AboutMe"));
+const Blog = lazy(() => import("./pages/Blog"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +34,7 @@ function App() {
               <Route path="projects" element={<Projects />} />
               <Route path="contactme" element={<ContactMe />} />
               <Route path="projects/:projectId" element={<ProjectDetails />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </Suspense>

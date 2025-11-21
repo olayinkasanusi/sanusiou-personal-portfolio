@@ -29,7 +29,7 @@ export const projects = [
     ],
     links: {
       liveDemo: "https://the-wild-oasis-chi-lime.vercel.app/",
-      github: "",
+      github: "https://github.com/olayinkasanusi/the-wild-oasis",
     },
     slidesData: [
       {

@@ -8,12 +8,18 @@ import TypeOnce from "../ui/TypeOnce";
 import { motion } from "framer-motion";
 
 const technologies = [
+  { icon: "/html.svg", tech: "HTML" },
+  { icon: "/javascript.svg", tech: "Javascript" },
+  { icon: "/css.svg", tech: "CSS" },
   { icon: `/react.svg`, tech: "React.js" },
   { icon: "/tailwind.svg", tech: "Tailwindcss" },
   { icon: "/redux.svg", tech: "Redux" },
   { icon: "/nextjs.svg", tech: "Next.js" },
   { icon: "/supabase.svg", tech: "Supabase" },
   { icon: "/vercel.svg", tech: "Vercel" },
+  { icon: "/netlify.svg", tech: "Netlify" },
+  { icon: "/figma.svg", tech: "Figma" },
+  { icon: "/bootstrap.svg", tech: "Bootstrap" },
 ];
 
 function AboutMe() {
@@ -29,7 +35,7 @@ function AboutMe() {
   return (
     <>
       <motion.div
-        className="bg-[#0A192F] w-full flex items-center flex-col justify-between  gap-10 overflow-scroll px-5"
+        className="bg-[#0A192F] w-full flex items-center flex-col justify-between  gap-10 px-5 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -53,7 +59,7 @@ function AboutMe() {
           />
 
           <motion.div
-            className="text-left flex flex-col gap-5"
+            className="text-left flex flex-col gap-5 min-w-110"
             initial="hidden"
             animate="visible"
             variants={{
