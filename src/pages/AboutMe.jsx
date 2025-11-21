@@ -59,7 +59,7 @@ function AboutMe() {
           />
 
           <motion.div
-            className="text-left flex flex-col gap-5 min-w-110"
+            className="text-left flex flex-col gap-5"
             initial="hidden"
             animate="visible"
             variants={{
