@@ -3,6 +3,7 @@ import * as THREE from "three";
 import Footer from "../ui/Footer";
 import useNavigation from "../utils/useNavigation";
 import TypeOnce from "../ui/TypeOnce";
+import { Helmet } from "react-helmet-async";
 
 const CHARACTERS = ["+", "-", "=", "<", "*", ">"];
 
@@ -39,7 +40,6 @@ const HeroSection = () => {
   const animate = useCallback(() => {
     if (!rendererRef.current) return;
 
-    // eslint-disable-next-line react-hooks/immutability
     requestAnimationFrame(animate);
 
     mouse.current.x += (targetMouse.current.x - mouse.current.x) * 0.05;
@@ -172,49 +172,64 @@ const HeroSection = () => {
   }, [animate, createParticles, onMouseMove, onWindowResize]);
 
   return (
-    <section
-      id="hero-section"
-      className="relative w-screen h-screen bg-[#040a13] overflow-hidden"
-    >
-      <div
-        ref={containerRef}
-        id="interactive-background"
-        className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none"
-      ></div>
-
-      <div
-        id="hero-content"
-        className="relative z-20 flex flex-col justify-center items-center h-full text-center p-4 text-[#E0E7FF] gap-8"
+    <>
+      <Helmet>
+        <title>
+          Sanusi Olayinka | Creative Frontend Developer (React/Next.js)
+        </title>
+        <meta
+          name="description"
+          content="Sanusi Olayinka is a Creative Frontend Developer specializing in React and Next.js. I build exceptional, accessible, and high-performance digital experiences. View my portfolio."
+        />
+        <link rel="canonical" href="https://www.yourdomain.com/" />
+        {/* Person Schema is included in the root HTML, not repeated here */}
+      </Helmet>
+      <section
+        id="hero-section"
+        className="relative w-screen h-screen bg-[#040a13] overflow-hidden"
       >
-        <h1 className="text-4xl sm:text-7xl font-bold font-montserrat bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-600 w-9/10 ">
-          <TypeOnce text="Sanusi Olayinka." />
-          <p className="text-3xl sm:text-5xl text-white mt-2">
-            <span className="text-yellow-400">{"<"}</span>
-            <TypeOnce text="Creative Frontend Developer" initDelay={1500} />
-            <span className="text-yellow-500">{"/>"}</span>
-          </p>
-        </h1>
-        <p className="text-xl md:text-2xl max-w-xl font-light font-raleway">
-          I build exceptional and accessible digital experiences
-        </p>
-        <div className="flex justify-between items-center gap-3">
-          <button
-            className="bg-transparent hover:bg-purple-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 border-2 border-white font-roboto"
-            onClick={() => handleClick("projects")}
-          >
-            View My Work
-          </button>
-          <button
-            className="bg-transparent hover:bg-purple-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 border-2 border-white font-roboto"
-            onClick={() => handleClick("aboutme")}
-          >
-            About Me
-          </button>
-        </div>
+        <div
+          ref={containerRef}
+          id="interactive-background"
+          className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none"
+        ></div>
 
-        <Footer />
-      </div>
-    </section>
+        <div
+          id="hero-content"
+          className="relative z-20 flex flex-col justify-center items-center h-full text-center p-4 text-[#E0E7FF] gap-8"
+        >
+          {/* SEO Optimization: Combined developer role into a strong H1 */}
+          <h1 className="text-4xl sm:text-7xl font-bold font-montserrat bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-600 w-9/10 ">
+            <TypeOnce text="Sanusi Olayinka." />
+            <p className="text-3xl sm:text-5xl text-white mt-2">
+              <span className="text-yellow-400">{"<"}</span>
+              <TypeOnce text="Creative Frontend Developer" initDelay={1500} />
+              <span className="text-yellow-500">{"/>"}</span>
+            </p>
+          </h1>
+          <p className="text-xl md:text-2xl max-w-xl font-light font-raleway">
+            I build exceptional and accessible digital experiences using modern
+            JavaScript frameworks.
+          </p>
+          <div className="flex justify-between items-center gap-3">
+            <button
+              className="bg-transparent hover:bg-purple-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 border-2 border-white font-roboto"
+              onClick={() => handleClick("projects")}
+            >
+              View My Work
+            </button>
+            <button
+              className="bg-transparent hover:bg-purple-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 border-2 border-white font-roboto"
+              onClick={() => handleClick("aboutme")}
+            >
+              About Me
+            </button>
+          </div>
+
+          <Footer />
+        </div>
+      </section>
+    </>
   );
 };
 

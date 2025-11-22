@@ -5,7 +5,9 @@ import Icons from "../ui/Icons";
 import CareerPath from "../ui/CareerPath";
 import useNavigation from "../utils/useNavigation";
 import TypeOnce from "../ui/TypeOnce";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 const technologies = [
   { icon: "/html.svg", tech: "HTML" },
@@ -34,8 +36,41 @@ function AboutMe() {
 
   return (
     <>
+      {/* SEO Optimization: Page-Specific Metadata (Assuming react-helmet-async is installed and configured) */}
+      <Helmet>
+        <title>
+          About Sanusi O.U. | Frontend Developer Skills & Certifications
+        </title>
+        <meta
+          name="description"
+          content="Meet Sanusi O.U., a freelance Frontend Developer specializing in high-performance web applications using React, Next.js, and modern CSS frameworks. Explore core tech stack and certifications."
+        />
+        <link rel="canonical" href="https://www.yourdomain.com/about" />
+
+        {/* JSON-LD Schema for the freeCodeCamp Certification */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "EducationalOccupationalCredential",
+              "name": "Responsive Web Design Certification",
+              "credentialCategory": "Certificate",
+              "url": "https://www.freecodecamp.org/certification/sanusi-olayinka7/responsive-web-design",
+              "recognizedBy": {
+                "@type": "EducationalOrganization",
+                "name": "freeCodeCamp"
+              },
+              "awardedTo": {
+                "@type": "Person",
+                "name": "Sanusi O.U."
+              }
+            }
+          `}
+        </script>
+      </Helmet>
+
       <motion.div
-        className="bg-[#0A192F] w-full flex items-center flex-col justify-between  gap-10 px-5 overflow-hidden"
+        className="bg-[#0A192F] w-full flex items-center flex-col justify-between gap-10 px-5 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -51,7 +86,7 @@ function AboutMe() {
         >
           <motion.img
             src="/profile_picture.jpg"
-            alt="sanusi_olayinka_img"
+            alt="Sanusi Olayinka professional profile picture as a frontend developer"
             className="rounded-full w-50 float-left border-white border"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -71,6 +106,7 @@ function AboutMe() {
               },
             }}
           >
+            {/* SEO Optimization: Use h1 for the main page topic. */}
             <motion.h1
               className="font-montserrat text-3xl text-white font-bold"
               variants={{
@@ -93,7 +129,7 @@ function AboutMe() {
               I am a freelance Frontend web developer,
               constantly honing my skills and bringing digital ideas to life
               through coding, I specialize in creating modern Web Applications
-              that are both performant and delightful to use.`}
+              that are both performant and delightful to use. I focus on React, Next.js, and building user-centric interfaces.`}
                 initDelay={2500}
                 typingSpeed={50}
               />
@@ -120,7 +156,8 @@ function AboutMe() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className={headerStyling}>Core Technologies</h1>
+          {/* SEO Optimization: Use h2 for a major section. */}
+          <h2 className={headerStyling}>Core Technologies</h2>
 
           <motion.div
             className="px-2 py-3 grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-10 m-auto sm:grid-cols-4"
@@ -156,7 +193,8 @@ function AboutMe() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className={headerStyling}>My Learning RoadMap</h1>
+          {/* SEO Optimization: Use h2 for a major section. */}
+          <h2 className={headerStyling}>My Learning RoadMap</h2>
           <CareerPath />
         </motion.div>
 
@@ -168,7 +206,8 @@ function AboutMe() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className={headerStyling}>Cerifications</h1>
+          {/* SEO Optimization: Use h2 for a major section. */}
+          <h2 className={headerStyling}>Certifications</h2>
 
           <motion.div
             className="flex justify-between items-center gap-4 flex-col md:flex-row-reverse"
@@ -179,6 +218,7 @@ function AboutMe() {
             <motion.img
               className="w-80"
               src="/freecodecamp-certificate.png"
+              alt="FreeCodeCamp Responsive Web Design Certification awarded to Sanusi O.U."
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
@@ -191,11 +231,11 @@ function AboutMe() {
               transition={{ duration: 0.6 }}
             >
               Completed the freeCodeCamp Responsive Web Design course in late
-              2023. Built hands-on projects with HTML5, CSS3, Flexbox and Grid
-              and focused on mobile-first, accessible layouts. I enjoy turning
-              designs into usable experiences, iterating from feedback and
-              solving layout challenges. Ready to apply these front-end skills
-              on real projects and in collaborative teams.{" "}
+              2023. Built hands-on projects with **HTML5**, **CSS3**, Flexbox
+              and Grid and focused on mobile-first, accessible layouts. I enjoy
+              turning designs into usable experiences, iterating from feedback
+              and solving layout challenges. Ready to apply these front-end
+              skills on real projects and in collaborative teams.{" "}
               <a
                 target="_blank"
                 href="https://www.freecodecamp.org/certification/sanusi-olayinka7/responsive-web-design"
