@@ -3,6 +3,7 @@ import NavBar from "../ui/NavBar";
 import SocialLinks from "../ui/SocialLinks";
 import { useMailer } from "../utils/useMailer";
 import MiniSpinner from "../ui/MiniSpinner";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
@@ -46,7 +47,7 @@ function ContactMe() {
           name="description"
           content="Ready to start a project? Contact Sanusi O.U. for freelance frontend development, React, Next.js, and web application collaborations. Get in touch for a quote or consultation."
         />
-        <link rel="canonical" href="https://www.yourdomain.com/contact" />
+        <link rel="canonical" href="https://sanusiou.pro/contact" />
 
         {/* JSON-LD ContactPage Schema */}
         <script type="application/ld+json">
@@ -55,7 +56,7 @@ function ContactMe() {
               "@context": "http://schema.org",
               "@type": "ContactPage",
               "name": "Contact Sanusi O.U. - Frontend Developer",
-              "url": "https://www.yourdomain.com/contact",
+              "url": "https://sanusiou.pro/contact",
               "description": "Form to contact Sanusi O.U. for hiring, project proposals, or collaboration.",
               "potentialAction": {
                 "@type": "CommunicateAction",

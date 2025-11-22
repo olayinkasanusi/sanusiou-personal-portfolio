@@ -40,6 +40,7 @@ const HeroSection = () => {
   const animate = useCallback(() => {
     if (!rendererRef.current) return;
 
+    // eslint-disable-next-line react-hooks/immutability
     requestAnimationFrame(animate);
 
     mouse.current.x += (targetMouse.current.x - mouse.current.x) * 0.05;
@@ -181,7 +182,7 @@ const HeroSection = () => {
           name="description"
           content="Sanusi Olayinka is a Creative Frontend Developer specializing in React and Next.js. I build exceptional, accessible, and high-performance digital experiences. View my portfolio."
         />
-        <link rel="canonical" href="https://www.yourdomain.com/" />
+        <link rel="canonical" href="https://sanusiou.pro/" />
         {/* Person Schema is included in the root HTML, not repeated here */}
       </Helmet>
       <section

@@ -58,7 +58,7 @@ function Projects() {
           name="description"
           content="View Sanusi O.U.'s featured portfolio projects built with modern frontend technologies including React, Next.js, Redux, and Tailwind CSS. See practical application development."
         />
-        <link rel="canonical" href="https://www.yourdomain.com/projects" />
+        <link rel="canonical" href="https://sanusiou.pro/projects" />
 
         {/* JSON-LD CollectionPage Schema for a gallery of projects */}
         <script type="application/ld+json">
@@ -68,31 +68,31 @@ function Projects() {
               "@type": "CollectionPage",
               "name": "Frontend Developer Projects Portfolio",
               "description": "A collection of featured web development projects showcasing expertise in React and Next.js.",
-              "url": "https://www.yourdomain.com/projects",
+              "url": "https://sanusiou.pro/projects",
               "mainEntity": [
                 {
                   "@type": "SoftwareSourceCode",
                   "name": "The Wild Oasis App - Booking Dashboard",
                   "description": "Dashboard built with React and Supabase for cabin management and bookings.",
-                  "url": "https://www.yourdomain.com/projects/0"
+                  "url": "https://sanusiou.pro/projects/0"
                 },
                 {
                   "@type": "SoftwareSourceCode",
                   "name": "Fast React Pizza Co. - E-commerce App",
                   "description": "High-performance React pizza ordering application utilizing Redux for state management.",
-                  "url": "https://www.yourdomain.com/projects/1"
+                  "url": "https://sanusiou.pro/projects/1"
                 },
                 {
                   "@type": "SoftwareSourceCode",
                   "name": "Worldwise App - Travel Tracker",
                   "description": "Travel tracking application using React Router and context API.",
-                  "url": "https://www.yourdomain.com/projects/2"
+                  "url": "https://sanusiou.pro/projects/2"
                 },
                 {
                   "@type": "SoftwareSourceCode",
                   "name": "AutoForce Mechanic Shop Website",
                   "description": "Responsive website designed for a local mechanic shop using modern CSS.",
-                  "url": "https://www.yourdomain.com/projects/3"
+                  "url": "https://sanusiou.pro/projects/3"
                 }
               ]
             }
