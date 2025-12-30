@@ -1,5 +1,60 @@
 export const projects = [
   {
+    name: "DGold Luxury Boutique",
+    shortSummary:
+      "A high-end digital storefront for a luxury boutique specializing in 18k/21k gold jewelry, Abayas, Shoes and couture. Features a sophisticated dual-checkout system via WhatsApp and Email, real-time inventory management, and a high-fidelity minimalist design.",
+    projectOverview:
+      "dGold is a full-stack e-commerce solution built to provide a bespoke shopping experience. It moves away from traditional automated checkouts in favor of a personalized inquiry system, allowing customers to finalize luxury purchases via direct communication. The app features a custom administrative dashboard for real-time inventory updates, a dynamic cart with karat and weight tracking, and a system-wide dark/light mode engine tailored for a high-end aesthetic.",
+    goals: [
+      "Implement a personalized 'Luxury Inquiry' checkout flow via WhatsApp and Email APIs.",
+      "Develop a secure, real-time administrative backend for managing high-value inventory using Supabase.",
+      "Achieve a pixel-perfect, minimalist UI/UX that emphasizes product photography and brand elegance.",
+    ],
+    challenges: [
+      "Architecting a dynamic pricing and cart system that handles complex attributes like gold karat, weight in grams, and item sizing simultaneously.",
+      "Optimizing global state management to ensure the cart remains synchronized across multiple product categories and browser sessions.",
+      "Building a high-performance image delivery system to maintain fast load times despite using high-resolution jewelry photography.",
+    ],
+    technologyStack: [
+      { icon: "/react.svg", tech: "React.js" },
+      { icon: "/tailwind.svg", tech: "Tailwindcss" },
+      { icon: "/supabase.svg", tech: "Supabase" },
+      { icon: "/vite.svg", tech: "Vite" },
+      { icon: "/vercel.svg", tech: "Vercel" },
+    ],
+    links: {
+      liveDemo: "https://dgold-sooty.vercel.app/",
+      github: "https://github.com/olayinkasanusi/dgold",
+    },
+    slidesData: [
+      {
+        id: 0,
+        title: "Boutique Hero-section",
+        img: "/dgold-1.png",
+      },
+      {
+        id: 1,
+        title: "Boutique Home Page",
+        img: "/dgold-2.png",
+      },
+      {
+        id: 2,
+        title: "Luxury Collection Grid",
+        img: "/dgold-3.png",
+      },
+      {
+        id: 3,
+        title: "Personalized Cart",
+        img: "/dgold-4.png",
+      },
+      {
+        id: 4,
+        title: "Admin Inventory Manager",
+        img: "/dgold-5.png",
+      },
+    ],
+  },
+  {
     name: "The Wild Oasis App",
     shortSummary:
       "A modern, highly scalable internal Administration App for the hotel management, for checking in, out guests bookings, adding available cabins and so on....",
