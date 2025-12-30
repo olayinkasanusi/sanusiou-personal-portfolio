@@ -114,23 +114,31 @@ function Projects() {
           </div>
           <div className="grid grid-cols-3 grid-rows-4 md:grid-rows-2 gap-6 w-full gap-y-8 p-5 md:p-10 bg-transparent">
             {/* SEO Optimization: Image alt attribute added via Image component */}
-            <div className={doubleRow} onClick={() => handleSearchParams(0)}>
+            <div
+              className="col-span-3 md:col-span-full relative w-full h-70 overflow-hidden hover:shadow-md hover:shadow-blue-400 rounded-2xl"
+              onClick={() => handleSearchParams(0)}
+            >
+              <Image src="/dgold-1.png">
+                DGOLD Luxury Boutique (React/Supabase)
+              </Image>
+            </div>
+            <div className={doubleRow} onClick={() => handleSearchParams(1)}>
               <Image src="/oasis-5.png">
                 The Wild Oasis App (React/Supabase)
               </Image>
             </div>
             {/* SEO Optimization: Image alt attribute added via Image component */}
-            <div className={singleRow} onClick={() => handleSearchParams(1)}>
+            <div className={singleRow} onClick={() => handleSearchParams(2)}>
               <Image src="/fast-react-pizza.png" classes="text-black">
                 Fast React Pizza Co. (Redux/Routing)
               </Image>
             </div>
             {/* SEO Optimization: Image alt attribute added via Image component */}
-            <div className={singleRow} onClick={() => handleSearchParams(2)}>
+            <div className={singleRow} onClick={() => handleSearchParams(3)}>
               <Image src="/worldwise-3.png">Worldwise App (React Router)</Image>
             </div>
             {/* SEO Optimization: Image alt attribute added via Image component */}
-            <div className={doubleRow} onClick={() => handleSearchParams(3)}>
+            <div className={doubleRow} onClick={() => handleSearchParams(4)}>
               <Image src="/autoforce-1.png">
                 AutoForce Mechanic Shop Website
               </Image>
