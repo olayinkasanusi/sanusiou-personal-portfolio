@@ -72,27 +72,33 @@ function Projects() {
               "mainEntity": [
                 {
                   "@type": "SoftwareSourceCode",
+                  "name": "DGOLD Luxury Boutique - Jewelries couture",
+                  "description": "Dashboard built with React and Supabase for Selling High quality Jewelries and couture.",
+                  "url": "https://sanusiou.pro/projects/0"
+                },
+                {
+                  "@type": "SoftwareSourceCode",
                   "name": "The Wild Oasis App - Booking Dashboard",
                   "description": "Dashboard built with React and Supabase for cabin management and bookings.",
-                  "url": "https://sanusiou.pro/projects/0"
+                  "url": "https://sanusiou.pro/projects/1"
                 },
                 {
                   "@type": "SoftwareSourceCode",
                   "name": "Fast React Pizza Co. - E-commerce App",
                   "description": "High-performance React pizza ordering application utilizing Redux for state management.",
-                  "url": "https://sanusiou.pro/projects/1"
+                  "url": "https://sanusiou.pro/projects/2"
                 },
                 {
                   "@type": "SoftwareSourceCode",
                   "name": "Worldwise App - Travel Tracker",
                   "description": "Travel tracking application using React Router and context API.",
-                  "url": "https://sanusiou.pro/projects/2"
+                  "url": "https://sanusiou.pro/projects/3"
                 },
                 {
                   "@type": "SoftwareSourceCode",
                   "name": "AutoForce Mechanic Shop Website",
                   "description": "Responsive website designed for a local mechanic shop using modern CSS.",
-                  "url": "https://sanusiou.pro/projects/3"
+                  "url": "https://sanusiou.pro/projects/4"
                 }
               ]
             }

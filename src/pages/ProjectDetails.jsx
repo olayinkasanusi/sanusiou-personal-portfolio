@@ -74,12 +74,14 @@ function ProjectDetails() {
               </h1>
               <p className={paragraphStyle}>
                 Email:{" "}
-                <span className="font-semibold">{projects[0].login.gmail}</span>
+                <span className="font-semibold">
+                  {projects[projectId].login.gmail}
+                </span>
               </p>
               <p className={paragraphStyle}>
                 Password:{" "}
                 <span className="font-semibold">
-                  {projects[0].login.password}
+                  {projects[projectId].login.password}
                 </span>
               </p>
             </div>
