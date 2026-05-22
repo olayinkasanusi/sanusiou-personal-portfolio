@@ -105,7 +105,17 @@ const mockPosts = [
   },
 ];
 
-const generateDetailedContent = (title) => {
+interface Post {
+  id: number;
+  title: string;
+  author: string;
+  date: string;
+  summary: string;
+  tags: string[];
+  image: string;
+}
+
+const generateDetailedContent = (title: string) => {
   switch (title) {
     case "Mastering Tailwind CSS Utility-First Design":
       return [
@@ -192,7 +202,12 @@ const generateDetailedContent = (title) => {
   }
 };
 
-const SinglePostView = ({ post, onBack }) => {
+interface SinglePostViewProps {
+  post: Post;
+  onBack: () => void;
+}
+
+const SinglePostView = ({ post, onBack }: SinglePostViewProps) => {
   const content = generateDetailedContent(post.title);
 
   return (
@@ -207,7 +222,7 @@ const SinglePostView = ({ post, onBack }) => {
       <article className="bg-slate-900 rounded-2xl p-6 sm:p-10 shadow-2xl border border-slate-800">
         <header className="mb-8 border-b border-slate-700 pb-6">
           <div className="flex flex-wrap gap-2 mb-3">
-            {post.tags.map((tag, index) => (
+            {post.tags.map((tag: string, index: number) => (
               <span
                 key={index}
                 className="flex items-center text-xs font-medium px-3 py-1 bg-indigo-900/40 text-indigo-400 rounded-full"
@@ -234,8 +249,9 @@ const SinglePostView = ({ post, onBack }) => {
             alt={post.title}
             className="w-full h-auto object-cover"
             onError={(e) => {
-              e.target.onerror = null;
-              e.target.src =
+              const target = e.currentTarget as HTMLImageElement;
+              target.onerror = null;
+              target.src =
                 "https://placehold.co/800x450/1F2937/FFFFFF?text=Featured+Image";
             }}
           />
@@ -284,7 +300,12 @@ const SinglePostView = ({ post, onBack }) => {
   );
 };
 
-const BlogPostCard = ({ post, onReadMore }) => (
+interface BlogPostCardProps {
+  post: Post;
+  onReadMore: (id: number) => void;
+}
+
+const BlogPostCard = ({ post, onReadMore }: BlogPostCardProps) => (
   <div className="bg-slate-800 rounded-xl overflow-hidden shadow-2xl border border-slate-700/50 hover:border-indigo-400 transition-all duration-300 transform hover:-translate-y-1">
     <div className="h-48 overflow-hidden">
       <img
@@ -292,15 +313,16 @@ const BlogPostCard = ({ post, onReadMore }) => (
         alt={post.title}
         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
         onError={(e) => {
-          e.target.onerror = null;
-          e.target.src =
+          const target = e.currentTarget as HTMLImageElement;
+          target.onerror = null;
+          target.src =
             "https://placehold.co/600x400/1F2937/FFFFFF?text=Post+Image";
         }}
       />
     </div>
     <div className="p-6 space-y-4">
       <div className="flex flex-wrap gap-2">
-        {post.tags.map((tag, index) => (
+        {post.tags.map((tag: string, index: number) => (
           <span
             key={index}
             className="flex items-center text-xs font-medium px-3 py-1 bg-indigo-900/40 text-indigo-400 rounded-full"
@@ -334,10 +356,10 @@ const BlogPostCard = ({ post, onReadMore }) => (
 );
 
 const Blog = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [selectedPostId, setSelectedPostId] = useState(null);
+  const [error, setError] = useState<string | null>(null);
+  const [selectedPostId, setSelectedPostId] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchPosts = () => {
@@ -360,7 +382,7 @@ const Blog = () => {
     fetchPosts();
   }, []);
 
-  const handleReadMore = (id) => {
+  const handleReadMore = (id: number) => {
     setSelectedPostId(id);
     window.scrollTo(0, 0);
   };

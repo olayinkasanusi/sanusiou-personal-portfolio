@@ -1,7 +1,7 @@
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
+import React from "react";
+import { motion, Variants } from "framer-motion";
 
-const pageVariants = {
+const pageVariants: Variants = {
   initial: {
     opacity: 0,
     y: 10,
@@ -25,7 +25,11 @@ const pageVariants = {
   },
 };
 
-const PageTransition = ({ children }) => {
+interface PageTransitionProps {
+  children: React.ReactNode;
+}
+
+const PageTransition = ({ children }: PageTransitionProps) => {
   return (
     <motion.div
       initial="initial"

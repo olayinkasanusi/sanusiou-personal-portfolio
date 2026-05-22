@@ -3,12 +3,19 @@ import toast from "react-hot-toast";
 
 const API_ENDPOINT = "https://my-portfolio-mailer.vercel.app/send-email";
 
+export interface MailData {
+  name: string;
+  email: string;
+  message: string;
+  [key: string]: any;
+}
+
 export const useMailer = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const sendMail = useCallback(async (data) => {
+  const sendMail = useCallback(async (data: MailData) => {
     setIsLoading(true);
     setIsSuccess(false);
     setError(null);
@@ -31,9 +38,9 @@ export const useMailer = () => {
         toast.error(`${result.msg}`);
         setError(result.msg);
       }
-    } catch (err) {
+    } catch (err: any) {
       toast.error("Network error or failed to connect to the mail service.");
-      setError(err.message);
+      setError(err.message || "Unknown error");
     } finally {
       setIsLoading(false);
     }

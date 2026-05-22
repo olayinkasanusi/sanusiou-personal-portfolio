@@ -1,4 +1,12 @@
-function CarouselSlide({ slide, isActive, color }) {
+import { SlideData } from "../../data/projects";
+
+interface CarouselSlideProps {
+  slide: SlideData;
+  isActive: boolean;
+  color?: string;
+}
+
+function CarouselSlide({ slide, isActive, color }: CarouselSlideProps) {
   return (
     <div
       className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${

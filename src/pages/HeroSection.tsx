@@ -8,11 +8,11 @@ import { Helmet } from "react-helmet-async";
 const CHARACTERS = ["+", "-", "=", "<", "*", ">"];
 
 const HeroSection = () => {
-  const containerRef = useRef(null);
-  const sceneRef = useRef(null);
-  const cameraRef = useRef(null);
-  const rendererRef = useRef(null);
-  const particlesRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const sceneRef = useRef<THREE.Scene | null>(null);
+  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const particlesRef = useRef<THREE.Group | null>(null);
   const handleClick = useNavigation();
 
   const mouse = useRef(new THREE.Vector2(0, 0));
@@ -21,7 +21,7 @@ const HeroSection = () => {
   const PARTICLE_COUNT = 20000;
   const PARTICLE_SIZE = 5;
 
-  const onMouseMove = useCallback((event) => {
+  const onMouseMove = useCallback((event: MouseEvent) => {
     targetMouse.current.x = (event.clientX / window.innerWidth) * 2 - 1;
     targetMouse.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
   }, []);
@@ -38,7 +38,7 @@ const HeroSection = () => {
   }, []);
 
   const animate = useCallback(() => {
-    if (!rendererRef.current) return;
+    if (!rendererRef.current || !sceneRef.current || !cameraRef.current) return;
 
     // eslint-disable-next-line react-hooks/immutability
     requestAnimationFrame(animate);
@@ -55,18 +55,20 @@ const HeroSection = () => {
     rendererRef.current.render(sceneRef.current, cameraRef.current);
   }, []);
 
-  const createCharacterTexture = useCallback((char) => {
+  const createCharacterTexture = useCallback((char: string) => {
     const canvas = document.createElement("canvas");
     const size = 128;
     canvas.width = size;
     canvas.height = size;
 
     const context = canvas.getContext("2d");
-    context.fillStyle = "#ffffff";
-    context.font = `bold ${size * 0.8}px Inter, sans-serif`;
-    context.textAlign = "center";
-    context.textBaseline = "middle";
-    context.fillText(char, size / 2, size / 2 + size * 0.05);
+    if (context) {
+      context.fillStyle = "#ffffff";
+      context.font = `bold ${size * 0.8}px Inter, sans-serif`;
+      context.textAlign = "center";
+      context.textBaseline = "middle";
+      context.fillText(char, size / 2, size / 2 + size * 0.05);
+    }
 
     const texture = new THREE.CanvasTexture(canvas);
     texture.needsUpdate = true;
@@ -74,7 +76,7 @@ const HeroSection = () => {
   }, []);
 
   const createParticles = useCallback(() => {
-    if (particlesRef.current) {
+    if (particlesRef.current && sceneRef.current) {
       sceneRef.current.remove(particlesRef.current);
       particlesRef.current = null;
     }
@@ -88,8 +90,8 @@ const HeroSection = () => {
       const texture = createCharacterTexture(char);
 
       const geometry = new THREE.BufferGeometry();
-      const positions = [];
-      const colors = [];
+      const positions: number[] = [];
+      const colors: number[] = [];
       const color = new THREE.Color();
 
       for (let i = 0; i < particlesPerType; i++) {
@@ -130,7 +132,9 @@ const HeroSection = () => {
     });
 
     particlesRef.current = particleGroup;
-    sceneRef.current.add(particlesRef.current);
+    if (sceneRef.current) {
+      sceneRef.current.add(particlesRef.current);
+    }
   }, [createCharacterTexture, PARTICLE_COUNT, PARTICLE_SIZE]);
 
   useEffect(() => {

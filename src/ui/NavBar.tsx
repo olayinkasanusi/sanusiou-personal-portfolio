@@ -5,7 +5,7 @@ import Logo from "./Logo";
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = (e) => {
+  const toggleMenu = (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsOpen(!isOpen);
   };
@@ -14,7 +14,7 @@ const HamburgerMenu = () => {
     setIsOpen(false);
   }
 
-  const ref = useOutSideClick(close, false);
+  const ref = useOutSideClick<HTMLUListElement>(close, false);
 
   const lineClasses =
     "block h-1 w-7 bg-white transform transition duration-300 ease-in-out";
@@ -87,9 +87,13 @@ const HamburgerMenu = () => {
     </div>
   );
 };
-function NavBar() {
+interface NavBarProps {
+  position?: string;
+}
+
+function NavBar({ position = "fixed" }: NavBarProps) {
   return (
-    <div className="fixed mt-2 w-9/10 md:w-auto top-0 z-1000">
+    <div className={`${position} mt-2 w-9/10 md:w-auto top-0 z-1000`}>
       <div className="rounded-full w-auto mx-auto shadow-md bg-[#0A192F] shadow-blue-400 flex justify-between items-center px-6 py-2  border-2 border-blue-600 z-100 gap-6">
         <Link to="/">
           <span className="flex justify-between items-center gap-3">

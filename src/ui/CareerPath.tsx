@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const milestones = [
+interface Milestone {
+  year: number;
+  title: string;
+  description: string;
+  x: number;
+  y: number;
+  labelPos: string;
+}
+
+const milestones: Milestone[] = [
   {
     year: 2021,
     title: "HTML/CSS/BootStrap",
@@ -35,7 +44,7 @@ const milestones = [
   },
 ];
 
-const getPathD = (milestones) => {
+const getPathD = (milestones: Milestone[]): string => {
   if (milestones.length === 0) return "";
   let d = `M ${milestones[0].x} ${milestones[0].y}`;
 
@@ -49,7 +58,12 @@ const getPathD = (milestones) => {
   return d;
 };
 
-const MilestoneNode = ({ milestone, isVisible }) => {
+interface MilestoneNodeProps {
+  milestone: Milestone;
+  isVisible: boolean;
+}
+
+const MilestoneNode = ({ milestone, isVisible }: MilestoneNodeProps) => {
   const { x, y, year, title, description, labelPos } = milestone;
 
   const textYOffset = labelPos === "top" ? -20 : 30;
@@ -103,8 +117,8 @@ const MilestoneNode = ({ milestone, isVisible }) => {
 
 const CareerPath = () => {
   const pathD = getPathD(milestones);
-  const pathRef = useRef(null);
-  const containerRef = useRef(null);
+  const pathRef = useRef<SVGPathElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [pathLength, setPathLength] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 

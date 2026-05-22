@@ -1,10 +1,23 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-function Button({ children, roundedFull, size, onClick }) {
-  const [ripples, setRipples] = useState([]);
+interface Ripple {
+  id: number;
+  x: number;
+  y: number;
+}
 
-  const handleRipple = (e) => {
+interface ButtonProps {
+  children: React.ReactNode;
+  roundedFull?: boolean;
+  size?: "small" | "large";
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+function Button({ children, roundedFull, size, onClick }: ButtonProps) {
+  const [ripples, setRipples] = useState<Ripple[]>([]);
+
+  const handleRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
 
     const x = e.clientX - rect.left;

@@ -1,6 +1,10 @@
 import { Link } from "./SocialLinks";
 
-function Footer({ position }) {
+interface FooterProps {
+  position?: string;
+}
+
+function Footer({ position }: FooterProps) {
   return (
     <footer
       className={`${

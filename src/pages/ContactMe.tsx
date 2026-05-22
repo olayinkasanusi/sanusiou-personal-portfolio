@@ -16,14 +16,16 @@ function ContactMe() {
 
   const { sendMail: mailing, isLoading: isMailing } = useMailer();
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
       mailing(formData);
@@ -184,7 +186,7 @@ function ContactMe() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows="5"
+                rows={5}
                 placeholder="Your message here..."
                 className={inputClasses}
                 required

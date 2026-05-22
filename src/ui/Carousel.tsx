@@ -2,9 +2,16 @@ import React, { useState, useEffect } from "react";
 import CarouselButton from "./CarouselButton";
 import CarouselSlide from "./CarouselSlide";
 
-function Carousel({ slidesData, color }) {
+import { SlideData } from "../../data/projects";
+
+interface CarouselProps {
+  slidesData: SlideData[];
+  color?: string;
+}
+
+function Carousel({ slidesData, color }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
 
   function nextSlide() {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slidesData.length);
@@ -21,15 +28,15 @@ function Carousel({ slidesData, color }) {
     return () => clearInterval(interval);
   }, [nextSlide]);
 
-  const handleDotClick = (index) => {
+  const handleDotClick = (index: number) => {
     setCurrentIndex(index);
   };
 
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (touchStart === null) return;
     const touchEnd = e.targetTouches[0].clientX;
     const diff = touchStart - touchEnd;

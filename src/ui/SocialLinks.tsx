@@ -1,7 +1,14 @@
+import React from "react";
 import GitHubIcon from "./GithubIcon";
 import LinkedInIcon from "./LinkedInIcon";
 
-function SocialLink({ children, name, href }) {
+interface SocialLinkProps {
+  children: React.ReactNode;
+  name: string;
+  href: string;
+}
+
+function SocialLink({ children, name, href }: SocialLinkProps) {
   return (
     <a
       href={href}

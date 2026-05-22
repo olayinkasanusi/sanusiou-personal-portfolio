@@ -5,13 +5,20 @@ import useNavigation from "../utils/useNavigation";
 import { useNavigate, useSearchParams } from "react-router";
 import { Helmet } from "react-helmet-async";
 
-function Image({ src, children, classes, href }) {
+interface ImageProps {
+  src: string;
+  children: React.ReactNode;
+  classes?: string;
+  href?: string;
+}
+
+function Image({ src, children, classes, href }: ImageProps) {
   return (
     <>
       <img
         className="w-full h-full object-cover border border-blue-400 rounded-2xl"
         src={src}
-        alt={children}
+        alt={typeof children === "string" ? children : "Project snapshot"}
       />
       <a
         className={`absolute bottom-2.5 left-2 transform font-raleway underline ${
@@ -42,8 +49,8 @@ function Projects() {
   const singleRow =
     "md:col-span-1 col-span-3 relative w-full h-70 overflow-hidden hover:shadow-md hover:shadow-blue-400 rounded-2xl";
 
-  function handleSearchParams(id) {
-    searchParams.set("projectId", id);
+  function handleSearchParams(id: number) {
+    searchParams.set("projectId", String(id));
     setSearchParams(searchParams);
     navigate(`/projects/${id}`);
   }

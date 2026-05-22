@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-const TypeOnce = ({ text, typingSpeed = 75, initDelay = 0 }) => {
+interface TypeOnceProps {
+  text: string;
+  typingSpeed?: number;
+  initDelay?: number;
+}
+
+const TypeOnce = ({ text, typingSpeed = 75, initDelay = 0 }: TypeOnceProps) => {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
   const [isReadyToType, setIsReadyToType] = useState(initDelay === 0);

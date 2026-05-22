@@ -1,4 +1,37 @@
-export const projects = [
+export interface Technology {
+  icon: string;
+  tech: string;
+}
+
+export interface LinkData {
+  liveDemo: string;
+  github: string;
+}
+
+export interface SlideData {
+  id: number;
+  title: string;
+  img: string;
+}
+
+export interface Project {
+  name: string;
+  shortSummary: string;
+  projectOverview: string;
+  goals: string[];
+  challenges: string[];
+  technologyStack: Technology[];
+  links: LinkData;
+  slidesData: SlideData[];
+  color?: string;
+  disabled?: string;
+  login?: {
+    gmail: string;
+    password?: string;
+  };
+}
+
+export const projects: Project[] = [
   {
     name: "DGold Luxury Boutique",
     shortSummary:

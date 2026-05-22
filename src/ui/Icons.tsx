@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 
-function Icons({ icon, tech }) {
+interface IconsProps {
+  icon: string;
+  tech: string;
+}
+
+function Icons({ icon, tech }: IconsProps) {
   return (
     <motion.div
       className="rounded-lg bg-[#242938] px-4 py-2 flex flex-col items-center justify-between"

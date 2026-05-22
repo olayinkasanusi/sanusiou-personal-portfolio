@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 function useNavigation() {
   const navigate = useNavigate();
 
-  function handleClick(route) {
+  function handleClick(route: string) {
     navigate(route);
   }
 

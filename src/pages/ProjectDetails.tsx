@@ -13,6 +13,9 @@ function ProjectDetails() {
   const { projectId } = useParams();
   const handleClick = useNavigation();
 
+  const index = projectId ? parseInt(projectId, 10) : 0;
+  const project = projects[index];
+
   const headerStyling =
     "text-left text-2xl text-white font-montserrat font-semibold mb-4";
 
@@ -20,6 +23,20 @@ function ProjectDetails() {
 
   const containerStyle =
     "max-w-3xl pb-8 w-full flex flex-col justify-between items-start";
+
+  if (!project) {
+    return (
+      <div className="bg-[#0A192F] min-h-screen text-white flex flex-col justify-center items-center font-raleway">
+        <h1 className="text-3xl mb-4">Project Not Found</h1>
+        <button
+          onClick={() => handleClick("/projects")}
+          className="border border-white px-6 py-2 rounded-full hover:bg-white/10 transition-colors"
+        >
+          Back to Projects
+        </button>
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -39,35 +56,36 @@ function ProjectDetails() {
           transition={{ duration: 0.7 }}
         >
           <h1 className={`text-3xl underline ${headerStyling}`}>
-            {projects[projectId].name}
+            {project.name}
           </h1>
-          <p className={`mb-4 ${paragraphStyle}`}>
+          <div className={`mb-4 ${paragraphStyle}`}>
             <TypeOnce
-              text={projects[projectId].shortSummary}
+              text={project.shortSummary}
               typingSpeed={25}
             />
-          </p>
+          </div>
           <motion.div
             className="flex gap-3 justify-between items-center sm:flex-row flex-col"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <a href={projects[projectId].links.github} target="_blank">
+            <a href={project.links.github} target="_blank" rel="noopener noreferrer">
               <Button size="small">View On Github</Button>
             </a>
             <a
-              href={`${
-                projects[projectId].disabled !== "disabled"
-                  ? projects[projectId].links.liveDemo
-                  : ""
-              } `}
+              href={
+                project.disabled !== "disabled"
+                  ? project.links.liveDemo
+                  : "#"
+              }
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Button size="small">View Live Demo</Button>
             </a>
           </motion.div>
-          {projects[projectId].login !== undefined && (
+          {project.login !== undefined && (
             <div>
               <h1 className="text-left text-2xl text-white font-montserrat font-medium mt-2 underline">
                 Login with these details
@@ -75,13 +93,13 @@ function ProjectDetails() {
               <p className={paragraphStyle}>
                 Email:{" "}
                 <span className="font-semibold">
-                  {projects[projectId].login.gmail}
+                  {project.login.gmail}
                 </span>
               </p>
               <p className={paragraphStyle}>
                 Password:{" "}
                 <span className="font-semibold">
-                  {projects[projectId].login.password}
+                  {project.login.password}
                 </span>
               </p>
             </div>
@@ -89,8 +107,8 @@ function ProjectDetails() {
         </motion.div>
 
         <Carousel
-          slidesData={projects[projectId].slidesData}
-          color={projects[projectId].color}
+          slidesData={project.slidesData}
+          color={project.color}
         />
 
         <motion.div
@@ -103,7 +121,7 @@ function ProjectDetails() {
           <h1 className={headerStyling}>Project Overview</h1>
           <hr className="text-[#007bff] w-full" />
           <p className={paragraphStyle}>
-            {projects[projectId].projectOverview}
+            {project.projectOverview}
           </p>
         </motion.div>
 
@@ -126,7 +144,7 @@ function ProjectDetails() {
                 Goals
               </h1>
               <ul className={`${paragraphStyle} list-disc text-white`}>
-                {projects[projectId].goals.map((goal, i) => (
+                {project.goals.map((goal: string, i: number) => (
                   <li key={i}>{goal}</li>
                 ))}
               </ul>
@@ -139,7 +157,7 @@ function ProjectDetails() {
                 Challenges
               </h1>
               <ul className={`${paragraphStyle} list-disc text-white`}>
-                {projects[projectId].challenges.map((challenge, i) => (
+                {project.challenges.map((challenge: string, i: number) => (
                   <li key={i}>{challenge}</li>
                 ))}
               </ul>
@@ -169,7 +187,7 @@ function ProjectDetails() {
               },
             }}
           >
-            {projects[projectId].technologyStack.map((tech) => (
+            {project.technologyStack.map((tech) => (
               <motion.div
                 key={tech.tech}
                 variants={{
