@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface Ripple {
   id: number;
@@ -19,14 +19,12 @@ function Button({ children, roundedFull, size, onClick }: ButtonProps) {
 
   const handleRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-
     const newRipple = { id: Date.now(), x, y };
+
     setRipples((prev) => [...prev, newRipple]);
 
-    // Remove ripple after animation
     setTimeout(() => {
       setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
     }, 600);
@@ -43,24 +41,20 @@ function Button({ children, roundedFull, size, onClick }: ButtonProps) {
       transition={{ duration: 0.4 }}
       whileHover={{ scale: 1.06 }}
       whileTap={{ scale: 0.94 }}
-      className={`relative overflow-hidden bg-[#007bff] text-white font-raleway ${
+      className={`relative overflow-hidden bg-blue-600 text-white font-sans ${
         roundedFull ? "rounded-full" : "rounded-lg"
       } ${
-        size === "small"
-          ? "py-1.5 font-light text-sm"
-          : "font-semibold py-3 px-2"
-      } shadow-lg transition duration-300 border border-white hover:bg-[#125aa7] w-40`}
+        size === "small" ? "py-1.5 font-light text-sm" : "font-semibold py-3 px-2"
+      } shadow-sm transition duration-300 hover:bg-blue-750 w-40 cursor-pointer`}
     >
       {children}
-
-      {/* Ripple elements */}
       {ripples.map((ripple) => (
         <motion.span
           key={ripple.id}
           initial={{ scale: 0, opacity: 0.6 }}
           animate={{ scale: 6, opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute bg-white rounded-full pointer-events-none"
+          className="absolute bg-white/40 rounded-full pointer-events-none"
           style={{
             width: 20,
             height: 20,

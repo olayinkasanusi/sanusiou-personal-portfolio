@@ -1,8 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-roboto: "Roboto", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
   --font-raleway: "Raleway", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #334155;
+  font-family: var(--font-sans);
+}
+
+.engineering-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+    linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+}
+
+::selection {
+  background-color: #dbeafe;
+  color: #1e40af;
 }

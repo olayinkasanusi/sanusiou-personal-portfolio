@@ -52,7 +52,6 @@ const getPathD = (milestones: Milestone[]): string => {
     const prev = milestones[i - 1];
     const curr = milestones[i];
     const midX = (prev.x + curr.x) / 2;
-
     d += ` C ${midX} ${prev.y}, ${midX} ${curr.y}, ${curr.x} ${curr.y}`;
   }
   return d;
@@ -65,7 +64,6 @@ interface MilestoneNodeProps {
 
 const MilestoneNode = ({ milestone, isVisible }: MilestoneNodeProps) => {
   const { x, y, year, title, description, labelPos } = milestone;
-
   const textYOffset = labelPos === "top" ? -20 : 30;
   const descriptionYOffset = labelPos === "top" ? -55 : 45;
 
@@ -73,7 +71,7 @@ const MilestoneNode = ({ milestone, isVisible }: MilestoneNodeProps) => {
     <g transform={`translate(${x}, ${y})`} className="group">
       <circle
         r="10"
-        className={`fill-amber-400 stroke-4 stroke-gray-800 transition-all duration-700 ease-out cursor-pointer 
+        className={`fill-blue-600 stroke-[4px] stroke-white transition-all duration-700 ease-out cursor-pointer 
           ${
             isVisible
               ? "opacity-100 scale-100 group-hover:scale-[1.4] group-hover:rotate-12"
@@ -81,9 +79,8 @@ const MilestoneNode = ({ milestone, isVisible }: MilestoneNodeProps) => {
           }`}
         style={{ transitionDelay: "2.5s" }}
       />
-
       <text
-        className={`font-light text-md fill-gray-300 font-raleway transition-opacity duration-700 
+        className={`font-light text-md fill-slate-500 font-sans transition-opacity duration-700 
           ${isVisible ? "opacity-100" : "opacity-0"}`}
         y={textYOffset}
         textAnchor="middle"
@@ -91,9 +88,8 @@ const MilestoneNode = ({ milestone, isVisible }: MilestoneNodeProps) => {
       >
         {year}
       </text>
-
       <text
-        className={`font-semibold text-sm fill-white font-raleway transition-opacity duration-700 
+        className={`font-semibold text-sm fill-slate-900 font-sans transition-opacity duration-700 
           ${isVisible ? "opacity-100" : "opacity-0"}`}
         y={descriptionYOffset}
         textAnchor="middle"
@@ -101,9 +97,8 @@ const MilestoneNode = ({ milestone, isVisible }: MilestoneNodeProps) => {
       >
         {title}
       </text>
-
       <text
-        className={`text-xs fill-white transition-opacity duration-700 
+        className={`text-xs fill-slate-500 transition-opacity duration-700 
           ${isVisible ? "opacity-100" : "opacity-0"}`}
         y={descriptionYOffset + 15}
         textAnchor="middle"
@@ -135,11 +130,7 @@ const CareerPath = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // console.log(entry);
             setIsVisible(true);
-            setTimeout(() => {
-              setIsVisible(true);
-            }, 1000);
           } else {
             setIsVisible(false);
           }
@@ -164,7 +155,7 @@ const CareerPath = () => {
   }, [pathLength]);
 
   return (
-    <div className="bg-[##0A192F] p-4 sm:p-6 flex w-full overflow-x-auto flex-col items-center justify-center font-raleway">
+    <div className="bg-transparent p-4 sm:p-6 flex w-full overflow-x-auto flex-col items-center justify-center font-sans">
       <div className="w-full h-auto overflow-x-auto" ref={containerRef}>
         <svg
           viewBox="0 0 1000 400"
@@ -174,7 +165,7 @@ const CareerPath = () => {
           <path
             ref={pathRef}
             d={pathD}
-            className="stroke-blue-500 fill-none stroke-[6px]"
+            className="stroke-blue-200 fill-none stroke-[6px]"
             strokeLinecap="round"
             strokeLinejoin="round"
             style={{
@@ -184,7 +175,12 @@ const CareerPath = () => {
                 pathLength > 0 ? "stroke-dashoffset 2.5s ease-in-out" : "none",
             }}
           />
-
+          <path
+            d={pathD}
+            className="stroke-blue-600 fill-none stroke-[2px]"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
           {milestones.map((milestone, index) => (
             <MilestoneNode
               key={index}
@@ -193,7 +189,6 @@ const CareerPath = () => {
             />
           ))}
         </svg>
-        {/* </div> */}
       </div>
     </div>
   );

@@ -1,6 +1,4 @@
-import React from "react";
-import GitHubIcon from "./GithubIcon";
-import LinkedInIcon from "./LinkedInIcon";
+import { Github, Linkedin } from "lucide-react";
 
 interface SocialLinkProps {
   children: React.ReactNode;
@@ -14,7 +12,7 @@ function SocialLink({ children, name, href }: SocialLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center text-gray-400 hover:text-blue-400 transition-colors"
+      className="flex items-center text-slate-500 hover:text-blue-600 transition-colors"
     >
       {children}
       <span className="text-sm font-medium">{name}</span>
@@ -25,31 +23,32 @@ function SocialLink({ children, name, href }: SocialLinkProps) {
 function SocialLinks() {
   return (
     <div>
-      <div className="mt-12 pt-6 border-t border-gray-800 text-center">
-        <p className="text-gray-400 mb-4 text-sm">Or find me on</p>
+      <div className="mt-12 pt-6 border-t border-slate-200 text-center">
+        <p className="text-slate-500 mb-4 text-sm">Or find me on</p>
         <div className="flex justify-center space-x-6">
           <SocialLink name="Github" href="https://github.com/olayinkasanusi">
-            <GitHubIcon className="w-5 h-5 mr-2 outline-0" />
+            <Github className="w-5 h-5 mr-2" />
           </SocialLink>
           <SocialLink
             name="LinkedIn"
             href="https://linkedin.com/in/sanusiolayinka"
           >
-            <LinkedInIcon className="w-5 h-5 mr-2 outline-0" />
+            <Linkedin className="w-5 h-5 mr-2" />
           </SocialLink>
         </div>
       </div>
     </div>
   );
 }
+
 export function Link() {
   return (
     <div className="flex justify-center space-x-6">
       <SocialLink name="Github" href="https://github.com/olayinkasanusi">
-        <GitHubIcon className="w-5 h-5 mr-2 outline-0" />
+        <Github className="w-5 h-5 mr-2" />
       </SocialLink>
       <SocialLink name="LinkedIn" href="https://linkedin.com/in/sanusiolayinka">
-        <LinkedInIcon className="w-5 h-5 mr-2 outline-0" />
+        <Linkedin className="w-5 h-5 mr-2" />
       </SocialLink>
     </div>
   );

@@ -1,43 +1,29 @@
+import { Loader2 } from "lucide-react";
+
+interface MiniSpinnerProps {
+  size?: number;
+  color?: string;
+  strokeWidth?: number;
+  speed?: number; // seconds for full rotation
+  className?: string;
+  ariaLabel?: string;
+}
+
 export default function MiniSpinner({
-  size = 48,
-  color = "#6C5CE7",
-  strokeWidth = 4,
-  speed = 1.2, // rotation speed in seconds
+  size = 20,
+  color = "#2563EB",
+  strokeWidth = 2,
+  speed = 1.2,
   className = "",
   ariaLabel = "Loading",
-}) {
-  return (
-    <div className="w-full flex justify-center items-center">
-      <svg
-        width={size}
-        height={size}
-        viewBox="0 0 50 50"
-        role="img"
-        aria-label={ariaLabel}
-        className={className}
-        xmlns="http://www.w3.org/2000/svg"
-        style={{
-          animation: `spin ${speed}s linear infinite`,
-        }}
-      >
-        <circle
-          cx="25"
-          cy="25"
-          r="20"
-          fill="none"
-          stroke={color}
-          strokeWidth={strokeWidth}
-          strokeLinecap="round"
-          strokeDasharray="90 150" // gives the arc effect
-        />
+}: MiniSpinnerProps) {
+  const animationStyle = {
+    animation: `spin ${speed}s linear infinite`,
+  } as React.CSSProperties;
 
-        <style>{`
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-            }
-            `}</style>
-      </svg>
+  return (
+    <div className={`flex justify-center items-center ${className}`} aria-label={ariaLabel}>
+      <Loader2 size={size} color={color} strokeWidth={strokeWidth} style={animationStyle} className="animate-spin" />
     </div>
   );
 }

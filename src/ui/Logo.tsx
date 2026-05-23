@@ -1,11 +1,20 @@
+interface LogoProps {
+  size?: number;
+  color?: string;
+  strokeWidth?: number;
+  className?: string;
+  variant?: "outline" | "filled";
+  ariaLabel?: string;
+}
+
 export default function Logo({
   size = 25,
-  color = "#f9f8fc",
+  color = "#0f172a",
   strokeWidth = 4,
   className = "",
   variant = "outline",
   ariaLabel = "SO logo",
-}) {
+}: LogoProps) {
   const common = {
     width: size,
     height: size,
@@ -21,11 +30,10 @@ export default function Logo({
     return (
       <svg {...common} xmlns="http://www.w3.org/2000/svg">
         <circle cx="32" cy="32" r="30" fill={color} />
-
         <path
           d={sPath}
           fill="none"
-          stroke="#fff"
+          stroke="#ffffff"
           strokeWidth={strokeWidth * 2}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -48,7 +56,6 @@ export default function Logo({
         strokeLinejoin="round"
         vectorEffect="non-scaling-stroke"
       />
-
       <path
         d={sPath}
         fill="none"

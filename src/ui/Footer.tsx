@@ -7,13 +7,13 @@ interface FooterProps {
 function Footer({ position }: FooterProps) {
   return (
     <footer
-      className={`${
-        position ? position : "absolute"
-      } bottom-0 w-full z-30 sm:p-4 py-2 text-center text-sm text-gray-400 backdrop-blur-sm bg-black/10 `}
+      className={`
+        ${position === "fixed" ? "fixed bottom-0 left-0" : "relative"} 
+        w-full z-30 py-6 text-center text-xs text-slate-500 bg-white/70 border-t border-slate-100 backdrop-blur-xs
+      `}
     >
-      <div className="flex justify-between md:w-3/5 w-full items-center mx-auto flex-col sm:flex-row gap-3">
-        <p>&copy; 2025 Sanusi Olayinka | All Rights reserved</p>
-        {/* http://wa.me/2348119760275 */}
+      <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center px-6 gap-3">
+        <p>&copy; {new Date().getFullYear()} Sanusi Olayinka Uthman. All rights reserved.</p>
         <Link />
       </div>
     </footer>

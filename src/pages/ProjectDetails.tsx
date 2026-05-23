@@ -1,13 +1,13 @@
+import { useParams } from "react-router";
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
 import Carousel from "../ui/Carousel";
 import NavBar from "../ui/NavBar";
 import Footer from "../ui/Footer";
 import Button from "../ui/Button";
 import Icons from "../ui/Icons";
-import { useParams } from "react-router";
 import useNavigation from "../utils/useNavigation";
 import { projects } from "../../data/projects";
-import TypeOnce from "../ui/TypeOnce";
-import { motion } from "framer-motion";
 
 function ProjectDetails() {
   const { projectId } = useParams();
@@ -16,21 +16,13 @@ function ProjectDetails() {
   const index = projectId ? parseInt(projectId, 10) : 0;
   const project = projects[index];
 
-  const headerStyling =
-    "text-left text-2xl text-white font-montserrat font-semibold mb-4";
-
-  const paragraphStyle = "text-[#a3a3a3] leading-8 font-raleway font-light";
-
-  const containerStyle =
-    "max-w-3xl pb-8 w-full flex flex-col justify-between items-start";
-
   if (!project) {
     return (
-      <div className="bg-[#0A192F] min-h-screen text-white flex flex-col justify-center items-center font-raleway">
-        <h1 className="text-3xl mb-4">Project Not Found</h1>
+      <div className="bg-white min-h-screen text-slate-800 flex flex-col justify-center items-center font-sans">
+        <h1 className="text-3xl mb-4 font-bold">Project Not Found</h1>
         <button
           onClick={() => handleClick("/projects")}
-          className="border border-white px-6 py-2 rounded-full hover:bg-white/10 transition-colors"
+          className="border border-slate-300 px-6 py-2 rounded-lg hover:bg-slate-50 transition-colors"
         >
           Back to Projects
         </button>
@@ -39,181 +31,97 @@ function ProjectDetails() {
   }
 
   return (
-    <motion.div
-      className="bg-[#0A192F]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="max-w-3xl mx-auto flex gap-10 flex-col justify-between items-center pb-40 px-5">
-        <NavBar />
+    <>
+      <Helmet>
+        <title>{project.name} | Case Study</title>
+        <meta name="description" content={project.shortSummary} />
+        <link rel="canonical" href={`https://sanusiou.pro/projects/${index}`} />
+      </Helmet>
+      <div className="bg-white min-h-screen engineering-grid w-full flex flex-col justify-between items-center px-6 py-12 gap-16 overflow-hidden">
+        <NavBar position="relative" />
 
-        {/* Project Header */}
-        <motion.div
-          className="mx-auto flex flex-col justify-between items-start w-full mt-30"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h1 className={`text-3xl underline ${headerStyling}`}>
-            {project.name}
-          </h1>
-          <div className={`mb-4 ${paragraphStyle}`}>
-            <TypeOnce
-              text={project.shortSummary}
-              typingSpeed={25}
-            />
+        <div className="max-w-3xl w-full text-left space-y-6">
+          <div className="space-y-2">
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 font-sans">
+              {project.name}
+            </h1>
+            <p className="text-lg text-slate-600 font-sans font-light">
+              {project.shortSummary}
+            </p>
           </div>
-          <motion.div
-            className="flex gap-3 justify-between items-center sm:flex-row flex-col"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
+
+          <div className="flex gap-4 items-center">
             <a href={project.links.github} target="_blank" rel="noopener noreferrer">
               <Button size="small">View On Github</Button>
             </a>
-            <a
-              href={
-                project.disabled !== "disabled"
-                  ? project.links.liveDemo
-                  : "#"
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={project.links.liveDemo} target="_blank" rel="noopener noreferrer">
               <Button size="small">View Live Demo</Button>
             </a>
-          </motion.div>
-          {project.login !== undefined && (
-            <div>
-              <h1 className="text-left text-2xl text-white font-montserrat font-medium mt-2 underline">
-                Login with these details
-              </h1>
-              <p className={paragraphStyle}>
-                Email:{" "}
-                <span className="font-semibold">
-                  {project.login.gmail}
-                </span>
-              </p>
-              <p className={paragraphStyle}>
-                Password:{" "}
-                <span className="font-semibold">
-                  {project.login.password}
-                </span>
-              </p>
-            </div>
-          )}
-        </motion.div>
+          </div>
+        </div>
 
-        <Carousel
-          slidesData={project.slidesData}
-          color={project.color}
-        />
+        <div className="max-w-3xl w-full">
+          <Carousel slidesData={project.slidesData} />
+        </div>
 
-        <motion.div
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-        >
-          <h1 className={headerStyling}>Project Overview</h1>
-          <hr className="text-[#007bff] w-full" />
-          <p className={paragraphStyle}>
+        <div className="max-w-3xl w-full text-left space-y-4">
+          <h2 className="text-2xl font-bold font-sans text-slate-900">
+            Project Overview
+          </h2>
+          <hr className="border-slate-200 w-full" />
+          <p className="text-slate-600 leading-relaxed font-sans font-light">
             {project.projectOverview}
           </p>
-        </motion.div>
+        </div>
 
-        {/* Goals & Challenges */}
-        <motion.div
-          className="w-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-        >
-          <h1 className={headerStyling}>Goals & Challenges</h1>
-          <hr className="text-[#007bff] w-full mb-4" />
-          <div className="flex gap-10 justify-between items-center md:flex-row flex-col">
-            <motion.div
-              className="px-8 py-4 bg-[#011831] shadow-md shadow-[#007bff] opacity-80 rounded-xl border border-blue-400"
-              whileHover={{ scale: 1.02 }}
-            >
-              <h1 className="text-white font-montserrat font-semibold tracking-wide text-lg underline">
+        <div className="max-w-3xl w-full text-left space-y-4">
+          <h2 className="text-2xl font-bold font-sans text-slate-900">
+            Goals & Challenges
+          </h2>
+          <hr className="border-slate-200 w-full" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 bg-slate-50 border border-slate-200 rounded-xl space-y-3">
+              <h3 className="text-slate-900 font-sans font-bold text-lg">
                 Goals
-              </h1>
-              <ul className={`${paragraphStyle} list-disc text-white`}>
-                {project.goals.map((goal: string, i: number) => (
+              </h3>
+              <ul className="text-slate-600 text-sm leading-relaxed list-disc pl-5 space-y-2 font-light">
+                {project.goals.map((goal, i) => (
                   <li key={i}>{goal}</li>
                 ))}
               </ul>
-            </motion.div>
-            <motion.div
-              className="px-8 py-4 bg-[#011831] shadow-md shadow-[#007bff] opacity-80 rounded-xl border border-blue-400"
-              whileHover={{ scale: 1.02 }}
-            >
-              <h1 className="text-white font-montserrat font-semibold tracking-wide text-lg underline">
+            </div>
+            <div className="p-6 bg-slate-50 border border-slate-200 rounded-xl space-y-3">
+              <h3 className="text-slate-900 font-sans font-bold text-lg">
                 Challenges
-              </h1>
-              <ul className={`${paragraphStyle} list-disc text-white`}>
-                {project.challenges.map((challenge: string, i: number) => (
+              </h3>
+              <ul className="text-slate-600 text-sm leading-relaxed list-disc pl-5 space-y-2 font-light">
+                {project.challenges.map((challenge, i) => (
                   <li key={i}>{challenge}</li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Technology Stack */}
-        <motion.div
-          className={containerStyle}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-        >
-          <h1 className={headerStyling}>Technology Stack</h1>
-          <hr className="text-[#007bff] w-full mb-4" />
-          <motion.div
-            className="px-5 py-3 grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-10 m-auto sm:grid-cols-2"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: {},
-              visible: {
-                transition: { staggerChildren: 0.1 },
-              },
-            }}
-          >
+        <div className="max-w-3xl w-full text-left space-y-4">
+          <h2 className="text-2xl font-bold font-sans text-slate-900">
+            Technology Stack
+          </h2>
+          <hr className="border-slate-200 w-full" />
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {project.technologyStack.map((tech) => (
-              <motion.div
-                key={tech.tech}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-              >
-                <Icons icon={tech.icon} tech={tech.tech} />
-              </motion.div>
+              <Icons key={tech.tech} icon={tech.icon} tech={tech.tech} />
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        {/* Contact Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-        >
+        <div className="mt-4">
           <Button onClick={() => handleClick("/contactme")}>Contact Me</Button>
-        </motion.div>
+        </div>
 
-        <Footer position="fixed" />
+        <Footer />
       </div>
-    </motion.div>
+    </>
   );
 }
 

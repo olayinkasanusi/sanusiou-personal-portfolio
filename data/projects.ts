@@ -23,276 +23,137 @@ export interface Project {
   technologyStack: Technology[];
   links: LinkData;
   slidesData: SlideData[];
-  color?: string;
-  disabled?: string;
-  login?: {
-    gmail: string;
-    password?: string;
-  };
 }
 
 export const projects: Project[] = [
   {
-    name: "DGold Luxury Boutique",
+    name: "Anchor Yield",
     shortSummary:
-      "A high-end digital storefront for a luxury boutique specializing in 18k/21k gold jewelry, Abayas, Shoes and couture. Features a sophisticated dual-checkout system via WhatsApp and Email, real-time inventory management, and a high-fidelity minimalist design.",
+      "A high-end FinTech Investment Platform focused on complex dashboard data synchronization, live pricing feeds, and secure transaction states.",
     projectOverview:
-      "dGold is a full-stack e-commerce solution built to provide a bespoke shopping experience. It moves away from traditional automated checkouts in favor of a personalized inquiry system, allowing customers to finalize luxury purchases via direct communication. The app features a custom administrative dashboard for real-time inventory updates, a dynamic cart with karat and weight tracking, and a system-wide dark/light mode engine tailored for a high-end aesthetic.",
+      "Anchor Yield provides institutional-grade yield metrics and portfolio statistics. The frontend architecture manages fast-polling client state synchronization to deliver zero-latency rendering of transaction updates and financial yield projections. Built with React and TypeScript, it utilizes custom hooks for polling strategies, secure auth flows, and advanced table sorting and filtering algorithms.",
     goals: [
-      "Implement a personalized 'Luxury Inquiry' checkout flow via WhatsApp and Email APIs.",
-      "Develop a secure, real-time administrative backend for managing high-value inventory using Supabase.",
-      "Achieve a pixel-perfect, minimalist UI/UX that emphasizes product photography and brand elegance.",
+      "Implement real-time dashboard data synchronization using structured state management and clean polling mechanisms.",
+      "Develop secure user transaction state handling with optimistic UI updates.",
+      "Build complex relational data visualizations using lightweight, responsive charting components."
     ],
     challenges: [
-      "Architecting a dynamic pricing and cart system that handles complex attributes like gold karat, weight in grams, and item sizing simultaneously.",
-      "Optimizing global state management to ensure the cart remains synchronized across multiple product categories and browser sessions.",
-      "Building a high-performance image delivery system to maintain fast load times despite using high-resolution jewelry photography.",
+      "Managing high-frequency data updates without causing unnecessary DOM re-renders or performance lags.",
+      "Maintaining state consistency across multi-page client checkouts and asset balance widgets."
     ],
     technologyStack: [
+      { icon: "/typescript.svg", tech: "TypeScript" },
       { icon: "/react.svg", tech: "React.js" },
-      { icon: "/tailwind.svg", tech: "Tailwindcss" },
-      { icon: "/supabase.svg", tech: "Supabase" },
-      { icon: "/vite.svg", tech: "Vite" },
-      { icon: "/vercel.svg", tech: "Vercel" },
+      { icon: "/javascript.svg", tech: "JavaScript" },
+      { icon: "/supabase.svg", tech: "Supabase" }
     ],
     links: {
-      liveDemo: "https://dgold-sooty.vercel.app/",
-      github: "https://github.com/olayinkasanusi/dgold",
+      liveDemo: "https://anchor-yield.vercel.app/",
+      github: "https://github.com/olayinkasanusi/anchor-yield"
     },
     slidesData: [
-      {
-        id: 0,
-        title: "Boutique Hero-section",
-        img: "/dgold-1.png",
-      },
-      {
-        id: 1,
-        title: "Boutique Home Page",
-        img: "/dgold-2.png",
-      },
-      {
-        id: 2,
-        title: "Luxury Collection Grid",
-        img: "/dgold-3.png",
-      },
-      {
-        id: 3,
-        title: "Personalized Cart",
-        img: "/dgold-4.png",
-      },
-      {
-        id: 4,
-        title: "Admin Inventory Manager",
-        img: "/dgold-5.png",
-      },
-    ],
+      { id: 0, title: "Overview Dashboard", img: "/anchor-1.png" },
+      { id: 1, title: "Yield Performance Tracker", img: "/anchor-2.png" },
+      { id: 2, title: "Transaction Ledger", img: "/anchor-3.png" },
+      { id: 3, title: "Security Settings Panel", img: "/anchor-4.png" }
+    ]
   },
   {
-    name: "The Wild Oasis App",
+    name: "Goal Mania",
     shortSummary:
-      "A modern, highly scalable internal Administration App for the hotel management, for checking in, out guests bookings, adding available cabins and so on....",
+      "An international e-commerce and sports analytics hub engineered for a remote Indonesian client, merging rapid live-score polling with a custom apparel configurations engine.",
     projectOverview:
-      "A full Stack App developed for the convenience of the hotel managements, where the bookings can be edited, the settings can be edited, featuring dark and light mode for user experience..",
-    login: {
-      gmail: "sanusiolayinka7@gmail.com",
-      password: "Olayinka123",
-    },
+      "Goal Mania handles transactional e-commerce pipelines alongside high-frequency data integrations. Stepping into an ongoing codebase, the frontend architecture was optimized to cleanly handle rapid API data synchronization for real-time sports metrics while orchestrating a heavy multi-step custom shirt configuration panel with robust local cart persistence.",
     goals: [
-      "Having a dashboard that gives the general overview of the hotel accommoddations",
-      "Reducing bereaucacy in the hotel by a large margin",
-      "Making sure that the data and uptime of the hotel are updated instantly and immediately",
+      "Optimize real-time API data streams to keep dynamic sports scores synchronized with the client view without introducing layout lag.",
+      "Build a fluid, highly responsive custom jersey ordering workflow with dynamic pricing calculations based on user-defined configurations.",
+      "Refactor existing monolithic components into a clean, decoupled architecture to vastly improve page speed for mobile users globally."
     ],
     challenges: [
-      "I encountered a difficult challange in the filtering/sorting methods of the app",
-      "Implementing a secure login, where only the login of the authenticator can add other users",
-      "Optimizing image delivery and rendering for Cabin details",
+      "Managing aggressive polling frequencies and caching configurations to prevent API rate-limiting or view jitter under heavy loads.",
+      "Synchronizing international currency matrices and dynamic inventory allocations securely during complex client checkout workflows."
     ],
     technologyStack: [
-      { icon: `/react.svg`, tech: "React.js" },
-      { icon: "/tailwind.svg", tech: "Tailwindcss" },
-      { icon: "/redux.svg", tech: "Redux" },
+      { icon: "/nodejs.svg", tech: "Node.js" },
+      { icon: "/typescript.svg", tech: "TypeScript" },
       { icon: "/nextjs.svg", tech: "Next.js" },
-      { icon: "/supabase.svg", tech: "Supabase" },
-      { icon: "/vercel.svg", tech: "Vercel" },
+      { icon: "/framer.svg", tech: "Framer Motion" },
+      { icon: "/vercel.svg", tech: "Vercel" }
     ],
     links: {
-      liveDemo: "https://the-wild-oasis-chi-lime.vercel.app/",
-      github: "https://github.com/olayinkasanusi/the-wild-oasis",
+      liveDemo: "https://goal-mania.it/",
+      github: "https://github.com/olayinkasanusi/goal-mania"
     },
     slidesData: [
-      {
-        id: 0,
-        title: "Dashboard Page",
-        img: "/oasis-5.png",
-      },
-      {
-        id: 1,
-        title: "Booking Details",
-        img: "/oasis-1.png",
-      },
-      {
-        id: 2,
-        title: "Cabin Page",
-        img: "/oasis-2.png",
-      },
-      {
-        id: 3,
-        title: "Bookings Page",
-        img: "/oasis-3.png",
-      },
-    ],
+      { id: 0, title: "E-Commerce Front", img: "/goal-1.png" },
+      { id: 1, title: "Jersey Customization Engine", img: "/goal-2.png" },
+      { id: 2, title: "Live Matches Hub", img: "/goal-3.png" },
+      { id: 3, title: "Localized Order Gateway", img: "/goal-4.png" }
+    ]
   },
   {
-    name: "Fast React Pizza",
+    name: "dGold Luxury Boutique",
     shortSummary:
-      "Fast React Pizza is a single-page application (SPA) designed to simulate the core flow of a modern online food ordering system. It features a dynamic menu display, interactive cart management, and a simplified checkout process where users can place orders for delivery. The project focuses on demonstrating efficient front-end state management and robust client-side routing.",
+      "A high-fidelity premium digital storefront processing complex multi-attribute inventory matrices (karats/weights) and secure real-time administrative state mutations.",
     projectOverview:
-      "This is a front-end focused application that allows users to browse a list of available pizzas (the menu), add items to a persistent cart, adjust quantities, and submit an order via a checkout form. The application utilizes a data source with Supabase to handle menu items and simulates the delivery process. Key features include client-side routing for navigating between the menu and the cart, and optimized state management to handle item addition, quantity updates, and calculating the final order total.",
+      "dGold Boutique translates an exclusive, high-ticket luxury jewelry retail model into a premium editorial web space. Built from the ground up, the platform features dynamic, client-side pricing calculators tied to real-time weight parameters, an inquiry-based checkout funnel, and a robust administrative control center.",
     goals: [
-      "To effectively manage application-wide state (the shopping cart) across multiple components without prop drilling, ensuring instantaneous updates when items are added or quantities are changed using Redux",
-      "Implement Robust Client-Side Routing",
-      "Simulate E-commerce Logic",
+      "Architect an asynchronous cart mechanism that computes live item pricing dynamically based on karat categories and raw gold weights.",
+      "Develop a secure, role-restricted admin management panel to push instant schema mutations, updates, and stock inventory controls.",
+      "Create a custom high-touch inquiry pipeline using direct message and automated communication API endpoints for premium checkout transactions."
     ],
     challenges: [
-      "The main challenge was ensuring the cart state was globally accessible and synchronized immediately when a user added an item from the menu, viewed the cart, or navigated away and returned.",
-      "Effectively managing the asynchronous fetching of the menu data from the API and correctly handling loading and error states to prevent a broken user interface during network delays",
-    ],
-    technologyStack: [
-      { icon: `/react.svg`, tech: "React.js" },
-      { icon: "/tailwind.svg", tech: "Tailwindcss" },
-      { icon: "/redux.svg", tech: "Redux" },
-      { icon: "/supabase.svg", tech: "Supabase" },
-      { icon: "/vercel.svg", tech: "Vercel" },
-    ],
-    links: {
-      liveDemo: "https://fast-react-pizza-mu-ashen.vercel.app/",
-      github: "https://github.com/olayinkasanusi/fast-react-pizza",
-    },
-    slidesData: [
-      {
-        id: 0,
-        title: "Home Page",
-        img: "/fast-1.png",
-      },
-      {
-        id: 1,
-        title: "Menu Page",
-        img: "/fast-2.png",
-      },
-      {
-        id: 2,
-        title: "Cart Page",
-        img: "/fast-3.png",
-      },
-      {
-        id: 3,
-        title: "Order Form",
-        img: "/fast-4.png",
-      },
-      {
-        id: 4,
-        title: "Order page",
-        img: "/fast-5.png",
-      },
-    ],
-    color: "#011831",
-  },
-  {
-    name: "The WorldWise App",
-    shortSummary:
-      "A DEMO traveller app for noting the cities visited and writing a summary about those cities",
-    projectOverview:
-      "WorldWise is a single-page application (SPA) designed to serve as a digital travel journal and interactive world map. The core functionality allows users to visually track the cities they have visited by marking them on a global map. For each city recorded, the user can create a corresponding journal entry, documenting their experiences, memories, and insights. This project uses a simulated authentication environment (fake login) to demonstrate user session management and ensure a personalized experience where users can privately manage their global travel history",
-    goals: [
-      "Enable Intuitive Geospatial Tracking.",
-      "Facilitate Seamless Journaling Integration.",
-      "Achieve a Fluid User Experience (UX).",
-    ],
-    challenges: [
-      "Integrating and Managing Map State.",
-      "Handling Asynchronous Data and Loading States",
-      "Designing the Data Structure.",
-    ],
-    technologyStack: [
-      { icon: `/react.svg`, tech: "React.js" },
-      { icon: "/redux.svg", tech: "Redux" },
-      { icon: "/supabase.svg", tech: "Supabase" },
-      { icon: "/vercel.svg", tech: "Vercel" },
-    ],
-    links: {
-      liveDemo: "https://worldwise-cyan-eta.vercel.app/",
-      github: "https://github.com/olayinkasanusi/worldwise",
-    },
-    disabled: "disabled",
-    slidesData: [
-      {
-        id: 0,
-        title: "Home Page",
-        img: "/worldwise-1.png",
-      },
-      {
-        id: 1,
-        title: "Fake Login Page",
-        img: "/worldwise-2.png",
-      },
-      {
-        id: 2,
-        title: "Map View",
-        img: "/worldwise-3.png",
-      },
-      {
-        id: 3,
-        title: "About Page",
-        img: "/worldwise-4.png",
-      },
-    ],
-  },
-  {
-    name: "AutoForce",
-    shortSummary:
-      "autoForce is a high-performance single-page application (SPA) designed as a premium digital storefront for a modern auto mechanic shop. It features a sophisticated dark/light mode engine, smooth scroll-triggered animations, and a responsive layout built to convert visitors into appointment bookings.",
-    projectOverview:
-      "This project modernizes the traditional mechanic shop website by prioritizing user experience and visual impact. The application is built as a cohesive single-page experience that guides the user through a narrative: from an immersive hero section to detailed service offerings, social proof via testimonials, and a final call to action. It leverages a component-based architecture to handle complex UI states, including a custom mobile navigation system and a theme toggle that persists across the session. The design focuses heavily on visual hierarchy and accessibility, ensuring critical information is legible in both high-contrast light and immersive dark themes.",
-    goals: [
-      "To implement a robust, system-aware Dark Mode toggle using Tailwind CSS classes that dynamically adjusts the entire color palette (backgrounds, text, borders) without page reloads.",
-      "To create a custom 'Reveal' animation system using the Intersection Observer API, allowing content to fade and slide in gracefully as the user scrolls.",
-      "To build a fully responsive navigation system that transitions from a transparent floating header to a solid, sticky navbar upon scrolling for better usability.",
-    ],
-    challenges: [
-      "Designing the Hero section to be visually striking with full-width background imagery while maintaining strict accessibility standards and text readability across both light and dark variants.",
-      "Managing the state and synchronization of the custom scroll animations to ensure they trigger smoothly on different device viewports without causing layout shifts or performance bottlenecks.",
+      "Orchestrating nested client-side state hooks across deep product variants without introducing layout shifts or component rendering delays.",
+      "Balancing high-resolution catalog media assets with aggressive loading strategies to guarantee immediate visual page responsiveness."
     ],
     technologyStack: [
       { icon: "/react.svg", tech: "React.js" },
-      { icon: "/tailwind.svg", tech: "Tailwindcss" },
-      { icon: "/vite.svg", tech: "Vite" },
-      { icon: "/vercel.svg", tech: "Vercel" },
+      { icon: "/javascript.svg", tech: "JavaScript" },
+      { icon: "/supabase.svg", tech: "Supabase" },
+      { icon: "/vercel.svg", tech: "Vercel" }
     ],
     links: {
-      liveDemo: "https://auto-force.vercel.app/",
-      github: "https://github.com/olayinkasanusi/autoForce",
+      liveDemo: "https://dgold.shop/",
+      github: "https://github.com/olayinkasanusi/dgold"
     },
     slidesData: [
-      {
-        id: 0,
-        title: "Home Page",
-        img: "/autoforce-1.png",
-      },
-      {
-        id: 1,
-        title: "Sales Page",
-        img: "/autoforce-2.png",
-      },
-      {
-        id: 2,
-        title: "Contact us",
-        img: "/autoforce-3.png",
-      },
-      {
-        id: 3,
-        title: "Testimonials",
-        img: "/autoforce-4.png",
-      },
-    ],
+      { id: 0, title: "Boutique Showcase Hero", img: "/dgold-1.png" },
+      { id: 1, title: "Curated Jewelry Catalog", img: "/dgold-2.png" },
+      { id: 2, title: "Dynamic Product Configurator", img: "/dgold-3.png" },
+      { id: 3, title: "White-Glove Inquiry Interface", img: "/dgold-4.png" },
+      { id: 4, title: "Secure Inventory Control Room", img: "/dgold-5.png" }
+    ]
   },
+  {
+    name: "Opulent Pages",
+    shortSummary:
+      "An elegant digital publishing platform prioritizing premium typography layout systems, strict WCAG 2.1 accessibility compliance, and hyper-optimized asset delivery pipelines.",
+    projectOverview:
+      "Opulent Pages provides an uncompromised, accessible reading interface for showcase portfolios. Built to modern web performance standards, it features strict semantic HTML layouts, advanced screen-reader optimizations, and fluid typography rules that conform natively across any viewport or responsive display ratio.",
+    goals: [
+      "Construct a highly detailed typographic grid system that automatically scales and preserves layout proportions on any device orientation.",
+      "Achieve near-perfect ratings on core Web Vitals and Lighthouse audits by enforcing strict lazy loading and payload optimization.",
+      "Implement exhaustive keyboard navigation maps and ARIA attributes to completely conform with WCAG 2.1 AA accessibility guidelines."
+    ],
+    challenges: [
+      "Delivering image-heavy literary portfolio lookbooks without introducing layout instability or rising Cumulative Layout Shift (CLS) metrics.",
+      "Enforcing strict compliance for assistive accessibility technologies while animating complex transition timelines between layout pages."
+    ],
+    technologyStack: [
+      { icon: "/react.svg", tech: "React.js" },
+      { icon: "/javascript.svg", tech: "JavaScript" },
+      { icon: "/framer.svg", tech: "Framer Motion" },
+      { icon: "/vercel.svg", tech: "Vercel" }
+    ],
+    links: {
+      liveDemo: "https://opulentpages.ca/",
+      github: "https://github.com/olayinkasanusi/td-hilderley"
+    },
+    slidesData: [
+      { id: 0, title: "Editorial Portfolio Landing", img: "/opulent-1.png" },
+      { id: 1, title: "Responsive Article Canvas", img: "/opulent-2.png" },
+      { id: 2, title: "Published Works Explorer", img: "/opulent-3.png" },
+      { id: 3, title: "Accessible Typography Matrix", img: "/opulent-4.png" }
+    ]
+  }
 ];

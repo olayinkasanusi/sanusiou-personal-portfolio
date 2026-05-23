@@ -1,19 +1,17 @@
+import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import Button from "../ui/Button";
 import Footer from "../ui/Footer";
 import NavBar from "../ui/NavBar";
 import Icons from "../ui/Icons";
 import CareerPath from "../ui/CareerPath";
 import useNavigation from "../utils/useNavigation";
-import TypeOnce from "../ui/TypeOnce";
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 
 const technologies = [
   { icon: "/html.svg", tech: "HTML" },
   { icon: "/javascript.svg", tech: "Javascript" },
   { icon: "/css.svg", tech: "CSS" },
-  { icon: `/react.svg`, tech: "React.js" },
+  { icon: "/react.svg", tech: "React.js" },
   { icon: "/tailwind.svg", tech: "Tailwindcss" },
   { icon: "/redux.svg", tech: "Redux" },
   { icon: "/nextjs.svg", tech: "Next.js" },
@@ -26,28 +24,16 @@ const technologies = [
 
 function AboutMe() {
   const handleClick = useNavigation();
-  const headerStyling =
-    "text-left text-2xl text-white font-montserrat font-semibold mb-4";
-
-  const paragraphStyle = "text-[#a3a3a3] leading-8 font-raleway font-light";
-
-  const containerStyle =
-    "max-w-3xl pb-8 w-full flex flex-col justify-between items-start border-b border-gray-500";
 
   return (
     <>
-      {/* SEO Optimization: Page-Specific Metadata (Assuming react-helmet-async is installed and configured) */}
       <Helmet>
-        <title>
-          About Sanusi O.U. | Frontend Developer Skills & Certifications
-        </title>
+        <title>About Sanusi Olayinka Uthman | Engineering Mindset</title>
         <meta
           name="description"
-          content="Meet Sanusi O.U., a freelance Frontend Developer specializing in high-performance web applications using React, Next.js, and modern CSS frameworks. Explore core tech stack and certifications."
+          content="Deep dive into Sanusi Olayinka Uthman's architectural principles, frontend state handle strategy, integrations, and lifecycle ownership."
         />
-        <link rel="canonical" href="https://www.yourdomain.com/about" />
-
-        {/* JSON-LD Schema for the freeCodeCamp Certification */}
+        <link rel="canonical" href="https://sanusiou.pro/about" />
         <script type="application/ld+json">
           {`
             {
@@ -62,7 +48,7 @@ function AboutMe() {
               },
               "awardedTo": {
                 "@type": "Person",
-                "name": "Sanusi O.U."
+                "name": "Sanusi Olayinka Uthman"
               }
             }
           `}
@@ -70,184 +56,132 @@ function AboutMe() {
       </Helmet>
 
       <motion.div
-        className="bg-[#0A192F] w-full flex items-center flex-col justify-between gap-10 px-5 overflow-hidden"
+        className="bg-white w-full flex items-center flex-col justify-between px-6 py-12 gap-16 overflow-hidden engineering-grid min-h-screen"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <NavBar />
+        <NavBar position="relative" />
 
-        {/* PROFILE SECTION */}
         <motion.div
-          className="max-w-3xl flex items-center md:flex-row flex-col justify-between gap-12 border-b border-gray-500 pb-8 mt-20"
+          className="max-w-4xl w-full flex items-center md:flex-row flex-col justify-between gap-12 border-b border-slate-200 pb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
           <motion.img
             src="/profile_picture.jpg"
-            alt="Sanusi Olayinka professional profile picture as a frontend developer"
-            className="rounded-full w-50 float-left border-white border"
+            alt="Sanusi Olayinka Uthman profile"
+            className="rounded-full w-48 h-48 object-cover border-2 border-slate-200 shadow-sm"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           />
 
-          <motion.div
-            className="text-left flex flex-col gap-5"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { staggerChildren: 0.2 },
-              },
-            }}
-          >
-            {/* SEO Optimization: Use h1 for the main page topic. */}
-            <motion.h1
-              className="font-montserrat text-3xl text-white font-bold"
-              variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0 },
-              }}
-            >
-              <TypeOnce text=" Hello, I am Sanusi Olayinka" initDelay={500} />
-            </motion.h1>
-
-            <motion.p
-              className={paragraphStyle}
-              variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0 },
-              }}
-            >
-              <TypeOnce
-                text={`
-              I am a freelance Frontend web developer,
-              constantly honing my skills and bringing digital ideas to life
-              through coding, I specialize in creating modern Web Applications
-              that are both performant and delightful to use. I focus on React, Next.js, and building user-centric interfaces.`}
-                initDelay={2500}
-                typingSpeed={50}
-              />
-            </motion.p>
-
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 15 },
-                visible: { opacity: 1, y: 0 },
-              }}
-            >
+          <div className="text-left flex flex-col gap-4 max-w-xl">
+            <h1 className="font-sans text-3xl font-extrabold text-slate-900">
+              Sanusi Olayinka Uthman
+            </h1>
+            <p className="font-sans text-base text-slate-600 leading-relaxed font-light">
+              I am a Frontend Engineer dedicated to translating complex technical
+              challenges into clean, responsive user interfaces. Blending an
+              engineering education with frontend architecture, I focus on
+              performance, structured state flow, and seamless API integrations.
+            </p>
+            <div>
               <Button onClick={() => handleClick("/projects")}>
-                View My Work
+                View Engineering Work
               </Button>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </motion.div>
 
-        {/* TECHNOLOGIES */}
-        <motion.div
-          className={containerStyle}
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* SEO Optimization: Use h2 for a major section. */}
-          <h2 className={headerStyling}>Core Technologies</h2>
+        <div className="max-w-4xl w-full">
+          <h2 className="text-2xl font-bold font-sans text-slate-900 mb-8 text-left">
+            Operational Priorities
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div className="bg-slate-50/80 border border-slate-200/80 rounded-xl p-6 shadow-xs hover:border-blue-500 hover:shadow-md transition-all duration-300">
+              <h3 className="font-sans font-bold text-lg text-slate-900 mb-3">
+                Frontend Architecture & State
+              </h3>
+              <p className="font-sans text-sm text-slate-600 leading-relaxed font-light">
+                Deep focus on React, Next.js, and TypeScript, utilizing modular
+                component architectures and robust custom state handling (like
+                Zustand) to handle dynamic data.
+              </p>
+            </div>
+            <div className="bg-slate-50/80 border border-slate-200/80 rounded-xl p-6 shadow-xs hover:border-blue-500 hover:shadow-md transition-all duration-300">
+              <h3 className="font-sans font-bold text-lg text-slate-900 mb-3">
+                Complex System Integrations
+              </h3>
+              <p className="font-sans text-sm text-slate-600 leading-relaxed font-light">
+                Proven experience consuming RESTful financial and administrative
+                data streams, dealing with fast-polling API data synchronization,
+                and managing relational databases via Supabase.
+              </p>
+            </div>
+            <div className="bg-slate-50/80 border border-slate-200/80 rounded-xl p-6 shadow-xs hover:border-blue-500 hover:shadow-md transition-all duration-300">
+              <h3 className="font-sans font-bold text-lg text-slate-900 mb-3">
+                Ownership Lifecycle
+              </h3>
+              <p className="font-sans text-sm text-slate-600 leading-relaxed font-light">
+                Managing feature delivery end-to-end—from initial high-fidelity
+                Figma design reviews and UX accessibility audits down to
+                production deployment and speed optimization.
+              </p>
+            </div>
+          </div>
+        </div>
 
-          <motion.div
-            className="px-2 py-3 grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-10 m-auto sm:grid-cols-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: {},
-              visible: {
-                transition: { staggerChildren: 0.1 },
-              },
-            }}
-          >
+        <div className="max-w-4xl w-full border-t border-slate-200 pt-12 text-left">
+          <h2 className="text-2xl font-bold font-sans text-slate-900 mb-6">
+            Core Technologies
+          </h2>
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {technologies.map((tech) => (
-              <motion.div
-                key={tech.tech}
-                variants={{
-                  hidden: { opacity: 0, y: 12 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-              >
-                <Icons icon={tech.icon} tech={tech.tech} />
-              </motion.div>
+              <Icons key={tech.tech} icon={tech.icon} tech={tech.tech} />
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        {/* ROADMAP */}
-        <motion.div
-          className={containerStyle}
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* SEO Optimization: Use h2 for a major section. */}
-          <h2 className={headerStyling}>My Learning RoadMap</h2>
+        <div className="max-w-4xl w-full border-t border-slate-200 pt-12 text-left">
+          <h2 className="text-2xl font-bold font-sans text-slate-900 mb-6">
+            Learning Roadmap
+          </h2>
           <CareerPath />
-        </motion.div>
+        </div>
 
-        {/* CERTIFICATIONS */}
-        <motion.div
-          className={`${containerStyle} border-b-0 mb-30`}
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* SEO Optimization: Use h2 for a major section. */}
-          <h2 className={headerStyling}>Certifications</h2>
-
-          <motion.div
-            className="flex justify-between items-center gap-4 flex-col md:flex-row-reverse"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <motion.img
-              className="w-80"
+        <div className="max-w-4xl w-full border-t border-slate-200 pt-12 pb-16 text-left">
+          <h2 className="text-2xl font-bold font-sans text-slate-900 mb-8">
+            Certifications
+          </h2>
+          <div className="flex flex-col md:flex-row items-center gap-8 bg-slate-50/50 border border-slate-200/80 p-6 rounded-xl">
+            <img
               src="/freecodecamp-certificate.png"
-              alt="FreeCodeCamp Responsive Web Design Certification awarded to Sanusi O.U."
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
+              alt="FreeCodeCamp Responsive Web Design Certification"
+              className="w-full md:w-72 rounded-lg border border-slate-200 shadow-xs"
             />
-
-            <motion.p
-              className={`${paragraphStyle} text-gray-400`}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Completed the freeCodeCamp Responsive Web Design course in late
-              2023. Built hands-on projects with **HTML5**, **CSS3**, Flexbox
-              and Grid and focused on mobile-first, accessible layouts. I enjoy
-              turning designs into usable experiences, iterating from feedback
-              and solving layout challenges. Ready to apply these front-end
-              skills on real projects and in collaborative teams.{" "}
+            <div className="space-y-4">
+              <p className="font-sans text-slate-600 text-sm leading-relaxed font-light">
+                Completed the freeCodeCamp Responsive Web Design course in late
+                2023. Built hands-on projects with HTML5, CSS3, Flexbox, and Grid,
+                focusing on mobile-first, accessible layouts. Ready to apply these
+                front-end skills on real projects and in collaborative teams.
+              </p>
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://www.freecodecamp.org/certification/sanusi-olayinka7/responsive-web-design"
-                className="underline font-bold text-white"
+                className="inline-block text-blue-600 hover:text-blue-700 font-bold font-sans text-sm underline"
               >
                 Check Out the Certification
               </a>
-            </motion.p>
-          </motion.div>
-        </motion.div>
+            </div>
+          </div>
+        </div>
 
-        <Footer position="fixed" />
+        <Footer />
       </motion.div>
     </>
   );
