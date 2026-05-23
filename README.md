@@ -1,18 +1,67 @@
-# React + Vite
+# Sanusi Olayinka Uthman — Professional Frontend Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository hosts the professional engineering portfolio of **Sanusi Olayinka Uthman**, a Frontend Software Architect specializing in React, Next.js, and TypeScript. 
 
-Currently, two official plugins are available:
+Designed as a high-end technical developer catalog, this project acts as a live demonstration of modern component design, rigid responsive styling grids, strict accessibility standards, and performant asset optimizations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 Purpose of the Project
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+The primary purpose of this portfolio is to transcend traditional, static resume layouts and establish direct technical credibility. It serves as:
+1. **An Interactive Developer Sandbox**: Introducing mock shell diagnostics terminals and responsive sliding grid animations that display programming fluency natively.
+2. **A High-Performance Frontend Benchmark**: Demonstrating speed optimizations, rapid client-side search engines, zero-lag state handling, and layout-glow glassmorphic design languages.
+3. **An Engineering Case-Study Hub**: Detailing technical solutions, system integration workflows, database mutations via Supabase, and end-to-end feature ownership.
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 💎 Core Features & UX Systems
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Developer Bash Diagnostics Console (`/about`)
+* **Terminal Simulation**: An interactive Unix terminal console that mimics typing animations to output technical metadata (`profile.json`).
+* **Syntax Highlighter**: Built-in JSON token highlighter to render typescript interfaces, arrays, numbers, and strings with specific IDE themes.
+
+### 2. Dual-Mode Responsive Timeline (`/about`)
+* **SVG Canvas (Desktop $\ge$ 768px)**: Draws an interactive bezier curved path with responsive nodes, years, and title indicators that animate on intersection.
+* **Vertical Timeline (Mobile < 768px)**: Adapts seamlessly to mobile viewports to prevent horizontal overflow. Replaces the SVG with vertical cards featuring tech badges (`Code`, `Award`, `FileCode`, `Layers`) and scroll fades.
+
+### 3. Compact Skill Tabs Panel (`/about`)
+* **Interactive Filtering**: Groups 14 technology cards under three distinct categories (Logic & Arch, State & Data, Tooling) to compress vertical space on mobile devices by **66%**.
+* **Spring Transitions**: Features active sliding background indicators driven by Framer Motion's `layoutId`.
+
+### 4. Senior Metrics Dashboard (`/projects`)
+* **Dynamic Search & Filtering**: A local real-time search engine with animated categories powered by Framer Motion's layout animations.
+* **Card Glare & Modals**: Reflective glassmorphic cards that support custom glare sheet reflections on mouse hovers and quick-view detail panels.
+
+---
+
+## 🛠️ Technical Stack & Tooling
+
+* **Core Runtime**: React 19 (Functional Components, Custom Hooks) & TypeScript (Strict Types).
+* **Build Architecture**: Vite Bundler (Hot Module Replacement, Code-Splitting).
+* **Styling System**: Vanilla CSS & Tailwind CSS v4 (Custom Properties, Utility Classes).
+* **Animations Engine**: Framer Motion (Layout Springs, Viewport Staggers, Exit Animations).
+* **Routing Strategy**: React Router v7 (Client-Side Navigation, Route Transitions).
+
+---
+
+## 🚀 Local Development Guide
+
+### 1. Installation
+Clone this repository to your workspace and install the Node dependencies:
+```bash
+npm install
+```
+
+### 2. Launching Development Server
+Start the local Vite development server with Hot Module Replacement active:
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser to inspect the application.
+
+### 3. Production Compilation
+Verify compilation correctness and bundle the application into an optimized `/dist` folder for hosting:
+```bash
+npm run build
+```

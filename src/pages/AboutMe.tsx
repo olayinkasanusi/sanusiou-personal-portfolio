@@ -180,6 +180,7 @@ const fadeUp: Variants = {
 
 function AboutMe() {
   const handleClick = useNavigation();
+  const [activeTechTab, setActiveTechTab] = useState(0);
 
   return (
     <>
@@ -342,14 +343,16 @@ function AboutMe() {
             <span className="w-1 h-6 bg-blue-600 rounded-full" />
             Core Technology Taxonomy
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+          {/* Desktop & Laptop Wide Viewports */}
+          <div className="hidden lg:grid grid-cols-3 gap-8">
             {techCategories.map((category, catIdx) => (
               <div key={category.title} className="space-y-4">
                 <h3 className="text-xs font-extrabold text-slate-400 uppercase tracking-widest font-mono">
                   {catIdx + 1}. {category.title}
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
-                  {category.items.map((item, itemIdx) => (
+                <div className="flex flex-col gap-3">
+                  {category.items.map((item) => (
                     <div 
                       key={item.tech} 
                       className="bg-white/30 backdrop-blur-md border border-slate-200/50 p-4 rounded-xl flex items-center justify-between hover:bg-white/55 hover:border-blue-500/25 hover:shadow-xs transition-all duration-300 hover:scale-[1.02] cursor-default"
@@ -366,6 +369,60 @@ function AboutMe() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Mobile & Tablet Interactive Viewports */}
+          <div className="block lg:hidden w-full space-y-6">
+            {/* Sliding glass pill navigation */}
+            <div className="flex p-1 bg-slate-100/80 backdrop-blur-md rounded-2xl border border-slate-200/50 relative overflow-hidden">
+              {techCategories.map((category, idx) => (
+                <button
+                  key={category.title}
+                  onClick={() => setActiveTechTab(idx)}
+                  className={`relative flex-1 py-2.5 text-center text-xs font-bold tracking-wide font-sans rounded-xl transition-colors duration-300 focus:outline-hidden ${
+                    activeTechTab === idx ? "text-blue-600" : "text-slate-500 hover:text-slate-800"
+                  }`}
+                >
+                  {activeTechTab === idx && (
+                    <motion.div
+                      layoutId="activeTechTabBg"
+                      className="absolute inset-0 bg-white rounded-xl shadow-xs border border-slate-200/40"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10 block truncate px-1">
+                    {idx === 0 ? "Logic & Arch" : idx === 1 ? "State & Data" : "Tooling"}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Dynamic category grids */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTechTab}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+              >
+                {techCategories[activeTechTab].items.map((item) => (
+                  <div
+                    key={item.tech}
+                    className="bg-white/30 backdrop-blur-md border border-slate-200/50 p-4 rounded-xl flex items-center justify-between hover:bg-white/55 hover:border-blue-500/25 hover:shadow-xs transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                      <span className="text-xs font-bold text-slate-800 font-sans">{item.tech}</span>
+                    </div>
+                    <span className="text-[9px] font-extrabold text-blue-600 bg-blue-50 border border-blue-500/10 px-2 py-0.5 rounded uppercase tracking-wide font-sans shrink-0">
+                      {item.level.split(" / ")[0]}
+                    </span>
+                  </div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
 

@@ -104,7 +104,7 @@ function Projects() {
         </div>
 
         {/* 1. Senior Metrics Dashboard */}
-        <div className="max-w-5xl w-full grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="max-w-5xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -226,7 +226,7 @@ function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4 }}
-                className="group relative cursor-pointer backdrop-blur-md bg-white/40 border border-slate-200/50 rounded-2xl overflow-hidden shadow-[0_8px_32px_0_rgba(15,23,42,0.02)] hover:shadow-[0_12px_40px_0_rgba(59,130,246,0.1)] hover:border-blue-500/30 hover:bg-white/60 transition-all duration-500 flex flex-col justify-between h-[480px]"
+                className="group relative cursor-pointer backdrop-blur-md bg-white/40 border border-slate-200/50 rounded-2xl overflow-hidden shadow-[0_8px_32px_0_rgba(15,23,42,0.02)] hover:shadow-[0_12px_40px_0_rgba(59,130,246,0.1)] hover:border-blue-500/30 hover:bg-white/60 transition-all duration-500 flex flex-col justify-between min-h-[400px] sm:min-h-[480px]"
                 onClick={() => navigate(`/projects/${project.originalIndex}`)}
               >
                 {/* Glare sheen overlay on hover */}
@@ -274,7 +274,7 @@ function Projects() {
                   </div>
 
                   {/* Actions & technologies */}
-                  <div className="flex items-center justify-between gap-3">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                     {/* Tech list */}
                     <div className="flex gap-1.5 overflow-hidden">
                       {project.technologyStack.slice(0, 3).map((tech: Technology) => (

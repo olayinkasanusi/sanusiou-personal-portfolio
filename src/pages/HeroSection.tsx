@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight, Layers, GitMerge, ShieldCheck } from "lucide-react";
 import useNavigation from "../utils/useNavigation";
 import NavBar from "../ui/NavBar";
 import Footer from "../ui/Footer";
@@ -10,21 +10,24 @@ const metrics = [
   { value: "4+", label: "Years Frontend Experience" },
   { value: "5+", label: "Production Deployments" },
   { value: "100%", label: "Interface Ownership & Delivery" },
-  { value: "International", label: "Client Collaborations" },
+  { value: "Global", label: "Client Collaborations" },
 ];
 
 const pillars = [
   {
+    icon: Layers,
     title: "Frontend Architecture & State",
     description:
       "Deep focus on React, Next.js, and TypeScript. I build modular component lifecycles with robust client-side state handling using Zustand and Context API to eliminate UI rendering lag and ensure deterministic data flow across complex view hierarchies.",
   },
   {
+    icon: GitMerge,
     title: "Complex System Integrations",
     description:
       "Hands-on experience consuming RESTful data streams, implementing fast-polling API data synchronization, and managing backend mutations and relational databases via Supabase. I ensure that every data layer transitions smoothly on the client side.",
   },
   {
+    icon: ShieldCheck,
     title: "End-to-End Feature Ownership",
     description:
       "Product-minded engineering approach: collaborating across cross-functional teams, translating design systems from Figma into reusable code blocks, and optimizing critical web vitals including CLS, LCP, and performance metrics for production readiness.",
@@ -191,7 +194,7 @@ const HeroSection = () => {
 
         <section className="px-6 py-16 border-t border-slate-100">
           <motion.div
-            className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
+            className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-12"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -204,7 +207,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="glass-card text-left">
-                  <p className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-sans tracking-tight">
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 font-sans tracking-tight break-words">
                     {metric.value}
                   </p>
                   <p className="text-sm text-slate-500 font-sans font-light mt-1 leading-snug">
@@ -248,10 +251,8 @@ const HeroSection = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="group bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-400 hover:shadow-md transition-all duration-300"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
-                    <span className="text-blue-600 font-bold font-sans text-sm">
-                      0{index + 1}
-                    </span>
+                  <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors duration-300">
+                    <pillar.icon size={18} className="text-blue-600" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 font-sans mb-3">
                     {pillar.title}

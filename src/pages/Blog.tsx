@@ -13,7 +13,7 @@ const mockPosts = [
     summary:
       "A deep dive into why utility-first CSS is the future and how Tailwind simplifies modern web development workflows.",
     tags: ["TailwindCSS", "Frontend"],
-    image: "https://source.unsplash.com/600x400/?tailwindcss",
+    image: "https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?w=600&auto=format&fit=crop&q=60",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const mockPosts = [
     summary:
       "Simplifying complex state logic using Redux Toolkit's powerful abstractions and best practices for large-scale React apps.",
     tags: ["Redux", "React"],
-    image: "https://source.unsplash.com/600x400/?redux",
+    image: "https://plus.unsplash.com/premium_photo-1678564741870-d68a69925537?w=500&auto=format&fit=crop&q=60",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const mockPosts = [
     summary:
       "Leveraging Supabase as a backend-as-a-service to quickly deploy full-stack applications without managing infrastructure.",
     tags: ["Next.js", "Supabase"],
-    image: "https://source.unsplash.com/600x400/?supabase",
+    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&auto=format&fit=crop&q=60",
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const mockPosts = [
     summary:
       "Practical strategies to cut down your build times and achieve instant deploys on the Vercel platform.",
     tags: ["Vercel", "DevOps"],
-    image: "https://source.unsplash.com/600x400/?vercel",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop&q=60",
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ const mockPosts = [
     summary:
       "Understanding how promises and async/await syntax drastically improve readability and error handling in asynchronous code.",
     tags: ["JavaScript", "Async"],
-    image: "https://source.unsplash.com/600x400/?javascript",
+    image: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=600&auto=format&fit=crop&q=60",
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ const mockPosts = [
     summary:
       "Exploring less common but highly effective custom hooks and built-in React APIs for solving common component challenges.",
     tags: ["React", "Hooks"],
-    image: "https://source.unsplash.com/600x400/?react",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&auto=format&fit=crop&q=60",
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ const mockPosts = [
     summary:
       "A comparison of data fetching paradigms, focusing on the flexibility and efficiency of GraphQL versus traditional REST endpoints.",
     tags: ["API", "GraphQL"],
-    image: "https://source.unsplash.com/600x400/?graphql",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=60",
   },
   {
     id: 8,
@@ -83,7 +83,7 @@ const mockPosts = [
     summary:
       "How integrating TypeScript can lead to fewer runtime errors, better tooling, and easier maintenance in large JavaScript projects.",
     tags: ["TypeScript", "JavaScript"],
-    image: "https://source.unsplash.com/600x400/?typescript",
+    image: "https://images.unsplash.com/photo-1612425506252-50b73402c822?w=500&auto=format&fit=crop&q=60",
   },
   {
     id: 9,
@@ -93,7 +93,7 @@ const mockPosts = [
     summary:
       "A practical guide to setting up and writing effective unit and integration tests for your React components to ensure reliability.",
     tags: ["Testing", "React"],
-    image: "https://source.unsplash.com/600x400/?testing",
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&auto=format&fit=crop&q=60",
   },
   {
     id: 10,
@@ -103,7 +103,7 @@ const mockPosts = [
     summary:
       "Key techniques for improving page load times, reducing bundle sizes, and achieving perfect Lighthouse scores for better SEO.",
     tags: ["Performance", "DevOps"],
-    image: "https://source.unsplash.com/600x400/?performance",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=60",
   },
 ];
 
