@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight } from "lucide-react
 import useNavigation from "../utils/useNavigation";
 import NavBar from "../ui/NavBar";
 import Footer from "../ui/Footer";
+import Button from "../ui/Button";
 
 const metrics = [
   { value: "4+", label: "Years Frontend Experience" },
@@ -121,10 +122,8 @@ const HeroSection = () => {
         <link rel="canonical" href="https://sanusiou.pro/" />
       </Helmet>
 
-      <div className="relative w-full bg-white engineering-grid overflow-hidden">
-        <div className="sticky top-0 z-50 flex justify-center pt-4">
-          <NavBar position="relative" />
-        </div>
+      <div className="relative w-full bg-white engineering-grid overflow-hidden pt-24 md:pt-32">
+        <NavBar />
 
         <section className="min-h-[90vh] flex flex-col justify-center items-center px-6 py-16">
           <div className="max-w-4xl w-full">
@@ -150,12 +149,14 @@ const HeroSection = () => {
                 smoothly on the client side.
               </p>
               <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <button
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-sm transition-all font-sans text-sm cursor-pointer"
+                <Button
                   onClick={() => handleClick("/projects")}
+                  variant="primary-glass"
+                  size="large"
+                  className="w-auto"
                 >
                   View Selected Engineering Work
-                </button>
+                </Button>
                 <div className="flex items-center gap-4">
                   <a
                     href="https://github.com/olayinkasanusi"
@@ -201,14 +202,15 @@ const HeroSection = () => {
                 key={metric.label}
                 variants={fadeUp}
                 transition={{ duration: 0.5 }}
-                className="text-left"
               >
-                <p className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-sans tracking-tight">
-                  {metric.value}
-                </p>
-                <p className="text-sm text-slate-500 font-sans font-light mt-1 leading-snug">
-                  {metric.label}
-                </p>
+                <div className="glass-card text-left">
+                  <p className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-sans tracking-tight">
+                    {metric.value}
+                  </p>
+                  <p className="text-sm text-slate-500 font-sans font-light mt-1 leading-snug">
+                    {metric.label}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -328,13 +330,15 @@ const HeroSection = () => {
                       Source Code
                       <Github size={12} />
                     </a>
-                    <button
+                    <Button
                       onClick={() => handleClick(`/projects/${work.route}`)}
-                      className="ml-auto flex items-center gap-1 text-xs font-semibold text-slate-400 hover:text-blue-600 font-sans transition-colors cursor-pointer"
+                      variant="secondary-glass"
+                      size="small"
+                      className="ml-auto w-auto px-3.5 py-1.5 rounded-lg text-xs"
                     >
                       Case Study
                       <ArrowUpRight size={12} />
-                    </button>
+                    </Button>
                   </div>
                 </motion.div>
               ))}

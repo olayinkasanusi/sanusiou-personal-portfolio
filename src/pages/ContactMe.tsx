@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import NavBar from "../ui/NavBar";
 import Footer from "../ui/Footer";
+import Button from "../ui/Button";
 import { useMailer } from "../utils/useMailer";
 import MiniSpinner from "../ui/MiniSpinner";
 
@@ -48,7 +49,7 @@ function ContactMe() {
         <link rel="canonical" href="https://sanusiou.pro/contact" />
       </Helmet>
 
-      <div className="bg-white min-h-screen engineering-grid w-full flex flex-col justify-between items-center px-6 py-12 gap-16 overflow-hidden">
+      <div className="bg-white min-h-screen engineering-grid w-full flex flex-col justify-between items-center px-6 pt-28 pb-12 md:pt-36 gap-16 overflow-hidden">
         <NavBar position="relative" />
 
         <div className="w-full max-w-lg mx-auto bg-white border border-slate-200/80 rounded-xl p-8 shadow-md">
@@ -116,19 +117,21 @@ function ContactMe() {
               ></textarea>
             </div>
 
-            <button
+            <Button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg font-sans text-sm transition-all shadow-sm disabled:bg-slate-300 disabled:text-slate-500 cursor-pointer"
+              variant="primary-glass"
+              size="large"
+              className="w-full"
               disabled={isMailing}
             >
               {isMailing ? (
                 <div className="flex justify-center items-center">
-                  <MiniSpinner size={20} color="#ffffff" strokeWidth={3} speed={1} />
+                  <MiniSpinner size={20} color="#2563eb" strokeWidth={3} speed={1} />
                 </div>
               ) : (
                 "Send Message"
               )}
-            </button>
+            </Button>
           </form>
         </div>
 

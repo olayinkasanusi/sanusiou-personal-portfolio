@@ -20,12 +20,13 @@ function ProjectDetails() {
     return (
       <div className="bg-white min-h-screen text-slate-800 flex flex-col justify-center items-center font-sans">
         <h1 className="text-3xl mb-4 font-bold">Project Not Found</h1>
-        <button
+        <Button
           onClick={() => handleClick("/projects")}
-          className="border border-slate-300 px-6 py-2 rounded-lg hover:bg-slate-50 transition-colors"
+          variant="secondary-glass"
+          size="medium"
         >
           Back to Projects
-        </button>
+        </Button>
       </div>
     );
   }
@@ -37,7 +38,7 @@ function ProjectDetails() {
         <meta name="description" content={project.shortSummary} />
         <link rel="canonical" href={`https://sanusiou.pro/projects/${index}`} />
       </Helmet>
-      <div className="bg-white min-h-screen engineering-grid w-full flex flex-col justify-between items-center px-6 py-12 gap-16 overflow-hidden">
+      <div className="bg-white min-h-screen engineering-grid w-full flex flex-col justify-between items-center px-6 pt-28 pb-12 md:pt-36 gap-16 overflow-hidden">
         <NavBar position="relative" />
 
         <div className="max-w-3xl w-full text-left space-y-6">
@@ -52,10 +53,10 @@ function ProjectDetails() {
 
           <div className="flex gap-4 items-center">
             <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-              <Button size="small">View On Github</Button>
+              <Button size="small" variant="secondary-glass" className="w-auto px-4">View On Github</Button>
             </a>
             <a href={project.links.liveDemo} target="_blank" rel="noopener noreferrer">
-              <Button size="small">View Live Demo</Button>
+              <Button size="small" variant="primary-glass" className="w-auto px-4">View Live Demo</Button>
             </a>
           </div>
         </div>

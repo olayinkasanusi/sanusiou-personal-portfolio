@@ -27,7 +27,7 @@ const milestones: Milestone[] = [
     labelPos: "top",
   },
   {
-    year: 2024,
+    year: 2023,
     title: "Javascript",
     description: "DOM Manipulation | APIs | Array Methods",
     x: 600,
@@ -35,7 +35,7 @@ const milestones: Milestone[] = [
     labelPos: "bottom",
   },
   {
-    year: 2024,
+    year: 2023,
     title: "Modern Frameworks",
     description: "React.Js | Next.js | Redux | SSR",
     x: 900,

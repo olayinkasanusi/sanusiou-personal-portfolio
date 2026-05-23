@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BookOpen, Calendar, Tag, ChevronLeft, User, Search } from "lucide-react";
 import NavBar from "../ui/NavBar";
 import Footer from "../ui/Footer";
+import Button from "../ui/Button";
 
 const mockPosts = [
   {
@@ -152,12 +153,14 @@ const SinglePostView = ({ post, onBack }: SinglePostViewProps) => {
 
   return (
     <div className="max-w-3xl mx-auto py-8">
-      <button
+      <Button
         onClick={onBack}
-        className="flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors mb-6 p-2 rounded-lg bg-slate-50 border border-slate-200"
+        variant="secondary-glass"
+        size="small"
+        className="mb-6 w-auto px-4 py-2 text-blue-600 hover:text-blue-700"
       >
         <ChevronLeft size={20} className="mr-1" /> Back to Blog List
-      </button>
+      </Button>
 
       <article className="bg-white rounded-xl p-6 sm:p-8 border border-slate-200 shadow-xs">
         <header className="mb-6 border-b border-slate-100 pb-6">
@@ -242,6 +245,7 @@ const BlogPostCard = ({ post, onReadMore }: BlogPostCardProps) => (
           src={post.image}
           alt={post.title}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          loading="lazy"
           onError={(e) => {
             const target = e.currentTarget as HTMLImageElement;
             target.onerror = null;
@@ -271,12 +275,14 @@ const BlogPostCard = ({ post, onReadMore }: BlogPostCardProps) => (
         <Calendar size={12} className="mr-1" />
         {post.date}
       </span>
-      <button
-        className="flex items-center text-blue-600 hover:text-blue-700 font-semibold text-xs transition-colors"
+      <Button
+        variant="primary-glass"
+        size="small"
+        className="w-auto px-3.5 py-1.5 rounded-lg text-xs"
         onClick={() => onReadMore(post.id)}
       >
         Read Article <BookOpen size={14} className="ml-1" />
-      </button>
+      </Button>
     </div>
   </div>
 );
@@ -319,7 +325,7 @@ const Blog = () => {
   );
 
   return (
-    <div className="bg-white min-h-screen engineering-grid w-full flex flex-col justify-between items-center px-6 py-12 gap-16 overflow-hidden">
+    <div className="bg-white min-h-screen engineering-grid w-full flex flex-col justify-between items-center px-6 pt-28 pb-12 md:pt-36 gap-16 overflow-hidden">
       <NavBar position="relative" />
 
       <main className="max-w-4xl w-full">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router-dom";
 import { useOutSideClick } from "../hooks/useOutsideClick";
 import Logo from "./Logo";
 
@@ -18,6 +18,13 @@ const HamburgerMenu = () => {
 
   const lineClasses =
     "block h-0.5 w-6 bg-slate-800 transform transition duration-300 ease-in-out";
+
+  const getMobileLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `font-sans w-full px-3 py-2 rounded-lg transition-all text-sm border duration-300 block text-left ${
+      isActive
+        ? "text-blue-600 bg-blue-600/10 border-blue-500/15 font-bold"
+        : "text-slate-700 hover:text-blue-600 hover:bg-slate-50 border-transparent"
+    }`;
 
   return (
     <div className="relative md:hidden">
@@ -43,7 +50,7 @@ const HamburgerMenu = () => {
         id="mobile-menu"
         className={`
           absolute right-0 mt-3 w-48 bg-white border border-slate-200/80 shadow-lg rounded-xl overflow-hidden 
-          transition-all duration-300 ease-in-out origin-top
+          transition-all duration-300 ease-in-out origin-top z-50
           ${isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"}
         `}
       >
@@ -51,41 +58,42 @@ const HamburgerMenu = () => {
           className="p-3 flex-col flex gap-1 justify-between items-start"
           ref={ref}
         >
-          <Link
+          <NavLink
             to="/"
-            className="font-sans w-full text-slate-700 hover:text-blue-600 hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors text-sm"
+            end
+            className={getMobileLinkClass}
             onClick={close}
           >
             Home
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/aboutme"
-            className="font-sans w-full text-slate-700 hover:text-blue-600 hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors text-sm"
+            className={getMobileLinkClass}
             onClick={close}
           >
             About
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/projects"
-            className="font-sans w-full text-slate-700 hover:text-blue-600 hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors text-sm"
+            className={getMobileLinkClass}
             onClick={close}
           >
             Projects
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/blog"
-            className="font-sans w-full text-slate-700 hover:text-blue-600 hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors text-sm"
+            className={getMobileLinkClass}
             onClick={close}
           >
             Blogs
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/contactme"
-            className="font-sans w-full text-slate-700 hover:text-blue-600 hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors text-sm"
+            className={getMobileLinkClass}
             onClick={close}
           >
             Contact Me
-          </Link>
+          </NavLink>
         </ul>
       </div>
     </div>
@@ -97,9 +105,17 @@ interface NavBarProps {
 }
 
 function NavBar({ position = "fixed" }: NavBarProps) {
+  // Desktop link class builder
+  const getDesktopLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `font-sans px-4 py-1.5 rounded-full transition-all text-sm font-medium border duration-300 ${
+      isActive
+        ? "text-blue-600 bg-blue-600/10 border-blue-500/15 font-bold shadow-[inset_0_1px_2px_rgba(59,130,246,0.05)]"
+        : "text-slate-600 hover:text-blue-600 border-transparent hover:bg-slate-50"
+    }`;
+
   return (
-    <div className={`${position} mt-4 w-11/12 md:w-auto top-0 z-50`}>
-      <div className="rounded-full w-auto mx-auto bg-white/85 backdrop-blur-md shadow-sm border border-slate-200/80 flex justify-between items-center px-6 py-2.5 z-50 gap-8">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-11/12 md:w-auto max-w-5xl mt-0">
+      <div className="rounded-full w-auto mx-auto bg-white/80 backdrop-blur-md shadow-md border border-slate-200/50 flex justify-between items-center px-6 py-2.5 z-50 gap-8">
         <Link to="/" className="flex items-center gap-2">
           <Logo />
           <p className="font-sans font-semibold text-slate-900 tracking-tight text-sm">
@@ -107,36 +123,37 @@ function NavBar({ position = "fixed" }: NavBarProps) {
           </p>
         </Link>
         <ul className="justify-between items-center gap-1 hidden md:flex">
-          <Link
+          <NavLink
             to="/"
-            className="font-sans text-slate-600 hover:text-blue-600 px-4 py-1.5 rounded-full transition-colors text-sm font-medium"
+            end
+            className={getDesktopLinkClass}
           >
             Home
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/aboutme"
-            className="font-sans text-slate-600 hover:text-blue-600 px-4 py-1.5 rounded-full transition-colors text-sm font-medium"
+            className={getDesktopLinkClass}
           >
             About
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/projects"
-            className="font-sans text-slate-600 hover:text-blue-600 px-4 py-1.5 rounded-full transition-colors text-sm font-medium"
+            className={getDesktopLinkClass}
           >
             Projects
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/blog"
-            className="font-sans text-slate-600 hover:text-blue-600 px-4 py-1.5 rounded-full transition-colors text-sm font-medium"
+            className={getDesktopLinkClass}
           >
             Blogs
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/contactme"
-            className="font-sans text-slate-600 hover:text-blue-600 px-4 py-1.5 rounded-full transition-colors text-sm font-medium"
+            className={getDesktopLinkClass}
           >
             Contact
-          </Link>
+          </NavLink>
         </ul>
         <HamburgerMenu />
       </div>
