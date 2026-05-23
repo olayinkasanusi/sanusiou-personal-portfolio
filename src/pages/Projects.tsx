@@ -18,7 +18,7 @@ function Projects() {
   return (
     <>
       <Helmet>
-        <title>Engineering Projects | Sanusi Olayinka Uthman</title>
+        <title>Front-end Projects | Sanusi Olayinka Uthman</title>
         <meta
           name="description"
           content="Explore the engineering showcase of Sanusi Olayinka Uthman, including FinTech platforms, media pipelines, and luxury digital checkouts."
@@ -30,7 +30,7 @@ function Projects() {
 
         <div className="max-w-4xl w-full text-left space-y-4">
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 font-sans">
-            Selected Engineering Work
+            Selected Front-end Work
           </h1>
           <p className="text-lg text-slate-600 font-sans font-light max-w-2xl">
             A selective index of projects demonstrating state synchronization, dynamic
