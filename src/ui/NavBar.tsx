@@ -20,7 +20,7 @@ const HamburgerMenu = () => {
     "block h-0.5 w-6 bg-slate-800 transform transition duration-300 ease-in-out";
 
   const getMobileLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `font-sans w-full px-3 py-2 rounded-lg transition-all text-sm border duration-300 block text-left ${
+    `font-sans w-full px-3 py-2 rounded-lg transition-all text-sm border duration-300 block text-left whitespace-nowrap ${
       isActive
         ? "text-blue-600 bg-blue-600/10 border-blue-500/15 font-bold"
         : "text-slate-700 hover:text-blue-600 hover:bg-slate-50 border-transparent"
@@ -107,7 +107,7 @@ interface NavBarProps {
 function NavBar({ position = "fixed" }: NavBarProps) {
   // Desktop link class builder
   const getDesktopLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `font-sans px-4 py-1.5 rounded-full transition-all text-sm font-medium border duration-300 ${
+    `font-sans px-4 py-1.5 rounded-full transition-all text-sm font-medium border duration-300 whitespace-nowrap ${
       isActive
         ? "text-blue-600 bg-blue-600/10 border-blue-500/15 font-bold shadow-[inset_0_1px_2px_rgba(59,130,246,0.05)]"
         : "text-slate-600 hover:text-blue-600 border-transparent hover:bg-slate-50"
