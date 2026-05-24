@@ -99,15 +99,40 @@ const techStack = {
   ],
 };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
-};
+const fadeInUpBlur = {
+  hidden: { opacity: 0, y: 35, filter: "blur(8px)", scale: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 70,
+      damping: 14,
+      mass: 0.8,
+    },
+  },
+} as const;
+
+const headerVariant = {
+  hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 16,
+    },
+  },
+} as const;
 
 const staggerContainer = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
@@ -131,9 +156,14 @@ const HeroSection = () => {
         <section className="min-h-[90vh] flex flex-col justify-center items-center px-6 py-16">
           <div className="max-w-4xl w-full">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 40, filter: "blur(12px)", scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 70,
+                damping: 15,
+                duration: 0.8,
+              }}
               className="space-y-6 text-left"
             >
               <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 font-sans">
@@ -193,13 +223,12 @@ const HeroSection = () => {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "-80px" }}
           >
             {metrics.map((metric) => (
               <motion.div
                 key={metric.label}
-                variants={fadeUp}
-                transition={{ duration: 0.5 }}
+                variants={fadeInUpBlur}
               >
                 <div className="glass-card text-left">
                   <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 font-sans tracking-tight break-words">
@@ -217,10 +246,10 @@ const HeroSection = () => {
         <section className="px-6 py-20">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={headerVariant}
               className="mb-12"
             >
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-sans tracking-tight">
@@ -237,13 +266,12 @@ const HeroSection = () => {
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "-80px" }}
             >
-              {pillars.map((pillar, index) => (
+              {pillars.map((pillar) => (
                 <motion.div
                   key={pillar.title}
-                  variants={fadeUp}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  variants={fadeInUpBlur}
                   className="group bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-400 hover:shadow-md transition-all duration-300"
                 >
                   <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors duration-300">
@@ -264,10 +292,10 @@ const HeroSection = () => {
         <section className="px-6 py-20 border-t border-slate-100">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={headerVariant}
               className="mb-12"
             >
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-sans tracking-tight">
@@ -285,13 +313,12 @@ const HeroSection = () => {
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "-80px" }}
             >
               {selectedWorks.map((work) => (
                 <motion.div
                   key={work.name}
-                  variants={fadeUp}
-                  transition={{ duration: 0.5 }}
+                  variants={fadeInUpBlur}
                   className="group bg-white border border-slate-200 rounded-xl p-6 hover:border-blue-400 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
@@ -345,10 +372,10 @@ const HeroSection = () => {
         <section className="px-6 py-20 border-t border-slate-100">
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={headerVariant}
               className="mb-12"
             >
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 font-sans tracking-tight">
@@ -365,13 +392,12 @@ const HeroSection = () => {
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "-80px" }}
             >
               {Object.entries(techStack).map(([category, tools]) => (
                 <motion.div
                   key={category}
-                  variants={fadeUp}
-                  transition={{ duration: 0.5 }}
+                  variants={fadeInUpBlur}
                 >
                   <h3 className="text-sm font-bold text-slate-900 font-sans uppercase tracking-wider mb-3">
                     {category}
