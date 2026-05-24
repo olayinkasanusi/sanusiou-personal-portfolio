@@ -143,12 +143,7 @@ const HeroSection = () => {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-sans font-light max-w-3xl">
-                I approach frontend development through the analytical lens of
-                an engineering background. Over the past four years, my focus has
-                been on converting high-end design languages into scalable,
-                performant web applications. I specialize in building reactive
-                interfaces that integrate seamlessly with complex APIs and custom
-                state logic, ensuring that critical data layers transition
+                As a frontend engineer, I specialize in converting high-end designs into scalable, highly performant web applications that integrate seamlessly with complex APIs and custom state logic, ensuring that critical data layers transition
                 smoothly on the client side.
               </p>
               <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -192,7 +187,7 @@ const HeroSection = () => {
           </div>
         </section>
 
-        <section className="px-6 py-16 border-t border-slate-100">
+        <section className="px-6 py-12 border-t border-slate-100">
           <motion.div
             className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-12"
             variants={staggerContainer}
