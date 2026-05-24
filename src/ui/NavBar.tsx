@@ -71,7 +71,7 @@ const HamburgerMenu = () => {
             className={getMobileLinkClass}
             onClick={close}
           >
-            About
+            About Sanusi
           </NavLink>
           <NavLink
             to="/projects"
@@ -134,7 +134,7 @@ function NavBar({ position = "fixed" }: NavBarProps) {
             to="/aboutme"
             className={getDesktopLinkClass}
           >
-            About
+            About Sanusi
           </NavLink>
           <NavLink
             to="/projects"
