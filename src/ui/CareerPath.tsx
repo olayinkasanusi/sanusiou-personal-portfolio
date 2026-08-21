@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Code, Award, FileCode, Layers, LucideIcon } from "lucide-react";
+import { Code, Award, Layers, Server, LucideIcon } from "lucide-react";
 
 interface Milestone {
   year: number;
@@ -15,16 +15,16 @@ interface Milestone {
 const milestones: Milestone[] = [
   {
     year: 2021,
-    title: "HTML/CSS/BootStrap",
-    description: "First static sites & DOM manipulation.",
+    title: "HTML / CSS / Web Fundamentals",
+    description: "Responsive layouts & DOM manipulation.",
     x: 100,
     y: 300,
     labelPos: "bottom",
     icon: Code,
   },
   {
-    year: 2023,
-    title: "Responsive Web-Design Certification",
+    year: 2022,
+    title: "JavaScript & FCC Certification",
     description: "certified by freecodecamp.org",
     x: 350,
     y: 100,
@@ -33,21 +33,21 @@ const milestones: Milestone[] = [
   },
   {
     year: 2023,
-    title: "Javascript",
-    description: "DOM Manipulation | APIs | Array Methods",
+    title: "Modern Frontend Frameworks",
+    description: "React.js | Next.js | Zustand | SSR",
     x: 600,
     y: 250,
     labelPos: "bottom",
-    icon: FileCode,
+    icon: Layers,
   },
   {
-    year: 2023,
-    title: "Modern Frameworks",
-    description: "React.Js | Next.js | Redux | SSR",
+    year: 2024,
+    title: "Node.js & Full-Stack Systems",
+    description: "Node.js | Express | REST APIs | PostgreSQL",
     x: 900,
     y: 70,
     labelPos: "top",
-    icon: Layers,
+    icon: Server,
   },
 ];
 

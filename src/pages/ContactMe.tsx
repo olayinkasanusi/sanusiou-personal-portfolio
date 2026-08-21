@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { Helmet } from "react-helmet-async";
 import NavBar from "../ui/NavBar";
 import Footer from "../ui/Footer";
@@ -16,7 +16,7 @@ function ContactMe() {
   const { sendMail: mailing, isLoading: isMailing } = useMailer();
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({
       ...formData,
@@ -24,7 +24,7 @@ function ContactMe() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
       mailing(formData);
@@ -44,7 +44,7 @@ function ContactMe() {
         <title>Contact Sanusi Olayinka Uthman | Get In Touch</title>
         <meta
           name="description"
-          content="Get in touch with Sanusi Olayinka Uthman regarding senior frontend development collaborations, project consultations, and architecture designs."
+          content="Get in touch with Sanusi Olayinka Uthman regarding full-stack software engineering collaborations, Node.js backend development, project consultations, and architecture designs."
         />
         <link rel="canonical" href="https://sanusiou.pro/contact" />
       </Helmet>
@@ -58,8 +58,7 @@ function ContactMe() {
               Connect and Build
             </h1>
             <p className="text-slate-600 text-sm font-sans font-light">
-              Have a system architecture or frontend project in mind? Contact me to discuss
-              how we can build performant digital products.
+              Have a full-stack system architecture, Node.js backend, or web application project in mind? Contact me to discuss how we can build performant digital products.
             </p>
           </div>
 

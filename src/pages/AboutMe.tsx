@@ -1,42 +1,46 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { Cpu, ShieldCheck, Zap, Award, ExternalLink, Terminal } from "lucide-react";
+import { Server, Layers, ShieldCheck, Award, ExternalLink, Terminal } from "lucide-react";
 import Button from "../ui/Button";
 import Footer from "../ui/Footer";
 import NavBar from "../ui/NavBar";
 import CareerPath from "../ui/CareerPath";
 import useNavigation from "../utils/useNavigation";
 
-// Highly technical grouped technologies stack representing a senior dev stack
+// Highly technical grouped technologies stack representing a senior full-stack stack
 const techCategories = [
   {
-    title: "Architecture & Logic Layers",
+    title: "Backend & Server Runtime",
+    items: [
+      { tech: "Node.js Engine", level: "Expert / Core Event Loop" },
+      { tech: "Express.js", level: "Expert / RESTful APIs" },
+      { tech: "JWT / Auth Middlewares", level: "Advanced / Security" },
+      { tech: "Asynchronous I/O", level: "Expert / Worker Streams" },
+      { tech: "Microservice Routes", level: "Advanced / Scalability" },
+      { tech: "Rate-Limiting & Caching", level: "Advanced / Redis" }
+    ]
+  },
+  {
+    title: "Frontend Architecture & Logic",
     items: [
       { tech: "TypeScript", level: "Expert / Strict Type" },
       { tech: "React.js", level: "Expert / 4+ Years" },
       { tech: "Next.js", level: "Advanced / SSR / App Router" },
       { tech: "JavaScript (ES6+)", level: "Expert / Core DOM" },
-      { tech: "HTML5 & Semantics", level: "Expert / WCAG" },
-      { tech: "CSS3 / Custom Properties", level: "Expert / Layout Grid" }
+      { tech: "Zustand & Context API", level: "Expert / State Sync" },
+      { tech: "HTML5 & TailwindCSS", level: "Expert / WCAG AA" }
     ]
   },
   {
-    title: "State & Data Pipelines",
+    title: "Databases, Cloud & Tooling",
     items: [
-      { tech: "Redux / Toolkit", level: "Advanced / Async Thunk" },
-      { tech: "Supabase / Postgres", level: "Advanced / Real-time Sync" },
-      { tech: "Zustand State Engine", level: "Expert / Optimization" },
-      { tech: "Context API", level: "Expert / Custom Providers" }
-    ]
-  },
-  {
-    title: "Tooling & Environments",
-    items: [
+      { tech: "PostgreSQL / Supabase", level: "Advanced / Real-time Sync" },
+      { tech: "MongoDB / NoSQL", level: "Experienced / Schemas" },
       { tech: "Vite Bundler", level: "Expert / Speed HMR" },
-      { tech: "Webpack Options", level: "Experienced / Loaders" },
-      { tech: "Vercel / Serverless", level: "Production / Edge Cache" },
-      { tech: "Figma Design Assets", level: "Asset Extraction / Spec" }
+      { tech: "Vercel / Node Serverless", level: "Production / Edge Deploy" },
+      { tech: "Git / CI/CD Pipelines", level: "Expert / Version Control" },
+      { tech: "Postman & API Testing", level: "Advanced / Endpoints" }
     ]
   }
 ];
@@ -49,10 +53,12 @@ function TerminalConsole() {
     "sanusiou",
     "$ cat profile.json",
     `{`,
-    `  "role": "Frontend Architect",`,
+    `  "role": "Full Stack Software Engineer",`,
     `  "experience": "4+ Years",`,
-    `  "coreStack": ["React", "Next.js", "TS"],`,
-    `  "delivery": "100% Feature Ownership",`,
+    `  "backend": ["Node.js", "Express", "REST APIs"],`,
+    `  "frontend": ["React", "Next.js", "TypeScript"],`,
+    `  "databases": ["PostgreSQL", "Supabase", "MongoDB"],`,
+    `  "delivery": "100% End-to-End Ownership",`,
     `  "lighthouseScore": 100,`,
     `  "accessibility": "WCAG 2.1 AA"`,
     `}`
@@ -185,10 +191,10 @@ function AboutMe() {
   return (
     <>
       <Helmet>
-        <title>About Sanusi Olayinka Uthman | Engineering Mindset</title>
+        <title>About Sanusi Olayinka Uthman | Full Stack Engineering Mindset</title>
         <meta
           name="description"
-          content="Deep dive into Sanusi Olayinka Uthman's architectural principles, frontend state handle strategy, integrations, and lifecycle ownership."
+          content="Deep dive into Sanusi Olayinka Uthman's full stack architectural principles, Node.js backend services, frontend state, and end-to-end system ownership."
         />
         <link rel="canonical" href="https://sanusiou.pro/about" />
         <script type="application/ld+json">
@@ -243,14 +249,11 @@ function AboutMe() {
                   Sanusi Olayinka Uthman
                 </h1>
                 <span className="text-xs font-extrabold text-blue-600 bg-blue-100/50 px-2 py-0.5 rounded-full uppercase tracking-wider font-sans mt-1.5 inline-block">
-                  Frontend Software Architect
+                  Full Stack Software Engineer
                 </span>
               </div>
               <p className="font-sans text-sm text-slate-600 leading-relaxed font-light">
-                I am a Frontend Software Engineer focused on translating high-end technical
-                specifications into high-performance user interfaces. Blending analytical
-                engineering practices with modern component architectures, my production deliveries
-                focus heavily on rendering metrics, state stability, and accessible code compliance.
+                I am a Full Stack Software Engineer specializing in scalable Node.js backend architectures, robust RESTful APIs, and high-performance user interfaces. Blending analytical server-side engineering with modern frontend component architectures, my production deliveries focus heavily on end-to-end data integrity, rendering metrics, and state stability.
               </p>
               <div className="pt-2">
                 <Button 
@@ -292,14 +295,13 @@ function AboutMe() {
               className="bg-white/35 backdrop-blur-md border border-slate-200/50 rounded-2xl p-6 shadow-xs hover:border-blue-500/30 hover:bg-white/55 hover:scale-[1.02] hover:shadow-md transition-all duration-500 relative"
             >
               <div className="p-2 bg-blue-100/60 rounded-xl text-blue-600 w-fit mb-4">
-                <Cpu size={20} />
+                <Server size={20} />
               </div>
               <h3 className="font-sans font-bold text-base text-slate-900 mb-2">
-                Frontend Architecture & State
+                Node.js Backend & API Systems
               </h3>
               <p className="font-sans text-xs text-slate-500 leading-relaxed font-light">
-                Architecting modular, highly decoupled client frameworks using React and Next.js, 
-                relying on Zustand to ensure zero-lag synchronization across deep viewport variants.
+                Architecting performant server runtimes with Node.js and Express, designing RESTful API endpoints, rate-limiting, and managing async data processing pipelines.
               </p>
             </motion.div>
 
@@ -308,14 +310,14 @@ function AboutMe() {
               className="bg-white/35 backdrop-blur-md border border-slate-200/50 rounded-2xl p-6 shadow-xs hover:border-blue-500/30 hover:bg-white/55 hover:scale-[1.02] hover:shadow-md transition-all duration-500 relative"
             >
               <div className="p-2 bg-emerald-100/60 rounded-xl text-emerald-600 w-fit mb-4">
-                <ShieldCheck size={20} />
+                <Layers size={20} />
               </div>
               <h3 className="font-sans font-bold text-base text-slate-900 mb-2">
-                Complex System Integrations
+                Frontend Architecture & State
               </h3>
               <p className="font-sans text-xs text-slate-500 leading-relaxed font-light">
-                Orchestrating real-time API integrations, consuming heavy high-frequency data streams,
-                optimizing caching patterns, and performing mutations securely via Supabase.
+                Building decoupled, responsive client interfaces with React and Next.js, 
+                relying on Zustand to ensure zero-lag synchronization across complex view hierarchies.
               </p>
             </motion.div>
 
@@ -324,14 +326,13 @@ function AboutMe() {
               className="bg-white/35 backdrop-blur-md border border-slate-200/50 rounded-2xl p-6 shadow-xs hover:border-blue-500/30 hover:bg-white/55 hover:scale-[1.02] hover:shadow-md transition-all duration-500 relative"
             >
               <div className="p-2 bg-amber-100/60 rounded-xl text-amber-600 w-fit mb-4">
-                <Zap size={20} />
+                <ShieldCheck size={20} />
               </div>
               <h3 className="font-sans font-bold text-base text-slate-900 mb-2">
-                Ownership Lifecycle
+                End-to-End System Ownership
               </h3>
               <p className="font-sans text-xs text-slate-500 leading-relaxed font-light">
-                Managing client feature delivery end-to-end. Translating visual design specifications 
-                from Figma down to performance checks (CLS, LCP) and access codes (WCAG AA).
+                Delivering complete applications from database schema modeling (PostgreSQL/Supabase) to server deployment, security authentication, and WCAG AA accessibility.
               </p>
             </motion.div>
           </motion.div>
@@ -391,7 +392,7 @@ function AboutMe() {
                     />
                   )}
                   <span className="relative z-10 block truncate px-1">
-                    {idx === 0 ? "Logic & Arch" : idx === 1 ? "State & Data" : "Tooling"}
+                    {idx === 0 ? "Backend & Server" : idx === 1 ? "Frontend & Logic" : "DB & Cloud"}
                   </span>
                 </button>
               ))}

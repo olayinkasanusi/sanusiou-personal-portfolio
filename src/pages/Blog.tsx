@@ -7,43 +7,43 @@ import Button from "../ui/Button";
 const mockPosts = [
   {
     id: 1,
-    title: "Mastering Tailwind CSS Utility-First Design",
+    title: "Architecting Scalable REST APIs with Node.js and Express",
     author: "Sanusi Olayinka Uthman",
     date: "Nov 15, 2025",
     summary:
-      "A deep dive into why utility-first CSS is the future and how Tailwind simplifies modern web development workflows.",
-    tags: ["TailwindCSS", "Frontend"],
-    image: "https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?w=600&auto=format&fit=crop&q=60",
+      "A deep dive into building modular, high-concurrency Node.js server architectures, robust middleware chains, and RESTful design best practices.",
+    tags: ["Node.js", "Backend"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=60",
   },
   {
     id: 2,
-    title: "Simplifying State with Redux Toolkit",
+    title: "Simplifying State with Redux Toolkit and Zustand",
     author: "Sanusi Olayinka Uthman",
     date: "Oct 28, 2025",
     summary:
-      "Simplifying complex state logic using Redux Toolkit's powerful abstractions and best practices for large-scale React apps.",
-    tags: ["Redux", "React"],
+      "Managing complex client state logic and API synchronization using modern state management patterns for large-scale React apps.",
+    tags: ["Full-Stack", "React"],
     image: "https://plus.unsplash.com/premium_photo-1678564741870-d68a69925537?w=500&auto=format&fit=crop&q=60",
   },
   {
     id: 3,
-    title: "Building Serverless Apps with Supabase",
+    title: "Building Real-Time Full-Stack Apps with Node.js & Supabase",
     author: "Sanusi Olayinka Uthman",
     date: "Sep 10, 2025",
     summary:
-      "Leveraging Supabase as a backend-as-a-service to quickly deploy full-stack applications without managing infrastructure.",
-    tags: ["Next.js", "Supabase"],
+      "Leveraging Node.js server pipelines alongside Supabase/PostgreSQL for secure ledger mutations and real-time state synchronization.",
+    tags: ["Node.js", "Supabase"],
     image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&auto=format&fit=crop&q=60",
   },
   {
     id: 4,
-    title: "Vercel Deployment: Optimizing Build Times",
+    title: "Mastering Tailwind CSS Utility-First Design",
     author: "Sanusi Olayinka Uthman",
-    date: "Aug 01, 2025",
+    date: "Aug 15, 2025",
     summary:
-      "Practical strategies to cut down your build times and achieve instant deploys on the Vercel platform.",
-    tags: ["Vercel", "DevOps"],
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop&q=60",
+      "A practical exploration of utility-first CSS, custom design tokens, and building responsive UI component libraries.",
+    tags: ["TailwindCSS", "Frontend"],
+    image: "https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?w=600&auto=format&fit=crop&q=60",
   },
   {
     id: 5,

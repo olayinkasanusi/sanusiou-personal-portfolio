@@ -1,8 +1,8 @@
-# Sanusi Olayinka Uthman — Professional Frontend Portfolio
+# Sanusi Olayinka Uthman — Professional Full Stack Portfolio
 
-This repository hosts the professional engineering portfolio of **Sanusi Olayinka Uthman**, a Frontend Software Architect specializing in React, Next.js, and TypeScript. 
+This repository hosts the professional engineering portfolio of **Sanusi Olayinka Uthman**, a Full Stack Software Engineer specializing in Node.js backend architectures, RESTful APIs, database design, React, Next.js, and TypeScript. 
 
-Designed as a high-end technical developer catalog, this project acts as a live demonstration of modern component design, rigid responsive styling grids, strict accessibility standards, and performant asset optimizations.
+Designed as a high-end technical developer catalog, this project acts as a live demonstration of full-stack system architecture, robust server design, modern component patterns, rigid responsive styling grids, strict accessibility standards, and performant asset optimizations.
 
 ---
 
@@ -10,8 +10,8 @@ Designed as a high-end technical developer catalog, this project acts as a live 
 
 The primary purpose of this portfolio is to transcend traditional, static resume layouts and establish direct technical credibility. It serves as:
 1. **An Interactive Developer Sandbox**: Introducing mock shell diagnostics terminals and responsive sliding grid animations that display programming fluency natively.
-2. **A High-Performance Frontend Benchmark**: Demonstrating speed optimizations, rapid client-side search engines, zero-lag state handling, and layout-glow glassmorphic design languages.
-3. **An Engineering Case-Study Hub**: Detailing technical solutions, system integration workflows, database mutations via Supabase, and end-to-end feature ownership.
+2. **A High-Performance Full-Stack Benchmark**: Demonstrating speed optimizations, rapid client-side search engines, zero-lag state handling, and layout-glow glassmorphic design languages.
+3. **An Engineering Case-Study Hub**: Detailing full-stack technical solutions, Node.js API data pipelines, database mutations via PostgreSQL/Supabase, and end-to-end feature ownership.
 
 ---
 
@@ -23,10 +23,10 @@ The primary purpose of this portfolio is to transcend traditional, static resume
 
 ### 2. Dual-Mode Responsive Timeline (`/about`)
 * **SVG Canvas (Desktop $\ge$ 768px)**: Draws an interactive bezier curved path with responsive nodes, years, and title indicators that animate on intersection.
-* **Vertical Timeline (Mobile < 768px)**: Adapts seamlessly to mobile viewports to prevent horizontal overflow. Replaces the SVG with vertical cards featuring tech badges (`Code`, `Award`, `FileCode`, `Layers`) and scroll fades.
+* **Vertical Timeline (Mobile < 768px)**: Adapts seamlessly to mobile viewports to prevent horizontal overflow. Replaces the SVG with vertical cards featuring tech badges (`Code`, `Award`, `Layers`, `Server`) and scroll fades.
 
 ### 3. Compact Skill Tabs Panel (`/about`)
-* **Interactive Filtering**: Groups 14 technology cards under three distinct categories (Logic & Arch, State & Data, Tooling) to compress vertical space on mobile devices by **66%**.
+* **Interactive Filtering**: Groups technology cards under three distinct categories (Backend & Server, Frontend & Logic, DB & Cloud) to compress vertical space on mobile devices by **66%**.
 * **Spring Transitions**: Features active sliding background indicators driven by Framer Motion's `layoutId`.
 
 ### 4. Senior Metrics Dashboard (`/projects`)
@@ -37,7 +37,9 @@ The primary purpose of this portfolio is to transcend traditional, static resume
 
 ## 🛠️ Technical Stack & Tooling
 
-* **Core Runtime**: React 19 (Functional Components, Custom Hooks) & TypeScript (Strict Types).
+* **Backend & Server**: Node.js, Express.js, RESTful APIs, JWT Authentication, Asynchronous Streams.
+* **Databases & Cloud**: PostgreSQL, Supabase, MongoDB, Vercel Serverless.
+* **Core Runtime & Frontend**: React 19 (Functional Components, Custom Hooks), Next.js, & TypeScript (Strict Types).
 * **Build Architecture**: Vite Bundler (Hot Module Replacement, Code-Splitting).
 * **Styling System**: Vanilla CSS & Tailwind CSS v4 (Custom Properties, Utility Classes).
 * **Animations Engine**: Framer Motion (Layout Springs, Viewport Staggers, Exit Animations).

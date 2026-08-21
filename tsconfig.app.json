@@ -16,6 +16,9 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["vite/client"],
 
     /* Linting */
     "strict": true,

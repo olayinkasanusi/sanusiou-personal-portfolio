@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import React, { useState } from "react";
+import { motion, type HTMLMotionProps } from "framer-motion";
+import { useState, type ReactNode, type MouseEvent } from "react";
 
 interface Ripple {
   id: number;
@@ -7,11 +7,15 @@ interface Ripple {
   y: number;
 }
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
+export interface ButtonProps extends HTMLMotionProps<"button"> {
+  children: ReactNode;
   roundedFull?: boolean;
   size?: "small" | "medium" | "large";
   variant?: "primary-glass" | "secondary-glass" | "white-glass";
+  className?: string;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 function Button({
@@ -25,7 +29,7 @@ function Button({
 }: ButtonProps) {
   const [ripples, setRipples] = useState<Ripple[]>([]);
 
-  const handleRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleRipple = (e: MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;

@@ -29,23 +29,24 @@ export const projects: Project[] = [
   {
     name: "Anchor Yield",
     shortSummary:
-      "A high-end FinTech Investment Platform focused on complex dashboard data synchronization, live pricing feeds, and secure transaction states.",
+      "An institutional FinTech platform featuring a Node.js API data pipeline, fast-polling client synchronization, and secure database mutations for yield metrics.",
     projectOverview:
-      "Anchor Yield provides institutional-grade yield metrics and portfolio statistics. The frontend architecture manages fast-polling client state synchronization to deliver zero-latency rendering of transaction updates and financial yield projections. Built with React and TypeScript, it utilizes custom hooks for polling strategies, secure auth flows, and advanced table sorting and filtering algorithms.",
+      "Anchor Yield provides institutional-grade yield metrics and portfolio statistics. Engineered as a full-stack system, the backend uses Node.js and RESTful services to orchestrate fast-polling data synchronization and real-time transaction processing, while Supabase/PostgreSQL manages secure ledger mutations. The React/TypeScript frontend renders zero-latency financial projections with optimistic UI updates and custom polling strategies.",
     goals: [
-      "Implement real-time dashboard data synchronization using structured state management and clean polling mechanisms.",
-      "Develop secure user transaction state handling with optimistic UI updates.",
-      "Build complex relational data visualizations using lightweight, responsive charting components."
+      "Architect a scalable Node.js API layer with structured polling mechanisms for high-frequency financial data synchronization.",
+      "Develop secure user transaction processing with database-level validation and optimistic frontend state updates.",
+      "Build complex relational data visualizations and responsive financial analytics dashboards."
     ],
     challenges: [
-      "Managing high-frequency data updates without causing unnecessary DOM re-renders or performance lags.",
-      "Maintaining state consistency across multi-page client checkouts and asset balance widgets."
+      "Managing high-frequency data streams and concurrent requests without causing server bottleneck or client rendering lag.",
+      "Maintaining end-to-end data integrity across distributed portfolio transactions and multi-step balance calculations."
     ],
     technologyStack: [
+      { icon: "/nodejs.svg", tech: "Node.js" },
       { icon: "/typescript.svg", tech: "TypeScript" },
       { icon: "/react.svg", tech: "React.js" },
-      { icon: "/javascript.svg", tech: "JavaScript" },
-      { icon: "/supabase.svg", tech: "Supabase" }
+      { icon: "/supabase.svg", tech: "Supabase" },
+      { icon: "/javascript.svg", tech: "JavaScript" }
     ],
     links: {
       liveDemo: "https://anchor-yield.vercel.app/",
@@ -61,22 +62,22 @@ export const projects: Project[] = [
   {
     name: "Goal Mania",
     shortSummary:
-      "An international e-commerce and sports analytics hub engineered for a remote Indonesian client, merging rapid live-score polling with a custom apparel configurations engine.",
+      "An international e-commerce and sports analytics platform powered by a Node.js backend, real-time sports polling streams, and a custom merchandise configuration engine.",
     projectOverview:
-      "Goal Mania handles transactional e-commerce pipelines alongside high-frequency data integrations. Stepping into an ongoing codebase, the frontend architecture was optimized to cleanly handle rapid API data synchronization for real-time sports metrics while orchestrating a heavy multi-step custom shirt configuration panel with robust local cart persistence.",
+      "Goal Mania handles transactional e-commerce pipelines alongside high-frequency sports data feeds. Built with a full-stack architecture, the server leverages Node.js to manage rapid external API data aggregation, rate-limiting, and inventory caching, while Next.js delivers a server-rendered frontend with dynamic jersey customization and robust persistent checkout workflows.",
     goals: [
-      "Optimize real-time API data streams to keep dynamic sports scores synchronized with the client view without introducing layout lag.",
-      "Build a fluid, highly responsive custom jersey ordering workflow with dynamic pricing calculations based on user-defined configurations.",
-      "Refactor existing monolithic components into a clean, decoupled architecture to vastly improve page speed for mobile users globally."
+      "Build a high-performance Node.js data aggregation service to synchronize real-time sports match metrics efficiently.",
+      "Develop a fluid, highly responsive custom jersey ordering workflow with server-verified dynamic pricing algorithms.",
+      "Refactor monolithic endpoints into clean, decoupled full-stack services to significantly boost global response times."
     ],
     challenges: [
-      "Managing aggressive polling frequencies and caching configurations to prevent API rate-limiting or view jitter under heavy loads.",
-      "Synchronizing international currency matrices and dynamic inventory allocations securely during complex client checkout workflows."
+      "Handling aggressive polling frequencies on the server while preventing API rate limits and memory overhead.",
+      "Synchronizing multi-currency matrices and dynamic stock allocations securely between the Node.js backend and client cart."
     ],
     technologyStack: [
       { icon: "/nodejs.svg", tech: "Node.js" },
-      { icon: "/typescript.svg", tech: "TypeScript" },
       { icon: "/nextjs.svg", tech: "Next.js" },
+      { icon: "/typescript.svg", tech: "TypeScript" },
       { icon: "/framer.svg", tech: "Framer Motion" },
       { icon: "/vercel.svg", tech: "Vercel" }
     ],
@@ -94,22 +95,23 @@ export const projects: Project[] = [
   {
     name: "dGold Luxury Boutique",
     shortSummary:
-      "A high-fidelity premium digital storefront processing complex multi-attribute inventory matrices (karats/weights) and secure real-time administrative state mutations.",
+      "A luxury e-commerce suite featuring dynamic weight-based pricing engines, role-restricted Node.js/Supabase admin mutations, and real-time inventory management.",
     projectOverview:
-      "dGold Boutique translates an exclusive, high-ticket luxury jewelry retail model into a premium editorial web space. Built from the ground up, the platform features dynamic, client-side pricing calculators tied to real-time weight parameters, an inquiry-based checkout funnel, and a robust administrative control center.",
+      "dGold Boutique translates an exclusive, high-ticket luxury retail model into a full-stack digital flagship. The backend employs Node.js server logic and PostgreSQL/Supabase to process dynamic multi-attribute matrices (karats/weights), validate live spot prices, and execute role-restricted stock mutations, paired with a high-fidelity editorial frontend.",
     goals: [
-      "Architect an asynchronous cart mechanism that computes live item pricing dynamically based on karat categories and raw gold weights.",
-      "Develop a secure, role-restricted admin management panel to push instant schema mutations, updates, and stock inventory controls.",
-      "Create a custom high-touch inquiry pipeline using direct message and automated communication API endpoints for premium checkout transactions."
+      "Implement server-validated pricing logic computing live item costs dynamically based on fluctuating gold spot prices and karat weights.",
+      "Develop a secure, role-restricted admin control suite to execute instant database mutations and inventory sync.",
+      "Create an end-to-end white-glove inquiry and checkout pipeline with automated messaging endpoints."
     ],
     challenges: [
-      "Orchestrating nested client-side state hooks across deep product variants without introducing layout shifts or component rendering delays.",
-      "Balancing high-resolution catalog media assets with aggressive loading strategies to guarantee immediate visual page responsiveness."
+      "Coordinating complex server-side validation rules with instant client-side state feedback during heavy variant selection.",
+      "Balancing high-resolution catalog media assets with optimized database query response times for global shoppers."
     ],
     technologyStack: [
+      { icon: "/nodejs.svg", tech: "Node.js" },
       { icon: "/react.svg", tech: "React.js" },
-      { icon: "/javascript.svg", tech: "JavaScript" },
       { icon: "/supabase.svg", tech: "Supabase" },
+      { icon: "/javascript.svg", tech: "JavaScript" },
       { icon: "/vercel.svg", tech: "Vercel" }
     ],
     links: {
@@ -127,12 +129,12 @@ export const projects: Project[] = [
   {
     name: "Opulent Pages",
     shortSummary:
-      "An elegant digital publishing platform prioritizing premium typography layout systems, strict WCAG 2.1 accessibility compliance, and hyper-optimized asset delivery pipelines.",
+      "An accessible editorial publishing platform with optimized backend asset pipelines, strict WCAG 2.1 AA compliance, and fluid typography layout systems.",
     projectOverview:
-      "Opulent Pages provides an uncompromised, accessible reading interface for showcase portfolios. Built to modern web performance standards, it features strict semantic HTML layouts, advanced screen-reader optimizations, and fluid typography rules that conform natively across any viewport or responsive display ratio.",
+      "Opulent Pages provides an accessible, high-performance publishing interface. Designed with full-stack performance principles, it features optimized server asset distribution, semantic content delivery, screen-reader optimizations, and fluid typography algorithms that scale smoothly across viewports.",
     goals: [
       "Construct a highly detailed typographic grid system that automatically scales and preserves layout proportions on any device orientation.",
-      "Achieve near-perfect ratings on core Web Vitals and Lighthouse audits by enforcing strict lazy loading and payload optimization.",
+      "Achieve near-perfect ratings on core Web Vitals and Lighthouse audits by enforcing strict server caching and payload optimization.",
       "Implement exhaustive keyboard navigation maps and ARIA attributes to completely conform with WCAG 2.1 AA accessibility guidelines."
     ],
     challenges: [
@@ -140,9 +142,10 @@ export const projects: Project[] = [
       "Enforcing strict compliance for assistive accessibility technologies while animating complex transition timelines between layout pages."
     ],
     technologyStack: [
+      { icon: "/nodejs.svg", tech: "Node.js" },
       { icon: "/react.svg", tech: "React.js" },
-      { icon: "/javascript.svg", tech: "JavaScript" },
       { icon: "/framer.svg", tech: "Framer Motion" },
+      { icon: "/javascript.svg", tech: "JavaScript" },
       { icon: "/vercel.svg", tech: "Vercel" }
     ],
     links: {

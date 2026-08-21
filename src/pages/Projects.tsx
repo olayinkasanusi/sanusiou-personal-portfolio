@@ -6,9 +6,9 @@ import {
   Search, 
   X, 
   Eye, 
-  Cpu, 
+  Server, 
   ShieldCheck, 
-  Zap, 
+  Database, 
   BarChart3, 
   SlidersHorizontal 
 } from "lucide-react";
@@ -21,19 +21,19 @@ import { projects, Project, Technology } from "../../data/projects";
 // High-end portfolio performance/metrics statistics mapped by project
 const projectPerformanceStats: Record<string, { label: string; value: string }[]> = {
   "Anchor Yield": [
-    { label: "Load Speed", value: "<1.1s" },
-    { label: "Visual Stability", value: "100%" },
-    { label: "Data Sync", value: "Real-time" }
+    { label: "Node API Latency", value: "<120ms" },
+    { label: "Data Pipeline", value: "Real-time" },
+    { label: "Ledger State", value: "PostgreSQL" }
   ],
   "Goal Mania": [
-    { label: "API Sync", value: "60fps" },
-    { label: "Local Cart", value: "Persistent" },
-    { label: "Page Speed", value: "98/100" }
+    { label: "Node.js Stream", value: "60fps" },
+    { label: "Cart State", value: "Persistent" },
+    { label: "Server Speed", value: "98/100" }
   ],
   "dGold Luxury Boutique": [
-    { label: "Calc Engine", value: "Active" },
-    { label: "Mutations", value: "Instant" },
-    { label: "Asset Load", value: "Optimized" }
+    { label: "Calc Engine", value: "Server-side" },
+    { label: "DB Mutations", value: "Instant" },
+    { label: "Asset Pipeline", value: "Optimized" }
   ],
   "Opulent Pages": [
     { label: "Accessibility", value: "100%" },
@@ -52,7 +52,7 @@ function Projects() {
   const [quickViewIndex, setQuickViewIndex] = useState<number | null>(null);
 
   // Categories list
-  const categories = ["All", "FinTech", "E-Commerce", "Editorial"];
+  const categories = ["All", "Full-Stack", "FinTech", "E-Commerce", "Editorial"];
 
   // Mapping indices dynamically so we route to the right item
   const projectsWithIndex = projects.map((proj, idx) => ({ ...proj, originalIndex: idx }));
@@ -60,6 +60,7 @@ function Projects() {
   const filteredProjects = projectsWithIndex.filter((project) => {
     const matchesCategory =
       selectedCategory === "All" ||
+      selectedCategory === "Full-Stack" ||
       (selectedCategory === "FinTech" && project.name === "Anchor Yield") ||
       (selectedCategory === "E-Commerce" && (project.name === "Goal Mania" || project.name === "dGold Luxury Boutique")) ||
       (selectedCategory === "Editorial" && project.name === "Opulent Pages");
@@ -81,10 +82,10 @@ function Projects() {
   return (
     <>
       <Helmet>
-        <title>Front-end Projects | Sanusi Olayinka Uthman</title>
+        <title>Full-Stack Projects | Sanusi Olayinka Uthman</title>
         <meta
           name="description"
-          content="Explore the engineering showcase of Sanusi Olayinka Uthman, including FinTech platforms, media pipelines, and luxury digital checkouts."
+          content="Explore the full-stack engineering showcase of Sanusi Olayinka Uthman, featuring Node.js backend architectures, RESTful API pipelines, FinTech dashboards, and luxury e-commerce engines."
         />
         <link rel="canonical" href="https://sanusiou.pro/projects" />
       </Helmet>
@@ -95,11 +96,10 @@ function Projects() {
         {/* Hero title */}
         <div className="max-w-5xl w-full text-left space-y-4">
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 font-sans">
-            Selected Frontend Work
+            Selected Full-Stack & Engineering Work
           </h1>
           <p className="text-lg text-slate-600 font-sans font-light max-w-2xl">
-            A selective index of projects demonstrating state synchronization, dynamic
-            checkout flows, media optimization pipelines, and strict WCAG compliance.
+            A selective index of production systems demonstrating Node.js backend services, real-time data synchronization, dynamic checkout architectures, and full-stack system design.
           </p>
         </div>
 
@@ -112,11 +112,11 @@ function Projects() {
             className="flex items-start gap-3 p-4 bg-slate-900/5 backdrop-blur-md border border-slate-200/50 rounded-2xl text-left"
           >
             <div className="p-2 bg-blue-100/60 rounded-xl text-blue-600 mt-0.5">
-              <Cpu size={18} />
+              <Server size={18} />
             </div>
             <div>
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-wider font-sans">Core Stack</p>
-              <p className="text-sm font-bold text-slate-800 font-sans mt-0.5">React / Next.js / TS</p>
+              <p className="text-xs font-bold text-slate-400 uppercase tracking-wider font-sans">Server Runtime</p>
+              <p className="text-sm font-bold text-slate-800 font-sans mt-0.5">Node.js / Express APIs</p>
             </div>
           </motion.div>
 
@@ -130,8 +130,8 @@ function Projects() {
               <ShieldCheck size={18} />
             </div>
             <div>
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-wider font-sans">Delivery Rate</p>
-              <p className="text-sm font-bold text-slate-800 font-sans mt-0.5">100% Code Ownership</p>
+              <p className="text-xs font-bold text-slate-400 uppercase tracking-wider font-sans">System Delivery</p>
+              <p className="text-sm font-bold text-slate-800 font-sans mt-0.5">100% Full-Stack Ownership</p>
             </div>
           </motion.div>
 
@@ -142,11 +142,11 @@ function Projects() {
             className="flex items-start gap-3 p-4 bg-slate-900/5 backdrop-blur-md border border-slate-200/50 rounded-2xl text-left"
           >
             <div className="p-2 bg-amber-100/60 rounded-xl text-amber-600 mt-0.5">
-              <Zap size={18} />
+              <Database size={18} />
             </div>
             <div>
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-wider font-sans">Accessibility</p>
-              <p className="text-sm font-bold text-slate-800 font-sans mt-0.5">WCAG 2.1 AA target</p>
+              <p className="text-xs font-bold text-slate-400 uppercase tracking-wider font-sans">Data & State</p>
+              <p className="text-sm font-bold text-slate-800 font-sans mt-0.5">Postgres / Supabase / Zustand</p>
             </div>
           </motion.div>
 
@@ -161,7 +161,7 @@ function Projects() {
             </div>
             <div>
               <p className="text-xs font-bold text-slate-400 uppercase tracking-wider font-sans">Integration</p>
-              <p className="text-sm font-bold text-slate-800 font-sans mt-0.5">REST & Real-time Poll</p>
+              <p className="text-sm font-bold text-slate-800 font-sans mt-0.5">RESTful & Real-time Poll</p>
             </div>
           </motion.div>
         </div>
@@ -293,7 +293,7 @@ function Projects() {
                         variant="secondary-glass"
                         size="small"
                         className="w-auto px-3.5 py-1.5 h-8 text-[11px] rounded-lg"
-                        onClick={(e) => handleQuickView(project, project.originalIndex, e)}
+                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => handleQuickView(project, project.originalIndex, e)}
                       >
                         <Eye size={12} />
                         Quick View

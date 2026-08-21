@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState, type MouseEvent } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useOutSideClick } from "../hooks/useOutsideClick";
 import Logo from "./Logo";
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = (e: React.MouseEvent) => {
+  const toggleMenu = (e: MouseEvent) => {
     e.stopPropagation();
     setIsOpen(!isOpen);
   };

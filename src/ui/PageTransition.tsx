@@ -1,4 +1,4 @@
-import React from "react";
+import type { ReactNode } from "react";
 import { motion, Variants } from "framer-motion";
 
 const pageVariants: Variants = {
@@ -26,7 +26,7 @@ const pageVariants: Variants = {
 };
 
 interface PageTransitionProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const PageTransition = ({ children }: PageTransitionProps) => {

@@ -1,36 +1,36 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight, Layers, GitMerge, ShieldCheck } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, ArrowUpRight, Server, Layers, ShieldCheck } from "lucide-react";
 import useNavigation from "../utils/useNavigation";
 import NavBar from "../ui/NavBar";
 import Footer from "../ui/Footer";
 import Button from "../ui/Button";
 
 const metrics = [
-  { value: "4+", label: "Years Frontend Experience" },
-  { value: "5+", label: "Production Deployments" },
-  { value: "100%", label: "Interface Ownership & Delivery" },
+  { value: "4+", label: "Years Full Stack Experience" },
+  { value: "5+", label: "Production Full-Stack Apps" },
+  { value: "100%", label: "End-to-End System Ownership" },
   { value: "Global", label: "Client Collaborations" },
 ];
 
 const pillars = [
   {
+    icon: Server,
+    title: "Node.js Backend & API Systems",
+    description:
+      "Specialized in architecting performant Node.js server runtimes, Express.js microservices, and RESTful API endpoints. I design robust backend data layers, authentication middleware, rate-limiting, and asynchronous event pipelines that power high-concurrency systems.",
+  },
+  {
     icon: Layers,
     title: "Frontend Architecture & State",
     description:
-      "Deep focus on React, Next.js, and TypeScript. I build modular component lifecycles with robust client-side state handling using Zustand and Context API to eliminate UI rendering lag and ensure deterministic data flow across complex view hierarchies.",
-  },
-  {
-    icon: GitMerge,
-    title: "Complex System Integrations",
-    description:
-      "Hands-on experience consuming RESTful data streams, implementing fast-polling API data synchronization, and managing backend mutations and relational databases via Supabase. I ensure that every data layer transitions smoothly on the client side.",
+      "Deep focus on React, Next.js, and TypeScript. I build modular component lifecycles with deterministic client-side state handling using Zustand and Context API to eliminate UI rendering lag and ensure seamless data flow across complex view hierarchies.",
   },
   {
     icon: ShieldCheck,
-    title: "End-to-End Feature Ownership",
+    title: "End-to-End System Delivery",
     description:
-      "Product-minded engineering approach: collaborating across cross-functional teams, translating design systems from Figma into reusable code blocks, and optimizing critical web vitals including CLS, LCP, and performance metrics for production readiness.",
+      "Product-minded full stack engineering: modeling relational database schemas with PostgreSQL/Supabase, orchestrating serverless functions, translating Figma designs into code, and optimizing Core Web Vitals and Lighthouse metrics for production.",
   },
 ];
 
@@ -39,63 +39,72 @@ const selectedWorks = [
     name: "Anchor Yield",
     tag: "FinTech Platform",
     description:
-      "Institutional-grade investment dashboard managing real-time financial API integration, multi-step transaction states, and complex data synchronization across portfolio widgets.",
+      "Full-stack institutional investment platform with a Node.js API data aggregation layer, fast-polling state sync, and secure Supabase/PostgreSQL ledger mutations.",
     live: "https://anchor-yield.vercel.app/",
-    github: "https://github.com/olayinkasanusi/anchor--yield",
+    github: "https://github.com/olayinkasanusi/anchor-yield",
     route: 0,
   },
   {
     name: "Goal Mania",
     tag: "E-Commerce & Analytics Hub",
     description:
-      "International collaboration for an Indonesian client handling real-time sports polling data, a jersey merchandise e-commerce engine, and custom state-driven product configuration flows.",
+      "Full-stack international platform powered by Node.js server streams for live sports polling, custom merchandise configuration algorithms, and Next.js SSR.",
     live: "https://goal-mania.it",
-    github: "https://github.com/goalmania/goal-mania",
+    github: "https://github.com/olayinkasanusi/goal-mania",
     route: 1,
   },
   {
     name: "dGold Luxury Boutique",
-    tag: "Luxury E-Commerce",
+    tag: "Luxury E-Commerce Suite",
     description:
-      "High-end digital storefront processing dynamic multi-attribute product matrices — weights, karats, spot prices — with a secure administration dashboard for real-time inventory mutations.",
+      "Full-stack luxury retail system featuring dynamic server-side pricing engines for gold spot rates, role-restricted admin inventory mutations, and real-time state sync.",
     live: "https://dgold.shop",
     github: "https://github.com/olayinkasanusi/dgold",
     route: 2,
   },
   {
     name: "Opulent Pages",
-    tag: "Author Platform",
+    tag: "Publishing Platform",
     description:
-      "Editorial publishing system built with strict typography layouts, aggressive asset-loading optimization pipelines, and full WCAG 2.1 AA accessibility compliance for global readers.",
+      "Full-stack publishing system engineered with optimized server asset pipelines, strict typography layouts, and full WCAG 2.1 AA accessibility compliance.",
     live: "https://opulentpages.ca",
-    github: "https://github.com/olayinkasanusi/td-hilderly/",
+    github: "https://github.com/olayinkasanusi/td-hilderley",
     route: 3,
   },
 ];
 
 const techStack = {
-  Architecture: [
+  "Backend & Server": [
+    "Node.js",
+    "Express.js",
+    "RESTful APIs",
+    "JWT Authentication",
+    "Asynchronous I/O",
+    "Middleware Design",
+  ],
+  "Frontend Architecture": [
     "React.js",
     "Next.js",
     "TypeScript",
     "JavaScript (ES6+)",
-    "HTML5",
-    "SASS",
+    "HTML5 / CSS3",
+    "TailwindCSS",
   ],
-  "State & Databases": [
-    "Zustand",
-    "Redux",
-    "Context API",
-    "RESTful APIs",
+  "Databases & Cloud": [
+    "PostgreSQL",
     "Supabase",
+    "MongoDB",
+    "Vercel / Serverless",
+    "Redis Caching",
+    "Zustand / Redux",
   ],
-  "Workflow & Build": [
-    "Git",
-    "Vite",
-    "Webpack",
+  "Tooling & DevOps": [
+    "Git / GitHub",
+    "Vite Bundler",
+    "Postman",
     "Figma Translation",
-    "Storybook",
     "WCAG Accessibility",
+    "Jest / Testing",
   ],
 };
 
@@ -142,10 +151,10 @@ const HeroSection = () => {
   return (
     <>
       <Helmet>
-        <title>Sanusi Olayinka Uthman | Senior Frontend Engineer</title>
+        <title>Sanusi Olayinka Uthman | Full Stack Software Engineer</title>
         <meta
           name="description"
-          content="Personal portfolio of Sanusi Olayinka Uthman, a senior frontend engineer specializing in converting high-end design languages into scalable web apps."
+          content="Personal portfolio of Sanusi Olayinka Uthman, a full stack software engineer specializing in scalable Node.js backend architectures, RESTful APIs, and modern React/Next.js web applications."
         />
         <link rel="canonical" href="https://sanusiou.pro/" />
       </Helmet>
@@ -169,12 +178,11 @@ const HeroSection = () => {
               <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 font-sans">
                 Sanusi Olayinka Uthman —
                 <span className="block text-blue-600 mt-1">
-                  Frontend Engineer
+                  Full Stack Engineer
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-sans font-light max-w-3xl">
-                As a frontend engineer, I specialize in converting high-end designs into scalable, highly performant web applications that integrate seamlessly with complex APIs and custom state logic, ensuring that critical data layers transition
-                smoothly on the client side.
+                As a full stack engineer, I architect end-to-end web applications — building high-performance Node.js backend services, secure RESTful APIs, and scalable databases alongside responsive, pixel-perfect frontend interfaces with React, Next.js, and TypeScript.
               </p>
               <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-6">
                 <Button
@@ -183,7 +191,7 @@ const HeroSection = () => {
                   size="large"
                   className="w-auto"
                 >
-                  View Selected Engineering Work
+                  View Selected Full-Stack Work
                 </Button>
                 <div className="flex items-center gap-4">
                   <a
@@ -256,8 +264,8 @@ const HeroSection = () => {
                 How I Build
               </h2>
               <p className="text-slate-500 font-sans font-light mt-2 max-w-2xl">
-                An engineering-first approach to frontend development — grounded
-                in architecture, integration depth, and full delivery ownership.
+                An engineering-first approach to full-stack development — grounded
+                in Node.js backend reliability, frontend architecture, and full delivery ownership.
               </p>
             </motion.div>
 
@@ -302,7 +310,7 @@ const HeroSection = () => {
                 Selected Systems
               </h2>
               <p className="text-slate-500 font-sans font-light mt-2 max-w-2xl">
-                Production applications I engineered — spanning financial data
+                Full-stack production applications I engineered — spanning Node.js financial data
                 pipelines, luxury e-commerce, and editorial publishing
                 platforms.
               </p>
@@ -382,8 +390,8 @@ const HeroSection = () => {
                 Technical Stack Index
               </h2>
               <p className="text-slate-500 font-sans font-light mt-2 max-w-2xl">
-                A categorized taxonomy of the tools, frameworks, and workflows I
-                use to ship production-grade frontend systems.
+                A categorized taxonomy of the backend tools, server frameworks, frontend libraries,
+                and workflows I use to ship production-grade full stack systems.
               </p>
             </motion.div>
 
